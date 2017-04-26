@@ -1,0 +1,1145 @@
+<?xml version="1.0" ?>
+<parameterMap>
+  <title>National Centers for Environmental Prediction (NCEP Ensemble Products) GRIB2 Parameter Table Version 2.1</title>
+  <center ID="7" subcenterID="2">U.S. National Weather Service, National Centers for Environmental Prediction (NCEP)</center>
+  <table masterVersion="2" localVersion="1">2.1</table>
+  <discipline code="0">
+    <parameterCategory code="0">
+      <parameter code="0">
+        <description>Temperature</description>
+        <units>K</units>
+        <CF ifLevelType="1">surface_temperature</CF>
+        <CF ifLevelType="7">tropopause_air_temperature</CF>
+        <CF ifLevelType="106-106">soil_temperature</CF>
+        <CF>air_temperature</CF>
+        <GCMD ifLevelType="1">bd24a9a9-7d52-4c29-b2a0-6cefd216ae78;40d6a3e7-89dd-4399-8fa5-bbc7a0917b4e</GCMD>
+        <GCMD ifLevelType="103" ifLevelValue="2">f634ab55-de40-4d0b-93bc-691bf5408ccb</GCMD>
+        <GCMD ifLevelType="106-106">0546b91a-294d-45d9-8b45-76aaad0cc024</GCMD>
+        <GCMD>926c1b80-6c11-40eb-ae7f-f5bcfdc43fac</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Virtual temperature</description>
+        <units>K</units>
+        <CF>virtual_temperature</CF>
+        <GCMD ifLevelType="1">fd19a3f1-8eeb-49ab-bcaf-e7b4b267d415</GCMD>
+        <GCMD>3afb06fa-96b7-4bf4-a6b7-b5fa626afc04</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Potential temperature</description>
+        <units>K</units>
+        <CF>air_potential_temperature</CF>
+        <GCMD ifLevelType="1">7a0bd777-be0d-43c8-80eb-5ac58f4832de</GCMD>
+        <GCMD ifLevelType="160">e02b0b50-a0f2-4c47-841b-9689fdb99121</GCMD>
+        <GCMD>RDAf08d0-6b2d-7ffe-ddad-ce812cf2556c</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Pseudo-adiabatic potential temperature or equivalent potential temperature</description>
+        <units>K</units>
+        <CF>pseudo_equivalent_potential_temperature</CF>
+      </parameter>
+      <parameter code="4">
+        <description>Maximum temperature</description>
+        <units>K</units>
+        <CF>maximum_air_temperature</CF>
+        <GCMD ifLevelType="1">5164162a-60eb-4c94-a0f0-2caaa3bb1754</GCMD>
+        <GCMD ifLevelType="103" ifLevelValue="2">5164162a-60eb-4c94-a0f0-2caaa3bb1754</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Minimum temperature</description>
+        <units>K</units>
+        <CF>minimum_air_temperature</CF>
+        <GCMD ifLevelType="1">5164162a-60eb-4c94-a0f0-2caaa3bb1754</GCMD>
+        <GCMD ifLevelType="103" ifLevelValue="2">5164162a-60eb-4c94-a0f0-2caaa3bb1754</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Dewpoint temperature</description>
+        <units>K</units>
+        <CF>dew_point_temperature</CF>
+        <GCMD>731beb11-9418-40ec-8f2c-c4b320e8231a</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Dewpoint depression (or deficit)</description>
+        <units>K</units>
+        <CF>dew_point_depression</CF>
+        <GCMD>731beb11-9418-40ec-8f2c-c4b320e8231a</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Lapse rate</description>
+        <units>K m^-1</units>
+        <CF>air_temperature_lapse_rate</CF>
+      </parameter>
+      <parameter code="9">
+        <description>Temperature anomaly</description>
+        <units>K</units>
+        <CF>air_temperature_anomaly</CF>
+      </parameter>
+      <parameter code="10">
+        <description>Latent heat flux</description>
+        <units>W m^-2</units>
+        <GCMD>46a3c823-727d-4c3c-b09d-e3e3fcaa43a5</GCMD>
+      </parameter>
+      <parameter code="11">
+        <description>Sensible heat flux</description>
+        <units>W m^-2</units>
+        <GCMD>46a3c823-727d-4c3c-b09d-e3e3fcaa43a5</GCMD>
+      </parameter>
+      <parameter code="12">
+        <description>Heat index</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="13">
+        <description>Wind chill factor</description>
+        <units>K</units>
+        <GCMD>8297bc97-9531-40da-950b-ac7e9d6e1b55</GCMD>
+      </parameter>
+      <parameter code="14">
+        <description>Minimum dew point depression</description>
+        <units>K</units>
+        <GCMD>731beb11-9418-40ec-8f2c-c4b320e8231a</GCMD>
+      </parameter>
+      <parameter code="15">
+        <description>Virtual potential temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="16">
+        <description>Snow phase change heat flux</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="192">
+        <description>Snow phase change heat flux</description>
+        <units>W m^-2</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="1">
+      <parameter code="0">
+        <description>Specific humidity</description>
+        <units>kg kg^-1</units>
+        <CF>specific_humidity</CF>
+        <GCMD>427e5121-a142-41cb-a8e9-a70b7f98eb6a</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Relative humidity</description>
+        <units>%</units>
+        <CF>relative_humidity</CF>
+        <GCMD>427e5121-a142-41cb-a8e9-a70b7f98eb6a</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Humidity mixing ratio</description>
+        <units>kg kg^-1</units>
+        <CF>humidity_mixing_ratio</CF>
+        <GCMD>427e5121-a142-41cb-a8e9-a70b7f98eb6a</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Precipitable water</description>
+        <units>kg m^-2</units>
+        <CF>atmosphere_water_vapor_content</CF>
+        <GCMD>c3a4eb4a-4619-43cd-b890-b567d01324ea</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Vapor pressure</description>
+        <units>Pa</units>
+        <CF>water_vapor_pressure</CF>
+        <GCMD>15029eb0-6342-4066-8ac9-c50f7dbfb392</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Saturation deficit</description>
+        <units>Pa</units>
+        <CF>water_vapor_saturation_deficit</CF>
+        <GCMD>15029eb0-6342-4066-8ac9-c50f7dbfb392</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Evaporation</description>
+        <units>kg m^-2</units>
+        <CF>water_evaporation_amount</CF>
+        <GCMD>b68ab978-6db6-49ee-84e2-5f37b461a998</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+        <CF>precipitation_flux</CF>
+        <GCMD>ac50c468-df2f-429c-8394-9d63efcc6f9d</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Total precipitation</description>
+        <units>kg m^-2</units>
+        <CF>precipitation_amount</CF>
+        <GCMD>cad5c02a-e771-434e-bef6-8dced38a68e8</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Large scale precipitation (non-convective)</description>
+        <units>kg m^-2</units>
+        <CF>large_scale_precipitation_amount</CF>
+        <GCMD>cad5c02a-e771-434e-bef6-8dced38a68e8</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Convective precipitation</description>
+        <units>kg m^-2</units>
+        <CF>convective_precipitation_amount</CF>
+        <GCMD>cad5c02a-e771-434e-bef6-8dced38a68e8</GCMD>
+      </parameter>
+      <parameter code="11">
+        <description>Snow depth</description>
+        <units>m</units>
+        <CF>surface_snow_thickness</CF>
+        <GCMD>9512b90f-f495-41bb-9600-ff25e4cfc571</GCMD>
+      </parameter>
+      <parameter code="12">
+        <description>Snowfall rate water equivalent</description>
+        <units>kg m^-2 s^-1</units>
+        <CF>snowfall_flux</CF>
+        <GCMD>47d8d3db-9aea-49f3-8edd-5216736a85ef</GCMD>
+      </parameter>
+      <parameter code="13">
+        <description>Water equivalent of accumulated snow depth</description>
+        <units>kg m^-2</units>
+        <CF>surface_snow_amount</CF>
+        <GCMD>47d8d3db-9aea-49f3-8edd-5216736a85ef</GCMD>
+      </parameter>
+      <parameter code="14">
+        <description>Convective snow</description>
+        <units>kg m^-2</units>
+        <CF>convective_snowfall_amount</CF>
+        <GCMD>b51b3708-a662-4cf1-bf13-e67f36b001c4</GCMD>
+      </parameter>
+      <parameter code="15">
+        <description>Large scale snow</description>
+        <units>kg m^-2</units>
+        <CF>large_scale_snowfall_amount</CF>
+        <GCMD>b51b3708-a662-4cf1-bf13-e67f36b001c4</GCMD>
+      </parameter>
+      <parameter code="16">
+        <description>Snow melt</description>
+        <units>kg m^-2</units>
+        <CF>surface_snow_melt_amount</CF>
+        <GCMD>dd6de9e1-61e7-41bf-a2dc-9d2afc690bb3</GCMD>
+      </parameter>
+      <parameter code="17">
+        <description>Snow age</description>
+        <units>day</units>
+      </parameter>
+      <parameter code="18">
+        <description>Absolute humidity</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="19">
+        <description>Precipitation type</description>
+      </parameter>
+      <parameter code="20">
+        <description>Integrated liquid water</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="21">
+        <description>Condensate</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="22">
+        <description>Cloud water mixing ratio</description>
+        <units>kg kg^-1</units>
+        <GCMD>05ac9d3e-bc44-41fa-ace0-c41bf3ebee97</GCMD>
+      </parameter>
+      <parameter code="23">
+        <description>Ice water mixing ratio</description>
+        <units>kg kg^-1</units>
+        <GCMD>05ac9d3e-bc44-41fa-ace0-c41bf3ebee97</GCMD>
+      </parameter>
+      <parameter code="24">
+        <description>Rain water mixing ratio</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="25">
+        <description>Snow water mixing ratio</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="26">
+        <description>Horizontal moisture convergence</description>
+        <units>kg kg^-1 s^-1</units>
+      </parameter>
+      <parameter code="27">
+        <description>Maximum relative humidity</description>
+        <units>%</units>
+        <CF>relative_humidity</CF>
+        <GCMD>427e5121-a142-41cb-a8e9-a70b7f98eb6a</GCMD>
+      </parameter>
+      <parameter code="28">
+        <description>Maximum absolute humidity</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="29">
+        <description>Total snowfall</description>
+        <units>m</units>
+        <CF>lwe_thickness_of_snowfall_amount</CF>
+        <GCMD>b51b3708-a662-4cf1-bf13-e67f36b001c4</GCMD>
+      </parameter>
+      <parameter code="30">
+        <description>Precipitable water category</description>
+      </parameter>
+      <parameter code="31">
+        <description>Hail</description>
+        <units>m</units>
+        <GCMD>7118d286-6629-48e5-931f-052cd347395e</GCMD>
+      </parameter>
+      <parameter code="32">
+        <description>Graupel</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="33">
+        <description>Categorical rain (yes=1; no=0)</description>
+      </parameter>
+      <parameter code="34">
+        <description>Categorical freezing rain (yes=1; no=0)</description>
+      </parameter>
+      <parameter code="35">
+        <description>Categorical ice pellets (yes=1; no=0)</description>
+      </parameter>
+      <parameter code="36">
+        <description>Categorical snow (yes=1; no=0)</description>
+      </parameter>
+      <parameter code="37">
+        <description>Convective precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+        <CF>convective_precipitation_flux</CF>
+        <GCMD>ac50c468-df2f-429c-8394-9d63efcc6f9d</GCMD>
+      </parameter>
+      <parameter code="38">
+        <description>Horizontal moisture divergence</description>
+        <units>kg kg^-1 s^-1</units>
+      </parameter>
+      <parameter code="39">
+        <description>Percent frozen precipitation</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="40">
+        <description>Potential evaporation</description>
+        <units>kg m^-2</units>
+        <GCMD>b68ab978-6db6-49ee-84e2-5f37b461a998</GCMD>
+      </parameter>
+      <parameter code="41">
+        <description>Potential evaporation rate</description>
+        <units>W m^-2</units>
+        <CF>potential_water_evaporation_flux</CF>
+        <GCMD>b68ab978-6db6-49ee-84e2-5f37b461a998</GCMD>
+      </parameter>
+      <parameter code="42">
+        <description>Snow cover</description>
+        <units>%</units>
+        <GCMD>6a08f79f-a621-4f8c-b5d5-e1335f9cbcec</GCMD>
+      </parameter>
+      <parameter code="43">
+        <description>Rain fraction of total liquid water</description>
+      </parameter>
+      <parameter code="44">
+        <description>Rime factor</description>
+      </parameter>
+      <parameter code="45">
+        <description>Total column integrated rain</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="46">
+        <description>Total column integrated snow</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="192">
+        <description>Categorical rain (yes=1; no=0)</description>
+      </parameter>
+      <parameter code="193">
+        <description>Categorical freezing rain (yes=1; no=0)</description>
+      </parameter>
+      <parameter code="194">
+        <description>Categorical ice pellets (yes=1; no=0)</description>
+      </parameter>
+      <parameter code="195">
+        <description>Categorical snow (yes=1; no=0)</description>
+      </parameter>
+      <parameter code="196">
+        <description>Convective precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+        <CF>convective_precipitation_flux</CF>
+        <GCMD>ac50c468-df2f-429c-8394-9d63efcc6f9d</GCMD>
+      </parameter>
+      <parameter code="197">
+        <description>Horizontal moisture divergence</description>
+        <units>kg kg^-1 s^-1</units>
+      </parameter>
+      <parameter code="199">
+        <description>Potential evaporation</description>
+        <units>kg m^-2</units>
+        <GCMD>b68ab978-6db6-49ee-84e2-5f37b461a998</GCMD>
+      </parameter>
+      <parameter code="200">
+        <description>Potential evaporation rate</description>
+        <units>W m^-2</units>
+        <CF>potential_water_evaporation_flux</CF>
+        <GCMD>b68ab978-6db6-49ee-84e2-5f37b461a998</GCMD>
+      </parameter>
+      <parameter code="201">
+        <description>Snow cover</description>
+        <units>%</units>
+        <GCMD>6a08f79f-a621-4f8c-b5d5-e1335f9cbcec</GCMD>
+      </parameter>
+      <parameter code="202">
+        <description>Rain fraction of total liquid water</description>
+      </parameter>
+      <parameter code="203">
+        <description>Rime factor</description>
+      </parameter>
+      <parameter code="204">
+        <description>Total column integrated rain</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="205">
+        <shortName>TCOLS</shortName>
+        <description>Total column integrated snow</description>
+        <units>kg m^-2</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="2">
+      <parameter code="0">
+        <description>Wind direction (from which blowing)</description>
+        <units>degree_T</units>
+        <CF>wind_from_direction</CF>
+        <GCMD>10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Wind speed</description>
+        <units>m s^-1</units>
+        <CF>wind_speed</CF>
+        <GCMD>10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>u-component of wind</description>
+        <units>m s^-1</units>
+        <CF>eastward_wind</CF>
+        <GCMD>592d49c4-e8ae-4ab4-bf24-ae4a896d0637</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>v-component of wind</description>
+        <units>m s^-1</units>
+        <CF>northward_wind</CF>
+        <GCMD>592d49c4-e8ae-4ab4-bf24-ae4a896d0637</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Stream function</description>
+        <units>m2 s^-1</units>
+        <CF>atmosphere_horizontal_streamfunction</CF>
+        <GCMD>eaeb5cdd-365f-4368-8e20-6defe111b3b4</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Velocity potential</description>
+        <units>m2 s^-1</units>
+        <CF>atmosphere_horizontal_velocity_potential</CF>
+      </parameter>
+      <parameter code="6">
+        <description>Montgomery stream function</description>
+        <units>m2 s^-1</units>
+        <CF>atmosphere_horizontal_montgomery_streamfunction</CF>
+        <GCMD>eaeb5cdd-365f-4368-8e20-6defe111b3b4</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Sigma coordinate vertical velocity</description>
+        <units>s^-1</units>
+        <CF>lagrangian_tendency_of_atmosphere_sigma_coordinate</CF>
+        <GCMD>841a7ac7-5981-4e93-895f-1b57c3d892a0</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Vertical velocity (pressure)</description>
+        <units>Pa s^-1</units>
+        <CF>lagrangian_tendency_of_air_pressure</CF>
+        <GCMD>841a7ac7-5981-4e93-895f-1b57c3d892a0</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Vertical velocity (geometric)</description>
+        <units>m s^-1</units>
+        <CF>upward_air_velocity</CF>
+        <GCMD>841a7ac7-5981-4e93-895f-1b57c3d892a0</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Absolute vorticity</description>
+        <units>s^-1</units>
+        <CF>atmosphere_absolute_vorticity</CF>
+        <GCMD>858a80ff-5aa4-4590-b2e2-e88a802a6ee4</GCMD>
+      </parameter>
+      <parameter code="11">
+        <description>Absolute divergence</description>
+        <units>s^-1</units>
+        <GCMD>a2cc8e02-3207-4c40-af41-9656404bac0a</GCMD>
+      </parameter>
+      <parameter code="12">
+        <description>Relative vorticity</description>
+        <units>s^-1</units>
+        <CF>atmosphere_relative_vorticity</CF>
+        <GCMD>858a80ff-5aa4-4590-b2e2-e88a802a6ee4</GCMD>
+      </parameter>
+      <parameter code="13">
+        <description>Relative divergence</description>
+        <units>s^-1</units>
+        <CF>divergence_of_wind</CF>
+        <GCMD>a2cc8e02-3207-4c40-af41-9656404bac0a</GCMD>
+      </parameter>
+      <parameter code="14">
+        <description>Potential vorticity</description>
+        <units>K m2 kg^-1 s^-1</units>
+      </parameter>
+      <parameter code="15">
+        <description>Vertical u-component of shear</description>
+        <units>s^-1</units>
+        <CF>eastward_wind_shear</CF>
+        <GCMD>05cf5b56-0f86-4819-b713-1272b97b06c5</GCMD>
+      </parameter>
+      <parameter code="16">
+        <description>Vertical v-component of shear</description>
+        <units>s^-1</units>
+        <CF>northward_wind_shear</CF>
+        <GCMD>05cf5b56-0f86-4819-b713-1272b97b06c5</GCMD>
+      </parameter>
+      <parameter code="17">
+        <description>Momentum flux, u-component</description>
+        <units>N m^-2</units>
+        <CF>downward_eastward_momentum_flux_in_air</CF>
+      </parameter>
+      <parameter code="18">
+        <description>Momentum flux, v-component</description>
+        <units>N m^-2</units>
+        <CF>downward_northward_momentum_flux_in_air</CF>
+      </parameter>
+      <parameter code="19">
+        <description>Wind mixing energy</description>
+        <units>J</units>
+        <CF>wind_mixing_energy_flux_into_ocean</CF>
+      </parameter>
+      <parameter code="20">
+        <description>Boundary layer dissipation</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="21">
+        <description>Maximum wind speed</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="22">
+        <description>Wind speed (gust)</description>
+        <units>m s^-1</units>
+        <GCMD>10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+      </parameter>
+      <parameter code="23">
+        <description>u-component of wind (gust)</description>
+        <units>m s^-1</units>
+        <GCMD>10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+      </parameter>
+      <parameter code="24">
+        <description>v-component of wind (gust)</description>
+        <units>m s^-1</units>
+        <GCMD>10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+      </parameter>
+      <parameter code="25">
+        <description>Vertical speed shear</description>
+        <units>s^-1</units>
+        <CF>wind_speed_shear</CF>
+        <GCMD>05cf5b56-0f86-4819-b713-1272b97b06c5</GCMD>
+      </parameter>
+      <parameter code="26">
+        <description>Horizontal momentum flux</description>
+        <units>N m^-2</units>
+      </parameter>
+      <parameter code="27">
+        <description>u-component of storm motion</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="28">
+        <description>v-component of storm motion</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="29">
+        <description>Drag coefficient</description>
+      </parameter>
+      <parameter code="30">
+        <description>Frictional velocity</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="192">
+        <description>Vertical speed shear</description>
+        <units>s^-1</units>
+        <CF>wind_speed_shear</CF>
+        <GCMD>05cf5b56-0f86-4819-b713-1272b97b06c5</GCMD>
+      </parameter>
+      <parameter code="193">
+        <description>Horizontal momentum flux</description>
+        <units>N m^-2</units>
+      </parameter>
+      <parameter code="194">
+        <description>u-component of storm motion</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="195">
+        <description>v-component of storm motion</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="196">
+        <description>Drag coefficient</description>
+      </parameter>
+      <parameter code="197">
+        <description>Frictional velocity</description>
+        <units>m s^-1</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="3">
+      <parameter code="0">
+        <description>Pressure</description>
+        <units>Pa</units>
+        <CF>air_pressure</CF>
+        <GCMD>a5aa7055-642d-4442-9b4b-76a759e15257</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Pressure reduced to MSL</description>
+        <units>Pa</units>
+      </parameter>
+      <parameter code="2">
+        <description>Pressure tendency</description>
+        <units>Pa s^-1</units>
+        <CF>tendency_of_air_pressure</CF>
+        <GCMD>fa98caa0-54dc-465e-9bde-cdf4da905994</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>ICAO standard atmosphere reference height</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="4">
+        <description>Geopotential</description>
+        <units>m2 s^-2</units>
+        <CF>geopotential</CF>
+      </parameter>
+      <parameter code="5">
+        <description>Geopotential height</description>
+        <units>gpm</units>
+        <CF>geopotential_height</CF>
+        <GCMD>d6aec072-daf9-4f96-b667-6c7831cf6bdd</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Geometric height</description>
+        <units>m</units>
+        <CF>altitude</CF>
+      </parameter>
+      <parameter code="7">
+        <description>Standard deviation of height</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="8">
+        <description>Pressure anomaly</description>
+        <units>Pa</units>
+        <CF>air_pressure_anomaly</CF>
+        <GCMD>a5aa7055-642d-4442-9b4b-76a759e15257</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Geopotential height anomaly</description>
+        <units>gpm</units>
+        <CF>geopotential_height_anomaly</CF>
+        <GCMD>d6aec072-daf9-4f96-b667-6c7831cf6bdd</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Density</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="11">
+        <description>Altimeter setting</description>
+        <units>Pa</units>
+      </parameter>
+      <parameter code="12">
+        <description>Thickness</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="13">
+        <description>Pressure altitude</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="14">
+        <description>Density altitude</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="15">
+        <description>5-wave geopotential height</description>
+        <units>gpm</units>
+      </parameter>
+      <parameter code="16">
+        <description>Zonal flux of gravity wave stress</description>
+        <units>N m^-2</units>
+        <GCMD>7e6f7c15-32e7-4b6e-bd35-7bff4bc03caf</GCMD>
+      </parameter>
+      <parameter code="17">
+        <description>Meridional flux of gravity wave stress</description>
+        <units>N m^-2</units>
+        <GCMD>7e6f7c15-32e7-4b6e-bd35-7bff4bc03caf</GCMD>
+      </parameter>
+      <parameter code="18">
+        <description>Planetary boundary layer height</description>
+        <units>m</units>
+        <GCMD>765e92a7-8c14-47dc-bdd8-d85d132a11ee</GCMD>
+      </parameter>
+      <parameter code="19">
+        <description>5-wave geopotential height anomaly</description>
+        <units>gpm</units>
+      </parameter>
+      <parameter code="192">
+        <description>MSLP (Eta model reduction)</description>
+        <units>Pa</units>
+        <GCMD>07ce145c-9936-4675-b4a7-8710e39aa391</GCMD>
+      </parameter>
+      <parameter code="193">
+        <description>5-wave geopotential height</description>
+        <units>gpm</units>
+      </parameter>
+      <parameter code="194">
+        <description>Zonal flux of gravity wave stress</description>
+        <units>N m^-2</units>
+        <GCMD>7e6f7c15-32e7-4b6e-bd35-7bff4bc03caf</GCMD>
+      </parameter>
+      <parameter code="195">
+        <description>Meridional flux of gravity wave stress</description>
+        <units>N m^-2</units>
+        <GCMD>7e6f7c15-32e7-4b6e-bd35-7bff4bc03caf</GCMD>
+      </parameter>
+      <parameter code="196">
+        <description>Planetary boundary layer height</description>
+        <units>m</units>
+        <GCMD>765e92a7-8c14-47dc-bdd8-d85d132a11ee</GCMD>
+      </parameter>
+      <parameter code="197">
+        <description>5-wave geopotential height anomaly</description>
+        <units>gpm</units>
+      </parameter>
+      <parameter code="198">
+        <description>MSLP (MAPS system reduction)</description>
+        <units>Pa</units>
+        <GCMD>07ce145c-9936-4675-b4a7-8710e39aa391</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="6">
+      <parameter code="0">
+        <shortName>C ICE</shortName>
+        <description>Cloud ice</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="1">
+        <shortName>T CDC</shortName>
+        <description>Total cloud cover</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="2">
+        <shortName>CDCON</shortName>
+        <description>Convective cloud cover</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="3">
+        <shortName>L CDC</shortName>
+        <description>Low cloud cover</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="4">
+        <shortName>M CDC</shortName>
+        <description>Medium cloud cover</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="5">
+        <shortName>H CDC</shortName>
+        <description>High cloud cover</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="6">
+        <shortName>C WAT</shortName>
+        <description>Cloud water</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="7">
+        <description>Cloud amount</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="8">
+        <description>Cloud type</description>
+      </parameter>
+      <parameter code="9">
+        <description>Thunderstorm maximum tops</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="10">
+        <description>Thunderstorm coverage</description>
+      </parameter>
+      <parameter code="11">
+        <description>Cloud base</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="12">
+        <description>Cloud top</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="13">
+        <description>Ceiling</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="14">
+        <shortName>CDLYR</shortName>
+        <description>Non-Convective cloud cover</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="15">
+        <shortName>CWORK</shortName>
+        <description>Cloud workfunction</description>
+        <units>J kg^-1</units>
+      </parameter>
+      <parameter code="16">
+        <shortName>CUEFI</shortName>
+        <description>Convective cloud efficiency</description>
+      </parameter>
+      <parameter code="17">
+        <shortName>TCOND</shortName>
+        <description>Total condensate</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="18">
+        <shortName>TCOLW</shortName>
+        <description>Total column-integrated cloud water</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="19">
+        <shortName>TCOLI</shortName>
+        <description>Total column-integrated cloud ice</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="20">
+        <shortName>TCOLC</shortName>
+        <description>Total column-integrated condensate</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="21">
+        <shortName>FICE</shortName>
+        <description>Ice fraction of total condensate</description>
+      </parameter>
+      <parameter code="192">
+        <shortName>CDLYR</shortName>
+        <description>Non-Convective cloud cover</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="193">
+        <shortName>CWORK</shortName>
+        <description>Cloud workfunction</description>
+        <units>J kg^-1</units>
+      </parameter>
+      <parameter code="194">
+        <shortName>CUEFI</shortName>
+        <description>Convective cloud efficiency</description>
+      </parameter>
+      <parameter code="195">
+        <shortName>TCOND</shortName>
+        <description>Total condensate</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="196">
+        <shortName>TCOLW</shortName>
+        <description>Total column-integrated cloud water</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="197">
+        <shortName>TCOLI</shortName>
+        <description>Total column-integrated cloud ice</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="198">
+        <shortName>TCOLC</shortName>
+        <description>Total column-integrated condensate</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="199">
+        <shortName>FICE</shortName>
+        <description>Ice fraction of total condensate</description>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="7">
+      <parameter code="0">
+        <shortName>PLI</shortName>
+        <description>Parcel lifted index (to 500 mb)</description>
+        <units>deg K</units>
+      </parameter>
+      <parameter code="1">
+        <shortName>BLI</shortName>
+        <description>Best lifted index (to 500 mb)</description>
+        <units>deg K</units>
+      </parameter>
+      <parameter code="2">
+        <shortName>K X</shortName>
+        <description>K index</description>
+        <units>deg K</units>
+      </parameter>
+      <parameter code="3">
+        <description>KO index</description>
+        <units>deg K</units>
+      </parameter>
+      <parameter code="4">
+        <description>Total totals index</description>
+        <units>deg K</units>
+      </parameter>
+      <parameter code="5">
+        <shortName>S X</shortName>
+        <description>Sweat index</description>
+      </parameter>
+      <parameter code="6">
+        <shortName>CAPE</shortName>
+        <description>Convective available potential energy</description>
+        <units>J kg^-1</units>
+      </parameter>
+      <parameter code="7">
+        <shortName>CIN</shortName>
+        <description>Convective inhibition</description>
+        <units>J kg^-1</units>
+      </parameter>
+      <parameter code="8">
+        <shortName>HLCY</shortName>
+        <description>Storm relative helicity</description>
+        <units>m2 s^-2</units>
+      </parameter>
+      <parameter code="9">
+        <description>Energy helicity index</description>
+      </parameter>
+      <parameter code="10">
+        <shortName>LFT X</shortName>
+        <description>Surface lifted index</description>
+        <units>deg K</units>
+      </parameter>
+      <parameter code="11">
+        <shortName>4LFTX</shortName>
+        <description>Best (4 layer) lifted index</description>
+        <units>deg K</units>
+      </parameter>
+      <parameter code="12">
+        <shortName>RI</shortName>
+        <description>Richardson number</description>
+      </parameter>
+      <parameter code="192">
+        <shortName>LFT X</shortName>
+        <description>Surface lifted index</description>
+        <units>deg K</units>
+      </parameter>
+      <parameter code="193">
+        <shortName>4LFTX</shortName>
+        <description>Best (4 layer) lifted index</description>
+        <units>deg K</units>
+      </parameter>
+      <parameter code="194">
+        <shortName>RI</shortName>
+        <description>Richardson number</description>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="14">
+      <parameter code="0.14.192">
+        <shortName>O3MR</shortName>
+        <description>Ozone mixing ratio</description>
+        <units>kg kg^-1</units>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+  <discipline code="2">
+    <parameterCategory code="0">
+      <parameter code="0">
+        <shortName>LAND</shortName>
+        <description>Land cover</description>
+      </parameter>
+      <parameter code="1">
+        <shortName>SFC R</shortName>
+        <description>Surface roughness</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="2">
+        <shortName>TSOIL</shortName>
+        <description>Soil temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="3">
+        <shortName>SOIL M</shortName>
+        <description>Soil moisture content</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="4">
+        <shortName>VEG</shortName>
+        <description>Vegetation</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="5">
+        <shortName>WATR</shortName>
+        <description>Water runoff</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="6">
+        <description>Evapotranspiration</description>
+        <units>kg^2 s^-1</units>
+      </parameter>
+      <parameter code="7">
+        <description>Model terrain height</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="8">
+        <description>Land use</description>
+      </parameter>
+      <parameter code="9">
+        <shortName>SOILW</shortName>
+        <description>Volumetric soil moisture content</description>
+      </parameter>
+      <parameter code="10">
+        <shortName>GFLUX</shortName>
+        <description>Ground heat flux</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="11">
+        <shortName>MSTAV</shortName>
+        <description>Moisture availability</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="12">
+        <shortName>SFEXC</shortName>
+        <description>Exchange coefficient</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="13">
+        <shortName>CNWAT</shortName>
+        <description>Plant canopy surface water</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="14">
+        <shortName>BMIXL</shortName>
+        <description>Blackadar's mixing length scale</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="15">
+        <shortName>CCOND</shortName>
+        <description>Canopy conductance</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="16">
+        <shortName>RSMIN</shortName>
+        <description>Minimal stomatal resistance</description>
+        <units>s m^-1</units>
+      </parameter>
+      <parameter code="17">
+        <shortName>WILT</shortName>
+        <description>Wilting point</description>
+      </parameter>
+      <parameter code="18">
+        <shortName>RCS</shortName>
+        <description>Solar parameter in canopy conductance</description>
+      </parameter>
+      <parameter code="19">
+        <shortName>RCT</shortName>
+        <description>Temperature parameter in canopy conductance</description>
+      </parameter>
+      <parameter code="20">
+        <shortName>RCSOL</shortName>
+        <description>Soil moisture parameter in canopy conductance</description>
+      </parameter>
+      <parameter code="21">
+        <shortName>RCQ</shortName>
+        <description>Humidity parameter in canopy conductance</description>
+      </parameter>
+      <parameter code="22">
+        <description>Soil moisture</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="23">
+        <description>Column-integrated soil water</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="24">
+        <description>Heat flux</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="25">
+        <description>Volumetric soil moisture</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+      <parameter code="26">
+        <description>Wilting point</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="27">
+        <description>Volumetric wilting moisture</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+      <parameter code="192">
+        <shortName>SOILW</shortName>
+        <description>Volumetric soil moisture content</description>
+      </parameter>
+      <parameter code="193">
+        <shortName>GFLUX</shortName>
+        <description>Ground heat flux</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="194">
+        <shortName>MSTAV</shortName>
+        <description>Moisture availability</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="195">
+        <shortName>SFEXC</shortName>
+        <description>Exchange coefficient</description>
+        <units>(kg m^-3) (m s^-1)</units>
+      </parameter>
+      <parameter code="196">
+        <shortName>CNWAT</shortName>
+        <description>Plant canopy surface water</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="197">
+        <shortName>BMIXL</shortName>
+        <description>Blackadar's mixing length scale</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="198">
+        <shortName>VGTYP</shortName>
+        <description>Vegetation type</description>
+      </parameter>
+      <parameter code="199">
+        <shortName>CCOND</shortName>
+        <description>Canopy conductance</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="200">
+        <shortName>RSMIN</shortName>
+        <description>Minimal stomatal resistance</description>
+        <units>s m^-1</units>
+      </parameter>
+      <parameter code="201">
+        <shortName>WILT</shortName>
+        <description>Wilting point</description>
+      </parameter>
+      <parameter code="202">
+        <shortName>RCS</shortName>
+        <description>Solar parameter in canopy conductance</description>
+      </parameter>
+      <parameter code="203">
+        <shortName>RCT</shortName>
+        <description>Temperature parameter in canopy conductance</description>
+      </parameter>
+      <parameter code="204">
+        <shortName>RCQ</shortName>
+        <description>Humidity parameter in canopy conductance</description>
+      </parameter>
+      <parameter code="205">
+        <shortName>RCSOL</shortName>
+        <description>Soil moisture parameter in canopy conductance</description>
+      </parameter>
+      <parameter code="206">
+        <shortName>RDRIP</shortName>
+        <description>Rate of water dropping from canopy to ground</description>
+      </parameter>
+      <parameter code="207">
+        <shortName>ICWAT</shortName>
+        <description>Ice-free water surface</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="208">
+        <shortName>AKHS</shortName>
+        <description>Surface exchange coefficients for T and Q divided by delta z</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="209">
+        <shortName>AKMS</shortName>
+        <description>Surface exchange coefficients for U and V divided by delta z</description>
+        <units>m s^-1</units>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+</parameterMap>
+

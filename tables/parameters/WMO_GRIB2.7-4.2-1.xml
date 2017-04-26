@@ -1,0 +1,314 @@
+<?xml version="1.0" ?>
+<parameterMap>
+  <title>National Centers for Environmental Prediction (NCEP Environmental Modeling Center) GRIB2 Parameter Table Version 2.1</title>
+  <center ID="7" subcenterID="4">U.S. National Weather Service, National Centers for Environmental Prediction (NCEP)</center>
+  <table masterVersion="2" localVersion="1">2.1</table>
+  <discipline code="0">
+    <parameterCategory code="0">
+      <parameter code="0">
+        <description>Temperature</description>
+        <units>K</units>
+        <shortName>TMP</shortName>
+        <CF ifLevelType="1">surface_temperature</CF>
+        <CF ifLevelType="7">tropopause_air_temperature</CF>
+        <CF ifLevelType="106-106">soil_temperature</CF>
+        <CF>air_temperature</CF>
+        <GCMD ifLevelType="1">bd24a9a9-7d52-4c29-b2a0-6cefd216ae78;40d6a3e7-89dd-4399-8fa5-bbc7a0917b4e</GCMD>
+        <GCMD ifLevelType="103" ifLevelValue="2">f634ab55-de40-4d0b-93bc-691bf5408ccb</GCMD>
+        <GCMD ifLevelType="106-106">0546b91a-294d-45d9-8b45-76aaad0cc024</GCMD>
+        <GCMD>926c1b80-6c11-40eb-ae7f-f5bcfdc43fac</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Potential temperature</description>
+        <units>K</units>
+        <shortName>POT</shortName>
+        <CF ifLevelType="160">sea_water_potential_temperature</CF>
+        <CF>air_potential_temperature</CF>
+        <GCMD ifLevelType="1">7a0bd777-be0d-43c8-80eb-5ac58f4832de</GCMD>
+        <GCMD ifLevelType="160">e02b0b50-a0f2-4c47-841b-9689fdb99121</GCMD>
+        <GCMD>RDAf08d0-6b2d-7ffe-ddad-ce812cf2556c</GCMD>
+      </parameter>
+      <parameter code="197">
+        <description>Total downward heat flux at surface</description>
+        <units>W m^-2</units>
+        <shortName>THFLX</shortName>
+      </parameter>
+      <parameter code="204">
+        <description>Tropical cyclone heat potential</description>
+        <units>J m^-2 K^-1</units>
+        <shortName>TCHP</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="1">
+      <parameter code="11">
+        <description>Snow depth</description>
+        <units>m</units>
+        <shortName>SNO D</shortName>
+      </parameter>
+      <parameter code="211">
+        <description>Evaporation minus precipitation</description>
+        <units>cm day^-1</units>
+        <shortName>EMNP</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="2">
+      <parameter code="9">
+        <description>Vertical velocity (geometric)</description>
+        <units>m s^-1</units>
+        <shortName>DZDT</shortName>
+        <CF>upward_air_velocity</CF>
+        <GCMD>841a7ac7-5981-4e93-895f-1b57c3d892a0</GCMD>
+      </parameter>
+      <parameter code="17">
+        <description>Momentum flux, u-component</description>
+        <units>N m^-2</units>
+        <shortName>U FLX</shortName>
+      </parameter>
+      <parameter code="18">
+        <description>Momentum flux, v-component</description>
+        <units>N m^-2</units>
+        <shortName>V FLX</shortName>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+  <discipline code="10">
+    <parameterCategory code="0">
+      <parameter code="0">
+        <description>Wave spectra (1)</description>
+        <shortName>WVSP1</shortName>
+        <GCMD>e79ff727-c598-4a1c-8b4f-b6019fcf386b</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Wave spectra (2)</description>
+        <shortName>WVSP2</shortName>
+        <GCMD>e79ff727-c598-4a1c-8b4f-b6019fcf386b</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Wave spectra (3)</description>
+        <shortName>WVSP3</shortName>
+        <GCMD>e79ff727-c598-4a1c-8b4f-b6019fcf386b</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Significant Height of Combined Wind Waves and Swell</description>
+        <units>m</units>
+        <shortName>HTSGW</shortName>
+      </parameter>
+      <parameter code="4">
+        <description>Direction of Wind Waves</description>
+        <units>degree_T</units>
+        <shortName>WVDIR</shortName>
+      </parameter>
+      <parameter code="5">
+        <description>Significant Height of Wind Waves</description>
+        <units>m</units>
+        <shortName>WVHGT</shortName>
+        <GCMD>0fc68280-1361-43e1-bc5a-40c49e9679b7</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Mean Period of Wind Waves</description>
+        <units>s</units>
+        <shortName>WVPER</shortName>
+        <GCMD>99ea6719-b751-4a4f-95d4-aaa02e961bc1</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Direction of Swell Waves</description>
+        <units>degree_T</units>
+        <shortName>SWDIR</shortName>
+        <GCMD>4e4d3c18-cdd4-474a-a936-6e127ec526f7</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Significant Height of Swell Waves</description>
+        <units>m</units>
+        <shortName>SWELL</shortName>
+        <GCMD>4e4d3c18-cdd4-474a-a936-6e127ec526f7</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Mean Period of Swell Waves</description>
+        <units>s</units>
+        <shortName>SWPER</shortName>
+        <GCMD>4e4d3c18-cdd4-474a-a936-6e127ec526f7</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Primary wave direction</description>
+        <units>degree_T</units>
+        <shortName>DIRPW</shortName>
+        <GCMD>e52114b2-adbc-4e3e-9c87-1a7f245fe5ef</GCMD>
+      </parameter>
+      <parameter code="11">
+        <description>Primary wave mean period</description>
+        <units>s</units>
+        <shortName>PERPW</shortName>
+        <GCMD>99ea6719-b751-4a4f-95d4-aaa02e961bc1</GCMD>
+      </parameter>
+      <parameter code="12">
+        <description>Secondary wave direction</description>
+        <units>degree_T</units>
+        <shortName>DIRSW</shortName>
+        <GCMD>e52114b2-adbc-4e3e-9c87-1a7f245fe5ef</GCMD>
+      </parameter>
+      <parameter code="13">
+        <description>Secondary wave mean period</description>
+        <units>s</units>
+        <shortName>PERSW</shortName>
+        <GCMD>99ea6719-b751-4a4f-95d4-aaa02e961bc1</GCMD>
+      </parameter>
+      <parameter code="192">
+        <description>Wave steepness</description>
+        <shortName>WSTP</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="1">
+      <parameter code="0">
+        <description>Current direction</description>
+        <units>degree_T</units>
+        <shortName>DIR C</shortName>
+        <GCMD>510c5f78-e19e-4ce4-b59a-8937aeb84631</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Current speed</description>
+        <units>m s^-1</units>
+        <shortName>SP C</shortName>
+        <GCMD>510c5f78-e19e-4ce4-b59a-8937aeb84631</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>U-component of current</description>
+        <units>m s^-1</units>
+        <shortName>UOGRD</shortName>
+        <GCMD>510c5f78-e19e-4ce4-b59a-8937aeb84631</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>V-component of current</description>
+        <units>m s^-1</units>
+        <shortName>VOGRD</shortName>
+        <GCMD>510c5f78-e19e-4ce4-b59a-8937aeb84631</GCMD>
+      </parameter>
+      <parameter code="192">
+        <description>Ocean mixed layer u velocity</description>
+        <units>m s^-1</units>
+        <shortName>OMLU</shortName>
+        <GCMD>48ec6449-373c-41f6-8a61-8f1e9ed95737</GCMD>
+      </parameter>
+      <parameter code="193">
+        <description>Ocean mixed layer v velocity</description>
+        <units>m s^-1</units>
+        <shortName>OMLV</shortName>
+        <GCMD>48ec6449-373c-41f6-8a61-8f1e9ed95737</GCMD>
+      </parameter>
+      <parameter code="194">
+        <description>Barotropic u velocity</description>
+        <units>m s^-1</units>
+        <shortName>UBARO</shortName>
+      </parameter>
+      <parameter code="195">
+        <description>Barotropic v velocity</description>
+        <units>m s^-1</units>
+        <shortName>VBARO</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="2">
+      <parameter code="0">
+        <description>Ice cover</description>
+        <units>fraction</units>
+        <shortName>ICEC</shortName>
+        <GCMD>87feb47e-aee3-42f1-8c39-5109d9d5422e</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Ice thickness</description>
+        <units>m</units>
+        <shortName>ICETK</shortName>
+        <GCMD>a735d8ca-182c-4307-9305-186a065e84a4</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Direction of ice drift</description>
+        <units>deg</units>
+        <shortName>DICED</shortName>
+        <GCMD>a47ab696-7ed9-4374-8965-c8996e61463d</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Speed of ice drift</description>
+        <units>m s^-1</units>
+        <shortName>SICED</shortName>
+        <GCMD>a47ab696-7ed9-4374-8965-c8996e61463d</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>U-Component of ice drift</description>
+        <units>m s^-1</units>
+        <shortName>UICE</shortName>
+        <GCMD>a47ab696-7ed9-4374-8965-c8996e61463d</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>V-Component of ice drift</description>
+        <units>m s^-1</units>
+        <shortName>VICE</shortName>
+        <GCMD>a47ab696-7ed9-4374-8965-c8996e61463d</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Ice growth rate</description>
+        <units>m s^-1</units>
+        <shortName>ICEG</shortName>
+        <GCMD>89fc22ca-326e-468c-ad3d-171c4ad34977</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Ice divergence</description>
+        <units>s^-1</units>
+        <shortName>ICED</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="3">
+      <parameter code="0">
+        <description>Water temperature</description>
+        <units>deg K</units>
+        <GCMD>46206e8c-8def-406f-9e62-da4e74633a58</GCMD>
+      </parameter>
+      <parameter code="195">
+        <description>Sea surface height relative to geoid</description>
+        <units>m</units>
+        <shortName>SSHG</shortName>
+        <GCMD>5c0b448c-7eb4-4e8c-8403-260cbb6114bb</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="4">
+      <parameter code="3">
+        <description>Salinity</description>
+        <units>kg kg^-1</units>
+        <shortName>SALTY</shortName>
+        <GCMD>7e95b5fc-1d58-431a-af36-948b29fa870d</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Ocean vertical heat diffusivity</description>
+        <units>m^2 s^-1</units>
+        <shortName>OVHD</shortName>
+        <GCMD>064d919e-3262-44c3-a636-8094bc963001</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Ocean vertical salt diffusivity</description>
+        <units>m^2 s^-1</units>
+        <shortName>OVSD</shortName>
+      </parameter>
+      <parameter code="6">
+        <description>Ocean vertical momentum diffusivity</description>
+        <units>m^2 s^-1</units>
+        <shortName>OVMD</shortName>
+        <GCMD>6fe4680b-96e8-4304-ab32-c17a0769932c</GCMD>
+      </parameter>
+      <parameter code="195">
+        <description>Geometric depth below sea surface</description>
+        <units>m</units>
+        <shortName>DBSS</shortName>
+      </parameter>
+      <parameter code="197">
+        <description>Ocean heat content</description>
+        <units>J m^-2</units>
+        <shortName>OHC</shortName>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+  <discipline code="255">
+    <parameterCategory code="255">
+      <parameter code="255">
+        <description>Unknown parameter (255.255.255)</description>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+</parameterMap>
+
