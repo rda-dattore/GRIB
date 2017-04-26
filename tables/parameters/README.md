@@ -5,7 +5,7 @@ various GRIB1 and GRIB2 parameter code tables
      WMO_GRIB`<E>`.`<C>`-`<S>`.`<P>`.xml
 
         where <E> = GRIB edition (1 or 2)
-              <C> = originating center code from WMO Common Code Table C-1
+              <C> = originating center code from [https://www.wmo.int/pages/prog/www/WMOCodes/WMO306_vI2/LatestVERSION/WMO306_vI2_CommonTable_en.pdf](WMO Common Code Table C-1)
               <S> = sub-center identification
               <P> = parameter table version
                       for GRIB1, this is a single value
