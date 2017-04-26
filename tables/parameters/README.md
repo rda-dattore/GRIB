@@ -8,7 +8,7 @@ various GRIB1 and GRIB2 parameter code tables
               <C> = originating center code from WMO Common Code Table C-1
               <S> = sub-center identification
               <P> = parameter table version
-                  for GRIB1, this is a single code
-                  for GRIB2, this is <M>-<L>
-                    where <M> = master version
-                          <L> = local version
+                      for GRIB1, this is a single code
+                      for GRIB2, this is <M>-<L>
+                                   where <M> = master version
+                                         <L> = local version
