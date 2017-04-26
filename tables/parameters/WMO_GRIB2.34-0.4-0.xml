@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<parameterMap>
+  <title>Japan Meteorological Agency (JMA) GRIB2 Parameter Table Version 4.0</title>
+  <center ID="34" subcenterID="0">Tokyo (RSMC), Japan Meteorological Agency</center>
+  <table masterVersion="4" localVersion="0">4.0</table>
+  <discipline code="0">
+    <parameterCategory code="0">
+      <parameter code="0">
+        <description>Temperature</description>
+        <shortName>T</shortName>
+        <units>K</units>
+        <GCMD ifLevelType="1">bd24a9a9-7d52-4c29-b2a0-6cefd216ae78;40d6a3e7-89dd-4399-8fa5-bbc7a0917b4e</GCMD>
+        <GCMD ifLevelType="103" ifLevelValue="2">f634ab55-de40-4d0b-93bc-691bf5408ccb</GCMD>
+        <GCMD ifLevelType="106-106">0546b91a-294d-45d9-8b45-76aaad0cc024</GCMD>
+        <GCMD>926c1b80-6c11-40eb-ae7f-f5bcfdc43fac</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Potential temperature</description>
+        <shortName>PT</shortName>
+        <units>K</units>
+        <GCMD ifLevelType="1">7a0bd777-be0d-43c8-80eb-5ac58f4832de</GCMD>
+        <GCMD ifLevelType="160">e02b0b50-a0f2-4c47-841b-9689fdb99121</GCMD>
+        <GCMD>RDAf08d0-6b2d-7ffe-ddad-ce812cf2556c</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Surface air dew point temperature</description>
+        <shortName>2D</shortName>
+        <units>K</units>
+        <GCMD>731beb11-9418-40ec-8f2c-c4b320e8231a</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Time-integrated surface latent heat flux</description>
+        <shortName>SLHF</shortName>
+        <units>W m^-2 s</units>
+        <GCMD>46a3c823-727d-4c3c-b09d-e3e3fcaa43a5;ee2cb9eb-f960-4e23-9e7c-be64d44a64e7</GCMD>
+      </parameter>
+      <parameter code="11">
+        <description>Time-integrated surface sensible heat flux</description>
+        <shortName>SSHF</shortName>
+        <units>W m^-2 s</units>
+        <GCMD>46a3c823-727d-4c3c-b09d-e3e3fcaa43a5;ee2cb9eb-f960-4e23-9e7c-be64d44a64e7</GCMD>
+      </parameter>
+      <parameter code="17">
+        <description>Skin temperature</description>
+        <shortName>SKT</shortName>
+        <units>K</units>
+        <GCMD>40d6a3e7-89dd-4399-8fa5-bbc7a0917b4e;bd24a9a9-7d52-4c29-b2a0-6cefd216ae78</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="1">
+      <parameter code="0">
+        <description>Specific humidity</description>
+        <shortName>Q</shortName>
+        <units>kg kg^-1</units>
+        <GCMD>427e5121-a142-41cb-a8e9-a70b7f98eb6a</GCMD>
+      </parameter>
+      <parameter code="51">
+        <description>Total column water</description>
+        <shortName>TCW</shortName>
+        <units>kg m^-2</units>
+        <GCMD>15029eb0-6342-4066-8ac9-c50f7dbfb392;05ac9d3e-bc44-41fa-ace0-c41bf3ebee97</GCMD>
+      </parameter>
+      <parameter code="52">
+        <description>Total precipitation</description>
+        <shortName>TP</shortName>
+        <units>kg m^-2</units>
+        <GCMD>cad5c02a-e771-434e-bef6-8dced38a68e8</GCMD>
+      </parameter>
+      <parameter code="53">
+        <description>Snow fall water equivalent</description>
+        <shortName>SF</shortName>
+        <units>kg m^-2</units>
+        <GCMD>47d8d3db-9aea-49f3-8edd-5216736a85ef</GCMD>
+      </parameter>
+      <parameter code="60">
+        <description>Snow depth water equivalent</description>
+        <shortName>SD</shortName>
+        <units>kg m^-2</units>
+        <GCMD>47d8d3db-9aea-49f3-8edd-5216736a85ef</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="2">
+      <parameter code="2">
+        <description>U-velocity</description>
+        <shortName>U</shortName>
+        <units>m s^-1</units>
+        <GCMD ifLevelType="103">10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+        <GCMD>592d49c4-e8ae-4ab4-bf24-ae4a896d0637</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>V-velocity</description>
+        <shortName>V</shortName>
+        <units>m s^-1</units>
+        <GCMD ifLevelType="103">10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+        <GCMD>592d49c4-e8ae-4ab4-bf24-ae4a896d0637</GCMD>
+      </parameter>
+      <parameter code="14">
+        <description>Potential vorticity</description>
+        <shortName>PV</shortName>
+        <units>K m^2 kg^-1 s^-1</units>
+        <GCMD>858a80ff-5aa4-4590-b2e2-e88a802a6ee4</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="3">
+      <parameter code="0">
+        <description>Pressure</description>
+        <units>Pa</units>
+        <GCMD ifLevelType="1">b54de5cd-4475-4c7b-acbc-4eb529b9396e</GCMD>
+        <GCMD ifLevelType="101">07ce145c-9936-4675-b4a7-8710e39aa391</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Geopotential height</description>
+        <shortName>GH</shortName>
+        <units>gpm</units>
+        <GCMD ifLevelType="1">74ed1690-968e-444c-8a31-7b8344a2aad3</GCMD>
+        <GCMD>d6aec072-daf9-4f96-b667-6c7831cf6bdd</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="4">
+      <parameter code="9">
+        <description>Time-integrated surface net solar radiation</description>
+        <shortName>SSR</shortName>
+        <units>W m^-2 s</units>
+        <GCMD>6b3be650-6625-40b5-9b40-9e7c8a9fd336</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="5">
+      <parameter code="5">
+        <description>Time-integrated outgoing longwave radiation</description>
+        <shortName>TTR</shortName>
+        <units>W m^-2 s</units>
+        <GCMD>006b1ea6-222d-4740-b220-03886d49cd81</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="6">
+      <parameter code="1">
+        <description>Total cloud cover</description>
+        <shortName>TCC</shortName>
+        <units>%</units>
+        <GCMD>acb52274-6c0d-4241-a979-3fa3efca6702</GCMD>
+      </parameter>
+      <parameter code="24">
+        <description>Sunshine duration</description>
+        <shortName>SUND</shortName>
+        <units>s</units>
+        <GCMD>86c95fdb-17b9-4224-a020-b1aacbea00fd</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="7">
+      <parameter code="6">
+        <description>Convective available potential energy</description>
+        <shortName>CAPE</shortName>
+        <units>J kg^-1</units>
+      </parameter>
+      <parameter code="7">
+        <description>Convective inhibition</description>
+        <shortName>CI</shortName>
+        <units>J kg^-1</units>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+  <discipline code="2">
+    <parameterCategory code="0">
+      <parameter code="0">
+        <description>Land-sea mask</description>
+        <shortName>LSM</shortName>
+      </parameter>
+      <parameter code="2">
+        <description>Soil temperature</description>
+        <shortName>ST</shortName>
+        <units>K</units>
+        <GCMD>0546b91a-294d-45d9-8b45-76aaad0cc024</GCMD>
+      </parameter>
+      <parameter code="22">
+        <description>Soil moisture</description>
+        <shortName>SM</shortName>
+        <units>kg m^-3</units>
+        <GCMD>bbe2ea34-8842-4a9f-9b0b-95dd3c71857f</GCMD>
+      </parameter>
+      <parameter code="26">
+        <description>Wilting point</description>
+        <shortName>WILT</shortName>
+        <units>kg m^-3</units>
+        <GCMD>bca1b724-3370-4a26-bcbc-3530ce4ddc97</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="3">
+      <parameter code="12">
+        <description>Field capacity</description>
+        <shortName>CAP</shortName>
+        <units>J kg^-3</units>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+</parameterMap>
+
