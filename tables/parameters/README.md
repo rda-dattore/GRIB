@@ -1,5 +1,5 @@
 # GRIB Parameter Code Tables
-various GRIB1 and GRIB2 parameter code tables
+Various GRIB1 and GRIB2 parameter code tables
 
 Table names have the format of:
   WMO_GRIB\<E\>.\<C\>-\<S\>.\<P\>.xml
