@@ -6,7 +6,7 @@ Table names have the format of:
 
 where:
 - \<E\> = GRIB edition (1 or 2)
-- \<C\> = originating center code from [WMO Common Code Table C-1](https://www.wmo.int/pages/prog/www/WMOCodes/WMO306_vI2/LatestVERSION/WMO306_vI2_CommonTable_en.pdf)
+- \<C\> = originating center code from [WMO Common Code Table C-1](http://www.wmo.int/pages/prog/www/WMOCodes/WMO306_vI2/LatestVERSION/WMO306_vI2_CommonTable_en.pdf)
 - \<S\> = sub-center identification
 - \<P\> = parameter table version:
 
