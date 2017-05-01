@@ -1,0 +1,3645 @@
+<?xml version="1.0" ?>
+<parameterMap>
+  <title>WMO GRIB2 Parameter Table Version 18</title>
+  <discipline code="0">
+    <description>Meteorological products</description>
+    <parameterCategory code="0">
+      <description>temperature</description>
+      <parameter code="0">
+        <description>Temperature</description>
+        <units>K</units>
+        <GRIB1>11</GRIB1>
+        <CF ifLevelType="1">surface_temperature</CF>
+        <CF ifLevelType="3">air_temperature_at_cloud_top</CF>
+        <CF ifLevelType="7">tropopause_air_temperature</CF>
+        <CF ifLevelType="106">soil_temperature</CF>
+        <CF ifLevelType="106-106">soil_temperature</CF>
+        <CF>air_temperature</CF>
+        <GCMD ifLevelType="1">bd24a9a9-7d52-4c29-b2a0-6cefd216ae78;40d6a3e7-89dd-4399-8fa5-bbc7a0917b4e</GCMD>
+        <GCMD ifLevelType="103" ifLevelValue="2">f634ab55-de40-4d0b-93bc-691bf5408ccb</GCMD>
+        <GCMD ifLevelType="106">0546b91a-294d-45d9-8b45-76aaad0cc024</GCMD>
+        <GCMD ifLevelType="106-106">0546b91a-294d-45d9-8b45-76aaad0cc024</GCMD>
+        <GCMD>926c1b80-6c11-40eb-ae7f-f5bcfdc43fac</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Virtual temperature</description>
+        <units>K</units>
+        <GRIB1>12</GRIB1>
+        <CF>virtual_temperature</CF>
+        <GCMD ifLevelType="1">fd19a3f1-8eeb-49ab-bcaf-e7b4b267d415</GCMD>
+        <GCMD>3afb06fa-96b7-4bf4-a6b7-b5fa626afc04</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Potential temperature</description>
+        <units>K</units>
+        <GRIB1>13</GRIB1>
+        <CF ifLevelType="160">sea_water_potential_temperature</CF>
+        <CF>air_potential_temperature</CF>
+        <GCMD ifLevelType="1">7a0bd777-be0d-43c8-80eb-5ac58f4832de</GCMD>
+        <GCMD ifLevelType="160">e02b0b50-a0f2-4c47-841b-9689fdb99121</GCMD>
+        <GCMD>RDAf08d0-6b2d-7ffe-ddad-ce812cf2556c</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Pseudo-adiabatic potential temperature or equivalent potential temperature</description>
+        <units>K</units>
+        <GRIB1>14</GRIB1>
+        <CF>pseudo_equivalent_potential_temperature</CF>
+        <GCMD ifLevelType="1">7a0bd777-be0d-43c8-80eb-5ac58f4832de</GCMD>
+        <GCMD ifLevelType="160">e02b0b50-a0f2-4c47-841b-9689fdb99121</GCMD>
+        <GCMD>RDAf08d0-6b2d-7ffe-ddad-ce812cf2556c</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Maximum temperature</description>
+        <units>K</units>
+        <GRIB1>15</GRIB1>
+        <CF>maximum_air_temperature</CF>
+        <GCMD ifLevelType="1">5164162a-60eb-4c94-a0f0-2caaa3bb1754</GCMD>
+        <GCMD ifLevelType="103" ifLevelValue="2">5164162a-60eb-4c94-a0f0-2caaa3bb1754</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Minimum temperature</description>
+        <units>K</units>
+        <GRIB1>16</GRIB1>
+        <CF>minimum_air_temperature</CF>
+        <GCMD ifLevelType="1">5164162a-60eb-4c94-a0f0-2caaa3bb1754</GCMD>
+        <GCMD ifLevelType="103" ifLevelValue="2">5164162a-60eb-4c94-a0f0-2caaa3bb1754</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Dewpoint temperature</description>
+        <units>K</units>
+        <GRIB1>17</GRIB1>
+        <CF>dew_point_temperature</CF>
+        <GCMD ifLevelType="103" ifLevelValue="2">0c28d9e4-c848-4628-9c00-45a540707b59</GCMD>
+        <GCMD>76103e17-59c2-4458-972d-9ff9801e5d32</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Dewpoint depression (or deficit)</description>
+        <units>K</units>
+        <GRIB1>18</GRIB1>
+        <CF>dew_point_depression</CF>
+        <GCMD ifLevelType="103" ifLevelValue="2">a5e36040-cc5e-46d1-aeee-f49902e943b2</GCMD>
+        <GCMD>86fb8a31-35f6-4d0e-b4b4-f9cecf961a47</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Lapse rate</description>
+        <units>K m^-1</units>
+        <GRIB1>19</GRIB1>
+        <CF>air_temperature_lapse_rate</CF>
+        <GCMD>ff5d5c12-74d9-435d-9164-1c9d69f967d7</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Temperature anomaly</description>
+        <units>K</units>
+        <GRIB1>25</GRIB1>
+        <CF ifLevelType="1">surface_temperature_anomaly</CF>
+        <CF>air_temperature_anomaly</CF>
+        <GCMD ifLevelType="1">bd24a9a9-7d52-4c29-b2a0-6cefd216ae78;40d6a3e7-89dd-4399-8fa5-bbc7a0917b4e</GCMD>
+        <GCMD ifLevelType="103" ifLevelValue="2">f634ab55-de40-4d0b-93bc-691bf5408ccb</GCMD>
+        <GCMD ifLevelType="106">0546b91a-294d-45d9-8b45-76aaad0cc024</GCMD>
+        <GCMD ifLevelType="106-106">0546b91a-294d-45d9-8b45-76aaad0cc024</GCMD>
+        <GCMD>926c1b80-6c11-40eb-ae7f-f5bcfdc43fac</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Latent heat net flux</description>
+        <units>W m^-2</units>
+        <GRIB1>121</GRIB1>
+        <CF>surface_upward_latent_heat_flux</CF>
+        <GCMD>46a3c823-727d-4c3c-b09d-e3e3fcaa43a5</GCMD>
+      </parameter>
+      <parameter code="11">
+        <description>Sensible heat net flux</description>
+        <units>W m^-2</units>
+        <GRIB1>122</GRIB1>
+        <CF>surface_upward_sensible_heat_flux</CF>
+        <GCMD>46a3c823-727d-4c3c-b09d-e3e3fcaa43a5</GCMD>
+      </parameter>
+      <parameter code="12">
+        <description>Heat index</description>
+        <units>K</units>
+        <GCMD>289ca013-0526-49e0-8b87-51513702e8f4</GCMD>
+      </parameter>
+      <parameter code="13">
+        <description>Wind chill factor</description>
+        <units>K</units>
+        <GCMD>d50d0685-f42f-4693-9458-eddb9ccf5704</GCMD>
+      </parameter>
+      <parameter code="14">
+        <description>Minimum dewpoint depression</description>
+        <units>K</units>
+        <GCMD ifLevelType="103" ifLevelValue="2">a5e36040-cc5e-46d1-aeee-f49902e943b2</GCMD>
+        <GCMD>86fb8a31-35f6-4d0e-b4b4-f9cecf961a47</GCMD>
+      </parameter>
+      <parameter code="15">
+        <description>Virtual potential temperature</description>
+        <units>K</units>
+        <GRIB1 center="7" tableVersion="2">189</GRIB1>
+        <GCMD ifLevelType="1">7a0bd777-be0d-43c8-80eb-5ac58f4832de</GCMD>
+        <GCMD ifLevelType="160">e02b0b50-a0f2-4c47-841b-9689fdb99121</GCMD>
+        <GCMD>RDAf08d0-6b2d-7ffe-ddad-ce812cf2556c</GCMD>
+      </parameter>
+      <parameter code="16">
+        <description>Snow phase change heat flux</description>
+        <units>W m^-2</units>
+        <GRIB1 center="7" tableVersion="2">229</GRIB1>
+      </parameter>
+      <parameter code="17">
+        <description>Skin temperature</description>
+        <units>K</units>
+        <GCMD>40d6a3e7-89dd-4399-8fa5-bbc7a0917b4e</GCMD>
+        <GRIB1 center="98" tableVersion="128">235</GRIB1>
+      </parameter>
+      <parameter code="18">
+        <description>Snow temperature (top of snow)</description>
+        <units>K</units>
+        <GRIB1 center="7" tableVersion="2">239</GRIB1>
+        <GRIB1 center="98" tableVersion="201">203</GRIB1>
+        <GCMD>1341f3e1-9279-4ae6-9a93-6a612957efd1</GCMD>
+      </parameter>
+      <parameter code="19">
+        <description>Turbulent transfer coefficient for heat</description>
+        <units>Numeric</units>
+        <GRIB1 center="98" tableVersion="201">171</GRIB1>
+      </parameter>
+      <parameter code="20">
+        <description>Turbulent diffusion coefficient for heat</description>
+        <units>m^2 s^-1</units>
+        <GRIB1 center="98" tableVersion="162">109</GRIB1>
+      </parameter>
+      <parameter code="21">
+        <description>Apparent temperature</description>
+        <units>K</units>
+        <GRIB1 center="7" tableVersion="131">193</GRIB1>
+      </parameter>
+      <parameter code="22">
+        <description>Temperature tendency due to short-wave radiation</description>
+        <units>K s^-1</units>
+        <GCMD ifLevelType="1">449ad1fb-8010-43c7-b994-178a049d4cff</GCMD>
+        <GCMD>RDAe551b-7c2e-00ca-dad5-90d65e76d083</GCMD>
+      </parameter>
+      <parameter code="23">
+        <description>Temperature tendency due to long-wave radiation</description>
+        <units>K s^-1</units>
+        <GCMD ifLevelType="1">449ad1fb-8010-43c7-b994-178a049d4cff</GCMD>
+        <GCMD>RDAe551b-7c2e-00ca-dad5-90d65e76d083</GCMD>
+      </parameter>
+      <parameter code="24">
+        <description>Temperature tendency due to short-wave radiation, clear sky</description>
+        <units>K s^-1</units>
+        <GCMD ifLevelType="1">449ad1fb-8010-43c7-b994-178a049d4cff</GCMD>
+        <GCMD>RDAe551b-7c2e-00ca-dad5-90d65e76d083</GCMD>
+      </parameter>
+      <parameter code="25">
+        <description>Temperature tendency due to long-wave radiation, clear sky</description>
+        <units>K s^-1</units>
+        <GCMD ifLevelType="1">449ad1fb-8010-43c7-b994-178a049d4cff</GCMD>
+        <GCMD>RDAe551b-7c2e-00ca-dad5-90d65e76d083</GCMD>
+      </parameter>
+      <parameter code="26">
+        <description>Temperature tendency due to parameterization</description>
+        <units>K s^-1</units>
+        <GCMD ifLevelType="1">449ad1fb-8010-43c7-b994-178a049d4cff</GCMD>
+        <GCMD>RDAe551b-7c2e-00ca-dad5-90d65e76d083</GCMD>
+      </parameter>
+      <parameter code="27">
+        <description>Wet-bulb temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="28">
+        <description>Unbalanced component of temperature</description>
+        <units>K</units>
+        <GRIB1 center="98" tableVersion="128">21</GRIB1>
+      </parameter>
+      <parameter code="29">
+        <description>Temperature advection</description>
+        <units>K s^-1</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="1">
+      <description>moisture</description>
+      <parameter code="0">
+        <description>Specific humidity</description>
+        <units>kg kg^-1</units>
+        <GRIB1>51</GRIB1>
+        <CF>specific_humidity</CF>
+        <GCMD>427e5121-a142-41cb-a8e9-a70b7f98eb6a</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Relative humidity</description>
+        <units>%</units>
+        <GRIB1>52</GRIB1>
+        <CF>relative_humidity</CF>
+        <GCMD>427e5121-a142-41cb-a8e9-a70b7f98eb6a</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Humidity mixing ratio</description>
+        <units>kg kg^-1</units>
+        <GRIB1>53</GRIB1>
+        <CF>humidity_mixing_ratio</CF>
+        <GCMD>427e5121-a142-41cb-a8e9-a70b7f98eb6a</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Precipitable water</description>
+        <units>kg m^-2</units>
+        <GRIB1>54</GRIB1>
+        <CF>atmosphere_water_vapor_content</CF>
+        <GCMD>c3a4eb4a-4619-43cd-b890-b567d01324ea</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Vapour pressure</description>
+        <units>Pa</units>
+        <GRIB1>55</GRIB1>
+        <CF>water_vapor_pressure</CF>
+        <GCMD>15029eb0-6342-4066-8ac9-c50f7dbfb392</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Saturation deficit</description>
+        <units>Pa</units>
+        <GRIB1>56</GRIB1>
+        <CF>water_vapor_saturation_deficit</CF>
+        <GCMD>15029eb0-6342-4066-8ac9-c50f7dbfb392</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Evaporation</description>
+        <units>kg m^-2</units>
+        <GRIB1>57</GRIB1>
+        <CF>water_evaporation_amount</CF>
+        <GCMD>b68ab978-6db6-49ee-84e2-5f37b461a998</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1>59</GRIB1>
+        <CF>precipitation_rate</CF>
+        <GCMD>ac50c468-df2f-429c-8394-9d63efcc6f9d</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Total precipitation</description>
+        <units>kg m^-2</units>
+        <GRIB1>61</GRIB1>
+        <CF>precipitation_amount</CF>
+        <GCMD>cad5c02a-e771-434e-bef6-8dced38a68e8</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Large-scale precipitation (non-convective)</description>
+        <units>kg m^-2</units>
+        <GRIB1>62</GRIB1>
+        <CF>large_scale_precipitation_amount</CF>
+        <GCMD>cad5c02a-e771-434e-bef6-8dced38a68e8</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Convective precipitation</description>
+        <units>kg m^-2</units>
+        <GRIB1>63</GRIB1>
+        <CF>convective_precipitation_amount</CF>
+        <GCMD>cad5c02a-e771-434e-bef6-8dced38a68e8</GCMD>
+      </parameter>
+      <parameter code="11">
+        <description>Snow depth</description>
+        <units>m</units>
+        <GRIB1>66</GRIB1>
+        <CF>surface_snow_thickness</CF>
+        <GCMD>9512b90f-f495-41bb-9600-ff25e4cfc571</GCMD>
+      </parameter>
+      <parameter code="12">
+        <description>Snowfall rate water equivalent</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1>64</GRIB1>
+        <CF>snowfall_rate</CF>
+        <GCMD>47d8d3db-9aea-49f3-8edd-5216736a85ef</GCMD>
+      </parameter>
+      <parameter code="13">
+        <description>Water equivalent of accumulated snow depth</description>
+        <units>kg m^-2</units>
+        <GRIB1>65</GRIB1>
+        <CF>surface_snow_amount</CF>
+        <GCMD>47d8d3db-9aea-49f3-8edd-5216736a85ef</GCMD>
+      </parameter>
+      <parameter code="14">
+        <description>Convective snow</description>
+        <units>kg m^-2</units>
+        <GRIB1>78</GRIB1>
+        <CF>convective_snowfall_amount</CF>
+        <GCMD>b51b3708-a662-4cf1-bf13-e67f36b001c4</GCMD>
+      </parameter>
+      <parameter code="15">
+        <description>Large-scale snow</description>
+        <units>kg m^-2</units>
+        <GRIB1>79</GRIB1>
+        <CF>large_scale_snowfall_amount</CF>
+        <GCMD>b51b3708-a662-4cf1-bf13-e67f36b001c4</GCMD>
+      </parameter>
+      <parameter code="16">
+        <description>Snow melt</description>
+        <units>kg m^-2</units>
+        <GRIB1>99</GRIB1>
+        <CF>surface_snow_melt_amount</CF>
+        <GCMD>dd6de9e1-61e7-41bf-a2dc-9d2afc690bb3</GCMD>
+      </parameter>
+      <parameter code="17">
+        <description>Snow age</description>
+        <units>d</units>
+        <GRIB1 center="7" tableVersion="130">180</GRIB1>
+      </parameter>
+      <parameter code="18">
+        <description>Absolute humidity</description>
+        <units>kg m^-3</units>
+        <GCMD>427e5121-a142-41cb-a8e9-a70b7f98eb6a</GCMD>
+      </parameter>
+      <parameter code="19">
+        <description>Precipitation type</description>
+        <units>(Code table 4.201)</units>
+      </parameter>
+      <parameter code="20">
+        <description>Integrated liquid water</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="21">
+        <description>Condensate</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="7" tableVersion="129">135</GRIB1>
+        <GCMD>ebbf8642-3da1-4401-a779-3e56550a029d</GCMD>
+      </parameter>
+      <parameter code="22">
+        <description>Cloud mixing ratio</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="7" tableVersion="2">153</GRIB1>
+        <GCMD>05ac9d3e-bc44-41fa-ace0-c41bf3ebee97</GCMD>
+      </parameter>
+      <parameter code="23">
+        <description>Ice water mixing ratio</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="7" tableVersion="2">178</GRIB1>
+        <GCMD>05ac9d3e-bc44-41fa-ace0-c41bf3ebee97</GCMD>
+      </parameter>
+      <parameter code="24">
+        <description>Rain mixing ratio</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="7" tableVersion="2">170</GRIB1>
+      </parameter>
+      <parameter code="25">
+        <description>Snow mixing ratio</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="7" tableVersion="2">171</GRIB1>
+      </parameter>
+      <parameter code="26">
+        <description>Horizontal moisture convergence</description>
+        <units>kg kg^-1 s^-1</units>
+      </parameter>
+      <parameter code="27">
+        <description>Maximum relative humidity</description>
+        <units>%</units>
+        <CF>relative_humidity</CF>
+        <GRIB1 center="7" tableVersion="129">218</GRIB1>
+        <GCMD>427e5121-a142-41cb-a8e9-a70b7f98eb6a</GCMD>
+      </parameter>
+      <parameter code="28">
+        <description>Maximum absolute humidity</description>
+        <units>kg m^-3</units>
+        <GCMD>427e5121-a142-41cb-a8e9-a70b7f98eb6a</GCMD>
+      </parameter>
+      <parameter code="29">
+        <description>Total snowfall</description>
+        <units>m</units>
+        <CF>lwe_thickness_of_snowfall_amount</CF>
+        <GCMD>b51b3708-a662-4cf1-bf13-e67f36b001c4</GCMD>
+      </parameter>
+      <parameter code="30">
+        <description>Precipitable water category</description>
+        <units>(Code table 4.202)</units>
+      </parameter>
+      <parameter code="31">
+        <description>Hail</description>
+        <units>m</units>
+        <GCMD>7118d286-6629-48e5-931f-052cd347395e</GCMD>
+      </parameter>
+      <parameter code="32">
+        <description>Graupel (snow pellets)</description>
+        <units>kg kg^-1</units>
+        <GCMD>c2815464-48b7-4dc1-90d6-0ab5a8b7c82b</GCMD>
+      </parameter>
+      <parameter code="33">
+        <description>Categorical rain</description>
+        <units>(Code table 4.222)</units>
+        <GRIB1 center="7" tableVersion="2">140</GRIB1>
+      </parameter>
+      <parameter code="34">
+        <description>Categorical freezing rain</description>
+        <units>(Code table 4.222)</units>
+        <GRIB1 center="7" tableVersion="2">141</GRIB1>
+      </parameter>
+      <parameter code="35">
+        <description>Categorical ice pellets</description>
+        <units>(Code table 4.222)</units>
+        <GRIB1 center="7" tableVersion="2">142</GRIB1>
+      </parameter>
+      <parameter code="36">
+        <description>Categorical snow</description>
+        <units>(Code table 4.222)</units>
+        <GRIB1 center="7" tableVersion="2">143</GRIB1>
+      </parameter>
+      <parameter code="37">
+        <description>Convective precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1 center="7" tableVersion="2">214</GRIB1>
+        <CF>convective_precipitation_rate</CF>
+        <GCMD>6c8581e8-d49c-423e-9b38-3be406b64efa</GCMD>
+      </parameter>
+      <parameter code="38">
+        <description>Horizontal moisture divergence</description>
+        <units>kg kg^-1 s^-1</units>
+        <GRIB1 center="7" tableVersion="2">135</GRIB1>
+      </parameter>
+      <parameter code="39">
+        <description>Per cent frozen precipitation</description>
+        <units>%</units>
+        <GRIB1 center="7" tableVersion="2">194</GRIB1>
+      </parameter>
+      <parameter code="40">
+        <description>Potential evaporation</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="2">228</GRIB1>
+        <GCMD>b68ab978-6db6-49ee-84e2-5f37b461a998</GCMD>
+      </parameter>
+      <parameter code="41">
+        <description>Potential evaporation rate</description>
+        <units>W m^-2</units>
+        <GRIB1 center="7" tableVersion="131">145</GRIB1>
+        <GCMD>b68ab978-6db6-49ee-84e2-5f37b461a998</GCMD>
+      </parameter>
+      <parameter code="42">
+        <description>Snow cover</description>
+        <units>%</units>
+        <GRIB1 center="7" tableVersion="2">238</GRIB1>
+        <GCMD>6a08f79f-a621-4f8c-b5d5-e1335f9cbcec</GCMD>
+      </parameter>
+      <parameter code="43">
+        <description>Rain fraction of total cloud water</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="129">131</GRIB1>
+      </parameter>
+      <parameter code="44">
+        <description>Rime factor</description>
+        <units>Numeric</units>
+        <GRIB1 center="7" tableVersion="129">133</GRIB1>
+      </parameter>
+      <parameter code="45">
+        <description>Total column integrated rain</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="129">138</GRIB1>
+      </parameter>
+      <parameter code="46">
+        <description>Total column integrated snow</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="129">139</GRIB1>
+      </parameter>
+      <parameter code="47">
+        <description>Large scale water precipitation (non-convective)</description>
+        <units>kg m^-2</units>
+        <GRIB1>62</GRIB1>
+      </parameter>
+      <parameter code="48">
+        <description>Convective water precipitation</description>
+        <units>kg m^-2</units>
+        <GRIB1>63</GRIB1>
+      </parameter>
+      <parameter code="49">
+        <description>Total water precipitation</description>
+        <units>kg m^-2</units>
+        <GRIB1>61</GRIB1>
+      </parameter>
+      <parameter code="50">
+        <description>Total snow precipitation</description>
+        <units>kg m^-2</units>
+        <GCMD>b51b3708-a662-4cf1-bf13-e67f36b001c4</GCMD>
+      </parameter>
+      <parameter code="51">
+        <description>Total column water (Vertically integrated total water (vapour + cloud water/ice))</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="52">
+        <description>Total precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+        <GCMD>9466020a-db25-40ba-a76f-4720800efc92</GCMD>
+      </parameter>
+      <parameter code="53">
+        <description>Total snowfall rate water equivalent</description>
+        <units>kg m^-2 s^-1</units>
+        <CF>lwe_snowfall_rate</CF>
+      </parameter>
+      <parameter code="54">
+        <description>Large scale precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="55">
+        <description>Convective snowfall rate water equivalent</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1 center="98" tableVersion="201">112</GRIB1>
+      </parameter>
+      <parameter code="56">
+        <description>Large scale snowfall rate water equivalent</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="57">
+        <description>Total snowfall rate</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="58">
+        <description>Convective snowfall rate</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="59">
+        <description>Large scale snowfall rate</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="60">
+        <description>Snow depth water equivalent</description>
+        <units>kg m^-2</units>
+        <GRIB1>65</GRIB1>
+        <CF>lwe_thickness_of_surface_snow_amount</CF>
+        <GCMD>47d8d3db-9aea-49f3-8edd-5216736a85ef</GCMD>
+      </parameter>
+      <parameter code="61">
+        <description>Snow density</description>
+        <units>kg m^-3</units>
+        <CF>snow_density</CF>
+        <GCMD>fde70d8c-d64c-4784-971d-589eedfc42d1</GCMD>
+        <GRIB1 center="98" tableVersion="201">133</GRIB1>
+      </parameter>
+      <parameter code="62">
+        <description>Snow evaporation</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="64">
+        <description>Total column integrated water vapour</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="98" tableVersion="2">54</GRIB1>
+        <CF>atmosphere_water_vapor_content</CF>
+        <GCMD>c3a4eb4a-4619-43cd-b890-b567d01324ea</GCMD>
+      </parameter>
+      <parameter code="65">
+        <description>Rain precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1 center="7" tableVersion="129">223</GRIB1>
+      </parameter>
+      <parameter code="66">
+        <description>Snow precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1 center="7" tableVersion="129">224</GRIB1>
+      </parameter>
+      <parameter code="67">
+        <description>Freezing rain precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1 center="7" tableVersion="129">225</GRIB1>
+      </parameter>
+      <parameter code="68">
+        <description>Ice pellets precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1 center="7" tableVersion="129">226</GRIB1>
+      </parameter>
+      <parameter code="69">
+        <description>Total column integrated cloud water</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="129">136</GRIB1>
+        <GRIB1 center="98" tableVersion="2">76</GRIB1>
+      </parameter>
+      <parameter code="70">
+        <description>Total column integrated cloud ice</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="129">137</GRIB1>
+        <GRIB1 center="98" tableVersion="2">58</GRIB1>
+        <CF>atmosphere_mass_content_of_cloud_ice</CF>
+        <GCMD>05ac9d3e-bc44-41fa-ace0-c41bf3ebee97</GCMD>
+      </parameter>
+      <parameter code="71">
+        <description>Hail mixing ratio</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="72">
+        <description>Total column integrated hail</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="73">
+        <description>Hail precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="74">
+        <description>Total column integrated graupel</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="75">
+        <description>Graupel (snow pellets) precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="76">
+        <description>Convective rain rate</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1 center="98" tableVersion="201">111</GRIB1>
+      </parameter>
+      <parameter code="77">
+        <description>Large scale rain rate</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1 center="98" tableVersion="201">100</GRIB1>
+      </parameter>
+      <parameter code="78">
+        <description>Total column integrated water (all components including precipitation)</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="98" tableVersion="201">41</GRIB1>
+      </parameter>
+      <parameter code="79">
+        <description>Evaporation rate</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="80">
+        <description>Total condensate</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="7" tableVersion="129">135</GRIB1>
+        <GCMD>ebbf8642-3da1-4401-a779-3e56550a029d</GCMD>
+      </parameter>
+      <parameter code="81">
+        <description>Total column-integrated condensate</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="129">140</GRIB1>
+      </parameter>
+      <parameter code="82">
+        <description>Cloud ice mixing-ratio</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="98" tableVersion="201">33</GRIB1>
+      </parameter>
+      <parameter code="83">
+        <description>Specific cloud liquid water content</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="98" tableVersion="128">246</GRIB1>
+      </parameter>
+      <parameter code="84">
+        <description>Specific cloud ice water content</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="98" tableVersion="128">247</GRIB1>
+      </parameter>
+      <parameter code="85">
+        <description>Specific rainwater content</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="98" tableVersion="128">75</GRIB1>
+      </parameter>
+      <parameter code="86">
+        <description>Specific snow water content</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="98" tableVersion="128">76</GRIB1>
+      </parameter>
+      <parameter code="90">
+        <description>Total kinematic moisture flux</description>
+        <units>kg kg^-1 m s^-1</units>
+      </parameter>
+      <parameter code="91">
+        <description>u-component (zonal) kinematic moisture flux</description>
+        <units>kg kg^-1 m s^-1</units>
+      </parameter>
+      <parameter code="92">
+        <description>v-component (meridional) kinematic moisture flux</description>
+        <units>kg kg^-1 m s^-1</units>
+      </parameter>
+      <parameter code="93">
+        <description>Relative humidity with respect to water</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="94">
+        <description>Relative humidity with respect to ice</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="95">
+        <description>Freezing or frozen precipitation rate</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="96">
+        <description>Mass density of rain</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="97">
+        <description>Mass density of snow</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="98">
+        <description>Mass density of graupel</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="99">
+        <description>Mass density of hail</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="100">
+        <description>Specific number concentration of rain</description>
+        <units>kg^-1</units>
+      </parameter>
+      <parameter code="101">
+        <description>Specific number concentration of snow</description>
+        <units>kg^-1</units>
+      </parameter>
+      <parameter code="102">
+        <description>Specific number concentration of graupel</description>
+        <units>kg^-1</units>
+      </parameter>
+      <parameter code="103">
+        <description>Specific number concentration of hail</description>
+        <units>kg^-1</units>
+      </parameter>
+      <parameter code="104">
+        <description>Number density of rain</description>
+        <units>m^-3</units>
+      </parameter>
+      <parameter code="105">
+        <description>Number density of snow</description>
+        <units>m^-3</units>
+      </parameter>
+      <parameter code="106">
+        <description>Number density of graupel</description>
+        <units>m^-3</units>
+      </parameter>
+      <parameter code="107">
+        <description>Number density of hail</description>
+        <units>m^-3</units>
+      </parameter>
+      <parameter code="108">
+        <description>Specific humidity tendency due to parameterization</description>
+        <units>kg kg^-1 s^-1</units>
+      </parameter>
+      <parameter code="109">
+        <description>Mass density of liquid water coating on hail expressed as mass of liquid water per unit volume of air</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="110">
+        <description>Specific mass of liquid water coating on hail expressed as mass of liquid water per unit mass of moist air</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="111">
+        <description>Mass mixing ratio of liquid water coating on hail expressed as mass of liquid water per unit mass of dry air</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="112">
+        <description>Mass density of liquid water coating on graupel expressed as mass of liquid water per unit volume of air</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="113">
+        <description>Specific mass of liquid water coating on graupel expressed as mass of liquid water per unit mass of moist air</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="114">
+        <description>Mass mixing ratio of liquid water coating on graupel expressed as mass of liquid water per unit mass of dry air</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="115">
+        <description>Mass density of liquid water coating on snow expressed as mass of liquid water per unit volume of air</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="116">
+        <description>Specific mass of liquid water coating on snow expressed as mass of liquid water per unit mass of moist air</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="117">
+        <description>Mass mixing ratio of liquid water coating on snow expressed as mass of liquid water per unit mass of dry air</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="118">
+        <description>Unbalanced component of specific humidity</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="119">
+        <description>Unbalanced component of specific cloud liquid water content</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="120">
+        <description>Unbalanced component of specific cloud ice water content</description>
+        <units>kg kg^-1</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="2">
+      <description>momentum</description>
+      <parameter code="0">
+        <description>Wind direction (from which blowing)</description>
+        <units>degree true</units>
+        <GRIB1>31</GRIB1>
+        <CF>wind_from_direction</CF>
+        <GCMD ifLevelType="103" ifLevelValue="10">10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+        <GCMD>592d49c4-e8ae-4ab4-bf24-ae4a896d0637</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Wind speed</description>
+        <units>m s^-1</units>
+        <GRIB1>32</GRIB1>
+        <CF>wind_speed</CF>
+        <GCMD ifLevelType="103" ifLevelValue="10">a92f49f3-e2ee-4ef4-b064-39311ffb95d3</GCMD>
+        <GCMD>661591b3-6685-4de7-a2a4-9ce8ae505044</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>u-component of wind</description>
+        <units>m s^-1</units>
+        <GRIB1>33</GRIB1>
+        <GCMD ifLevelType="103" ifLevelValue="10">10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+        <GCMD>592d49c4-e8ae-4ab4-bf24-ae4a896d0637</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>v-component of wind</description>
+        <units>m s^-1</units>
+        <GRIB1>34</GRIB1>
+        <GCMD ifLevelType="103" ifLevelValue="10">10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+        <GCMD>592d49c4-e8ae-4ab4-bf24-ae4a896d0637</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Stream function</description>
+        <units>m^2 s^-1</units>
+        <GRIB1>35</GRIB1>
+        <CF>atmosphere_horizontal_streamfunction</CF>
+        <GCMD>eaeb5cdd-365f-4368-8e20-6defe111b3b4</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Velocity potential</description>
+        <units>m^2 s^-1</units>
+        <GRIB1>36</GRIB1>
+        <CF>atmosphere_horizontal_velocity_potential</CF>
+      </parameter>
+      <parameter code="6">
+        <description>Montgomery stream function</description>
+        <units>m^2 s^-2</units>
+        <GRIB1>37</GRIB1>
+        <CF>atmosphere_horizontal_streamfunction</CF>
+        <GCMD>eaeb5cdd-365f-4368-8e20-6defe111b3b4</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Sigma coordinate vertical velocity</description>
+        <units>s^-1</units>
+        <GRIB1>38</GRIB1>
+        <CF>lagrangian_tendency_of_atmosphere_sigma_coordinate</CF>
+        <GCMD>841a7ac7-5981-4e93-895f-1b57c3d892a0</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Vertical velocity (pressure)</description>
+        <units>Pa s^-1</units>
+        <GRIB1>39</GRIB1>
+        <CF>lagrangian_tendency_of_air_pressure</CF>
+        <GCMD>841a7ac7-5981-4e93-895f-1b57c3d892a0</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Vertical velocity (geometric)</description>
+        <units>m s^-1</units>
+        <GRIB1>40</GRIB1>
+        <CF>upward_air_velocity</CF>
+        <GCMD>841a7ac7-5981-4e93-895f-1b57c3d892a0</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Absolute vorticity</description>
+        <units>s^-1</units>
+        <GRIB1>41</GRIB1>
+        <CF>atmosphere_absolute_vorticity</CF>
+        <GCMD>858a80ff-5aa4-4590-b2e2-e88a802a6ee4</GCMD>
+      </parameter>
+      <parameter code="11">
+        <description>Absolute divergence</description>
+        <units>s^-1</units>
+        <GRIB1>42</GRIB1>
+      </parameter>
+      <parameter code="12">
+        <description>Relative vorticity</description>
+        <units>s^-1</units>
+        <GRIB1>43</GRIB1>
+        <CF>atmosphere_relative_vorticity</CF>
+        <GCMD>858a80ff-5aa4-4590-b2e2-e88a802a6ee4</GCMD>
+      </parameter>
+      <parameter code="13">
+        <description>Relative divergence</description>
+        <units>s^-1</units>
+        <GRIB1>44</GRIB1>
+        <CF>divergence_of_wind</CF>
+      </parameter>
+      <parameter code="14">
+        <description>Potential vorticity</description>
+        <units>K m^2 kg^-1 s^-1</units>
+        <GRIB1>4</GRIB1>
+        <CF>ertel_potential_vorticity</CF>
+        <GCMD>858a80ff-5aa4-4590-b2e2-e88a802a6ee4</GCMD>
+      </parameter>
+      <parameter code="15">
+        <description>Vertical u-component shear</description>
+        <units>s^-1</units>
+        <GRIB1>45</GRIB1>
+        <CF>eastward_wind_shear</CF>
+        <GCMD>05cf5b56-0f86-4819-b713-1272b97b06c5</GCMD>
+      </parameter>
+      <parameter code="16">
+        <description>Vertical v-component shear</description>
+        <units>s^-1</units>
+        <GRIB1>46</GRIB1>
+        <CF>northward_wind_shear</CF>
+        <GCMD>05cf5b56-0f86-4819-b713-1272b97b06c5</GCMD>
+      </parameter>
+      <parameter code="17">
+        <description>Momentum flux, u-component</description>
+        <units>N m^-2</units>
+        <GRIB1>124</GRIB1>
+        <CF>downward_eastward_momentum_flux_in_air</CF>
+      </parameter>
+      <parameter code="18">
+        <description>Momentum flux, v-component</description>
+        <units>N m^-2</units>
+        <GRIB1>125</GRIB1>
+        <CF>downward_northward_momentum_flux_in_air</CF>
+      </parameter>
+      <parameter code="19">
+        <description>Wind mixing energy</description>
+        <units>J</units>
+        <GRIB1>126</GRIB1>
+        <CF>wind_mixing_energy_flux_into_ocean</CF>
+      </parameter>
+      <parameter code="20">
+        <description>Boundary layer dissipation</description>
+        <units>W m^-2</units>
+        <GRIB1>123</GRIB1>
+      </parameter>
+      <parameter code="21">
+        <description>Maximum wind speed</description>
+        <units>m s^-1</units>
+        <GCMD ifLevelType="103" ifLevelValue="10">a92f49f3-e2ee-4ef4-b064-39311ffb95d3</GCMD>
+        <GCMD>661591b3-6685-4de7-a2a4-9ce8ae505044</GCMD>
+        <GRIB1 center="98" tableVersion="200">219</GRIB1>
+      </parameter>
+      <parameter code="22">
+        <description>Wind speed (gust)</description>
+        <units>m s^-1</units>
+        <GCMD ifLevelType="103" ifLevelValue="10">a92f49f3-e2ee-4ef4-b064-39311ffb95d3</GCMD>
+        <GCMD>661591b3-6685-4de7-a2a4-9ce8ae505044</GCMD>
+      </parameter>
+      <parameter code="23">
+        <description>u-component of wind (gust)</description>
+        <units>m s^-1</units>
+        <GCMD ifLevelType="103" ifLevelValue="10">10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+        <GCMD>592d49c4-e8ae-4ab4-bf24-ae4a896d0637</GCMD>
+      </parameter>
+      <parameter code="24">
+        <description>v-component of wind (gust)</description>
+        <units>m s^-1</units>
+        <GCMD ifLevelType="103" ifLevelValue="10">10685919-bc01-43e7-901a-b62ac44627f3</GCMD>
+        <GCMD>592d49c4-e8ae-4ab4-bf24-ae4a896d0637</GCMD>
+      </parameter>
+      <parameter code="25">
+        <description>Vertical speed shear</description>
+        <units>s^-1</units>
+        <GRIB1 center="7" tableVersion="2">136</GRIB1>
+        <GCMD>05cf5b56-0f86-4819-b713-1272b97b06c5</GCMD>
+      </parameter>
+      <parameter code="26">
+        <description>Horizontal momentum flux</description>
+        <units>N m^-2</units>
+        <GRIB1 center="7" tableVersion="2">172</GRIB1>
+      </parameter>
+      <parameter code="27">
+        <description>u-component storm motion</description>
+        <units>m s^-1</units>
+        <GRIB1 center="7" tableVersion="2">196</GRIB1>
+        <GRIB1 center="98" tableVersion="254">147</GRIB1>
+      </parameter>
+      <parameter code="28">
+        <description>v-component storm motion</description>
+        <units>m s^-1</units>
+        <GRIB1 center="7" tableVersion="2">197</GRIB1>
+        <GRIB1 center="98" tableVersion="254">148</GRIB1>
+      </parameter>
+      <parameter code="29">
+        <description>Drag coefficient</description>
+        <units>Numeric</units>
+        <GRIB1 center="7" tableVersion="2">252</GRIB1>
+      </parameter>
+      <parameter code="30">
+        <description>Frictional velocity</description>
+        <units>m s^-1</units>
+        <GRIB1 center="7" tableVersion="2">253</GRIB1>
+      </parameter>
+      <parameter code="31">
+        <description>Turbulent diffusion coefficient for momentum</description>
+        <units>m^2 s^-1</units>
+        <GRIB1 center="98" tableVersion="201">153</GRIB1>
+      </parameter>
+      <parameter code="32">
+        <description>Eta coordinate vertical velocity</description>
+        <units>s^-1</units>
+        <GRIB1 center="98" tableVersion="128">77</GRIB1>
+      </parameter>
+      <parameter code="33">
+        <description>Wind fetch</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="34">
+        <description>Normal wind component</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="35">
+        <description>Tangential wind component</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="36">
+        <description>Amplitude function for Rossby wave envelope for meridional wind</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="37">
+        <description>Northward turbulent surface stress</description>
+        <units>N m^-2 s</units>
+        <GRIB1 center="98" tableVersion="128">181</GRIB1>
+      </parameter>
+      <parameter code="38">
+        <description>Eastward turbulent surface stress</description>
+        <units>N m^-2 s</units>
+        <GRIB1 center="98" tableVersion="128">180</GRIB1>
+      </parameter>
+      <parameter code="39">
+        <description>Eastward wind tendency due to parameterization</description>
+        <units>m s^-2</units>
+      </parameter>
+      <parameter code="40">
+        <description>Northward wind tendency due to parameterization</description>
+        <units>m s^-2</units>
+      </parameter>
+      <parameter code="41">
+        <description>u-component of geostrophic wind</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="42">
+        <description>v-component of geostrophic wind</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="43">
+        <description>Geostrophic wind direction</description>
+        <units>degree true</units>
+      </parameter>
+      <parameter code="44">
+        <description>Geostrophic wind speed</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="45">
+        <description>Unbalanced component of divergence</description>
+        <units>s^-1</units>
+        <GRIB1 center="98" tableVersion="128">23</GRIB1>
+      </parameter>
+      <parameter code="46">
+        <description>Vorticity advection</description>
+        <units>s^-2</units>
+        <GCMD>858a80ff-5aa4-4590-b2e2-e88a802a6ee4</GCMD>
+        <GRIB1 center="98" tableVersion="203">33</GRIB1>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="3">
+      <description>mass</description>
+      <parameter code="0">
+        <description>Pressure</description>
+        <units>Pa</units>
+        <GRIB1>1</GRIB1>
+        <CF ifLevelType="2">air_pressure_at_cloud_base</CF>
+        <CF ifLevelType="3">air_pressure_at_cloud_top</CF>
+        <CF ifLevelType="4">air_pressure_at_freezing_level</CF>
+        <CF ifLevelType="101">air_pressure_at_sea_level</CF>
+        <CF>air_pressure</CF>
+        <GCMD ifLevelType="101">07ce145c-9936-4675-b4a7-8710e39aa391</GCMD>
+        <GCMD>a5aa7055-642d-4442-9b4b-76a759e15257</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Pressure reduced to MSL</description>
+        <units>Pa</units>
+        <GRIB1>2</GRIB1>
+        <GCMD>07ce145c-9936-4675-b4a7-8710e39aa391</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Pressure tendency</description>
+        <units>Pa s^-1</units>
+        <GRIB1>3</GRIB1>
+        <CF>tendency_of_air_pressure</CF>
+        <GCMD>fa98caa0-54dc-465e-9bde-cdf4da905994</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>ICAO Standard Atmosphere Reference Height</description>
+        <units>m</units>
+        <GRIB1>5</GRIB1>
+      </parameter>
+      <parameter code="4">
+        <description>Geopotential</description>
+        <units>m^2 s^-2</units>
+        <GRIB1>6</GRIB1>
+        <CF ifLevelType="1">surface_geopotential</CF>
+        <CF>geopotential</CF>
+      </parameter>
+      <parameter code="5">
+        <description>Geopotential height</description>
+        <units>gpm</units>
+        <GRIB1>7</GRIB1>
+        <CF ifLevelType="1">surface_altitude</CF>
+        <CF>geopotential_height</CF>
+        <GCMD ifLevelType="1">74ed1690-968e-444c-8a31-7b8344a2aad3</GCMD>
+        <GCMD>d6aec072-daf9-4f96-b667-6c7831cf6bdd</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Geometric height</description>
+        <units>m</units>
+        <GRIB1>8</GRIB1>
+        <CF>height</CF>
+      </parameter>
+      <parameter code="7">
+        <description>Standard deviation of height</description>
+        <units>m</units>
+        <GRIB1>9</GRIB1>
+      </parameter>
+      <parameter code="8">
+        <description>Pressure anomaly</description>
+        <units>Pa</units>
+        <GRIB1>26</GRIB1>
+        <CF>air_pressure_anomaly</CF>
+        <GCMD ifLevelType="101">07ce145c-9936-4675-b4a7-8710e39aa391</GCMD>
+        <GCMD>a5aa7055-642d-4442-9b4b-76a759e15257</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Geopotential height anomaly</description>
+        <units>gpm</units>
+        <GRIB1>27</GRIB1>
+        <CF>geopotential_height_anomaly</CF>
+        <GCMD>d6aec072-daf9-4f96-b667-6c7831cf6bdd</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Density</description>
+        <units>kg m^-3</units>
+        <GRIB1>89</GRIB1>
+        <CF>air_density</CF>
+      </parameter>
+      <parameter code="11">
+        <description>Altimeter setting</description>
+        <units>Pa</units>
+      </parameter>
+      <parameter code="12">
+        <description>Thickness</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="13">
+        <description>Pressure altitude</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="14">
+        <description>Density altitude</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="15">
+        <description>5-wave geopotential height</description>
+        <units>gpm</units>
+        <GRIB1 center="7" tableVersion="2">222</GRIB1>
+      </parameter>
+      <parameter code="16">
+        <description>Zonal flux of gravity wave stress</description>
+        <units>N m^-2</units>
+        <GRIB1 center="7" tableVersion="2">147</GRIB1>
+        <GCMD>7e6f7c15-32e7-4b6e-bd35-7bff4bc03caf</GCMD>
+      </parameter>
+      <parameter code="17">
+        <description>Meridional flux of gravity wave stress</description>
+        <units>N m^-2</units>
+        <GRIB1 center="7" tableVersion="2">148</GRIB1>
+        <GCMD>7e6f7c15-32e7-4b6e-bd35-7bff4bc03caf</GCMD>
+      </parameter>
+      <parameter code="18">
+        <description>Planetary boundary layer height</description>
+        <units>m</units>
+        <GRIB1 center="7" tableVersion="2">221</GRIB1>
+        <GCMD>765e92a7-8c14-47dc-bdd8-d85d132a11ee</GCMD>
+      </parameter>
+      <parameter code="19">
+        <description>5-wave geopotential height anomaly</description>
+        <units>gpm</units>
+        <GRIB1 center="7" tableVersion="2">230</GRIB1>
+      </parameter>
+      <parameter code="20">
+        <description>Standard deviation of sub-grid scale orography</description>
+        <units>m</units>
+        <GRIB1 center="98" tableVersion="202">46</GRIB1>
+      </parameter>
+      <parameter code="21">
+        <description>Angle of sub-gridscale orography</description>
+        <units>rad</units>
+        <GRIB1 center="98" tableVersion="202">48</GRIB1>
+      </parameter>
+      <parameter code="22">
+        <description>Slope of sub-gridscale orography</description>
+        <units>Numeric</units>
+        <GRIB1 center="98" tableVersion="202">49</GRIB1>
+      </parameter>
+      <parameter code="23">
+        <description>Gravity wave dissipation</description>
+        <units>W m^-2</units>
+        <GCMD>7e6f7c15-32e7-4b6e-bd35-7bff4bc03caf</GCMD>
+      </parameter>
+      <parameter code="24">
+        <description>Anisotropy of sub-gridscale orography</description>
+        <units>Numeric</units>
+        <GRIB1 center="98" tableVersion="202">47</GRIB1>
+      </parameter>
+      <parameter code="25">
+        <description>Natural logarithm of pressure in Pa</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="26">
+        <description>Exner pressure</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="27">
+        <description>Updraught mass flux</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1 center="7" tableVersion="133">202</GRIB1>
+      </parameter>
+      <parameter code="28">
+        <description>Downdraught mass flux</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1 center="7" tableVersion="133">209</GRIB1>
+      </parameter>
+      <parameter code="29">
+        <description>Updraught detrainment rate</description>
+        <units>kg m^-3 s^-1</units>
+      </parameter>
+      <parameter code="30">
+        <description>Downdraught detrainment rate</description>
+        <units>kg m^-3 s^-1</units>
+      </parameter>
+      <parameter code="31">
+        <description>Unbalanced component of logarithm of surface pressure</description>
+        <GRIB1 center="98" tableVersion="128">22</GRIB1>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="4">
+      <description>short-wave radiation</description>
+      <parameter code="0">
+        <description>Net short-wave radiation flux (surface)</description>
+        <units>W m^-2</units>
+        <GRIB1>111</GRIB1>
+        <CF>surface_net_upward_shortwave_flux</CF>
+        <GCMD>6b3be650-6625-40b5-9b40-9e7c8a9fd336</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Net short-wave radiation flux (top of atmosphere)</description>
+        <units>W m^-2</units>
+        <GRIB1>113</GRIB1>
+        <CF>toa_net_upward_shortwave_flux</CF>
+        <GCMD>a8f5c969-34e9-4284-afb5-ff2113f5f881</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Short-wave radiation flux</description>
+        <units>W m^-2</units>
+        <GRIB1>116</GRIB1>
+        <CF>net_upward_shortwave_flux_in_air</CF>
+        <GCMD>a8f5c969-34e9-4284-afb5-ff2113f5f881</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Global radiation flux</description>
+        <units>W m^-2</units>
+        <GRIB1>117</GRIB1>
+        <GCMD>107582ef-a356-4afa-a9a4-4e1d2200c134</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Brightness temperature</description>
+        <units>K</units>
+        <GRIB1>118</GRIB1>
+        <CF>brightness_temperature</CF>
+        <GCMD>d8525750-2ca4-4b1f-a717-08fda61fd547</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Radiance (with respect to wave number)</description>
+        <units>W m^-1 sr^-1</units>
+        <GRIB1>119</GRIB1>
+      </parameter>
+      <parameter code="6">
+        <description>Radiance (with respect to wavelength)</description>
+        <units>W m^-3 sr^-1</units>
+        <GRIB1>120</GRIB1>
+      </parameter>
+      <parameter code="7">
+        <description>Downward short-wave radiation flux</description>
+        <units>W m^-2</units>
+        <GRIB1 center="7" tableVersion="2">204</GRIB1>
+        <GRIB1 center="98" tableVersion="200">204</GRIB1>
+        <GCMD>a8f5c969-34e9-4284-afb5-ff2113f5f881</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Upward short-wave radiation flux</description>
+        <units>W m^-2</units>
+        <GRIB1 center="7" tableVersion="2">211</GRIB1>
+        <GRIB1 center="98" tableVersion="200">211</GRIB1>
+        <GCMD>a8f5c969-34e9-4284-afb5-ff2113f5f881</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Net short wave radiation flux</description>
+        <units>W m^-2</units>
+        <GCMD>a8f5c969-34e9-4284-afb5-ff2113f5f881</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Photosynthetically active radiation</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="11">
+        <description>Net short-wave radiation flux, clear sky</description>
+        <units>W m^-2</units>
+        <GCMD>a8f5c969-34e9-4284-afb5-ff2113f5f881</GCMD>
+      </parameter>
+      <parameter code="12">
+        <description>Downward UV radiation</description>
+        <units>W m^-2</units>
+        <GCMD>90e7fd13-2da2-4ba6-9e0c-dbecdf7c2215</GCMD>
+      </parameter>
+      <parameter code="13">
+        <description>Direct short-wave radiation flux</description>
+        <units>W m^-2</units>
+        <GCMD>a8f5c969-34e9-4284-afb5-ff2113f5f881</GCMD>
+      </parameter>
+      <parameter code="14">
+        <description>Diffuse short-wave radiation flux</description>
+        <units>W m^-2</units>
+        <GCMD>a8f5c969-34e9-4284-afb5-ff2113f5f881</GCMD>
+      </parameter>
+      <parameter code="50">
+        <description>UV index (under clear sky)</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="51">
+        <description>UV index</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="52">
+        <description>Downward short-wave radiation flux, clear sky</description>
+        <units>W m^-2</units>
+        <GCMD>a8f5c969-34e9-4284-afb5-ff2113f5f881</GCMD>
+      </parameter>
+      <parameter code="53">
+        <description>Upward short-wave radiation flux, clear sky</description>
+        <units>W m^-2</units>
+        <GCMD>a8f5c969-34e9-4284-afb5-ff2113f5f881</GCMD>
+        <GRIB1 center="7" tableVersion="2">160</GRIB1>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="5">
+      <description>long-wave radiation</description>
+      <parameter code="0">
+        <description>Net long-wave radiation flux (surface)</description>
+        <units>W m^-2</units>
+        <GRIB1>112</GRIB1>
+        <CF>surface_net_upward_longwave_flux</CF>
+        <GCMD>006b1ea6-222d-4740-b220-03886d49cd81</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Net long-wave radiation flux (top of atmosphere)</description>
+        <units>W m^-2</units>
+        <GRIB1>114</GRIB1>
+        <CF>toa_outgoing_longwave_flux</CF>
+        <GCMD>006b1ea6-222d-4740-b220-03886d49cd81</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Long-wave radiation flux</description>
+        <units>W m^-2</units>
+        <GRIB1>115</GRIB1>
+        <CF>net_upward_longwave_flux_in_air</CF>
+        <GCMD>68323795-3614-462f-8259-bd5293620799</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Downward long-wave radiation flux</description>
+        <units>W m^-2</units>
+        <GRIB1 center="7" tableVersion="2">205</GRIB1>
+        <GRIB1 center="98" tableVersion="200">205</GRIB1>
+        <CF ifLevelType="1">surface_downwelling_longwave_flux_in_air</CF>
+        <CF>downwelling_longwave_flux_in_air</CF>
+        <GCMD>68323795-3614-462f-8259-bd5293620799</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Upward long-wave radiation flux</description>
+        <units>W m^-2</units>
+        <GRIB1 center="7" tableVersion="2">212</GRIB1>
+        <GRIB1 center="98" tableVersion="200">212</GRIB1>
+        <CF ifLevelType="1">surface_upwelling_longwave_flux_in_air</CF>
+        <CF>upwelling_longwave_flux_in_air</CF>
+        <GCMD>006b1ea6-222d-4740-b220-03886d49cd81</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Net long-wave radiation flux</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="6">
+        <description>Net long-wave radiation flux, clear sky</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="7">
+        <description>Brightness temperature</description>
+        <units>K</units>
+        <GRIB1>118</GRIB1>
+        <GCMD>d8525750-2ca4-4b1f-a717-08fda61fd547</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Downward long-wave radiation flux, clear sky</description>
+        <units>W m^-2</units>
+        <GRIB1 center="7" tableVersion="2">163</GRIB1>
+        <CF ifLevelType="1">surface_downwelling_longwave_flux_in_air_assuming_clear_sky</CF>
+        <CF>downwelling_longwave_flux_in_air_assuming_clear_sky</CF>
+        <GCMD>68323795-3614-462f-8259-bd5293620799</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="6">
+      <description>cloud</description>
+      <parameter code="0">
+        <description>Cloud ice</description>
+        <units>kg m^-2</units>
+        <GRIB1>58</GRIB1>
+        <CF>atmosphere_mass_content_of_cloud_ice</CF>
+        <GCMD>05ac9d3e-bc44-41fa-ace0-c41bf3ebee97</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Total cloud cover</description>
+        <units>%</units>
+        <GRIB1>71</GRIB1>
+        <CF>cloud_area_fraction</CF>
+        <GCMD>acb52274-6c0d-4241-a979-3fa3efca6702</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Convective cloud cover</description>
+        <units>%</units>
+        <GRIB1>72</GRIB1>
+        <CF>convective_cloud_area_fraction</CF>
+        <GCMD>acb52274-6c0d-4241-a979-3fa3efca6702</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Low cloud cover</description>
+        <units>%</units>
+        <GRIB1>73</GRIB1>
+        <CF>low_type_cloud_area_fraction</CF>
+        <GCMD>acb52274-6c0d-4241-a979-3fa3efca6702</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Medium cloud cover</description>
+        <units>%</units>
+        <GRIB1>74</GRIB1>
+        <CF>medium_type_cloud_area_fraction</CF>
+        <GCMD>acb52274-6c0d-4241-a979-3fa3efca6702</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>High cloud cover</description>
+        <units>%</units>
+        <GRIB1>75</GRIB1>
+        <CF>high_type_cloud_area_fraction</CF>
+        <GCMD>acb52274-6c0d-4241-a979-3fa3efca6702</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Cloud water</description>
+        <units>kg m^-2</units>
+        <GRIB1>76</GRIB1>
+        <CF>atmosphere_mass_content_of_cloud_condensed_water</CF>
+        <GCMD>05ac9d3e-bc44-41fa-ace0-c41bf3ebee97</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Cloud amount</description>
+        <units>%</units>
+        <GCMD>acb52274-6c0d-4241-a979-3fa3efca6702</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Cloud type</description>
+        <units>(Code table 4.203)</units>
+        <GCMD>29b61359-ebec-42c2-be05-2d7be2275954</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Thunderstorm maximum tops</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="10">
+        <description>Thunderstorm coverage</description>
+        <units>(Code table 4.204)</units>
+      </parameter>
+      <parameter code="11">
+        <description>Cloud base</description>
+        <units>m</units>
+        <GCMD>1f0765e3-4ea3-42be-8ed5-3e26bdebb219</GCMD>
+      </parameter>
+      <parameter code="12">
+        <description>Cloud top</description>
+        <units>m</units>
+        <GCMD>0893cf38-fe6e-4ebc-95f4-db7d24c874db</GCMD>
+      </parameter>
+      <parameter code="13">
+        <description>Ceiling</description>
+        <units>m</units>
+        <GRIB1 center="7" tableVersion="129">219</GRIB1>
+        <GRIB1 center="98" tableVersion="228">109</GRIB1>
+        <GCMD>57292a97-19be-4fae-b2f7-9fa0a3629b53</GCMD>
+      </parameter>
+      <parameter code="14">
+        <description>Non-convective cloud cover</description>
+        <units>%</units>
+        <GCMD>acb52274-6c0d-4241-a979-3fa3efca6702</GCMD>
+      </parameter>
+      <parameter code="15">
+        <description>Cloud work function</description>
+        <units>J kg^-1</units>
+        <GRIB1 center="7" tableVersion="2">146</GRIB1>
+        <GRIB1 center="98" tableVersion="200">146</GRIB1>
+      </parameter>
+      <parameter code="16">
+        <description>Convective cloud efficiency</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="129">134</GRIB1>
+      </parameter>
+      <parameter code="17">
+        <description>Total condensate</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="7" tableVersion="129">135</GRIB1>
+        <GCMD>ebbf8642-3da1-4401-a779-3e56550a029d</GCMD>
+      </parameter>
+      <parameter code="18">
+        <description>Total column-integrated cloud water</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="129">136</GRIB1>
+        <GCMD>05ac9d3e-bc44-41fa-ace0-c41bf3ebee97</GCMD>
+      </parameter>
+      <parameter code="19">
+        <description>Total column-integrated cloud ice</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="129">137</GRIB1>
+        <GCMD>05ac9d3e-bc44-41fa-ace0-c41bf3ebee97</GCMD>
+      </parameter>
+      <parameter code="20">
+        <description>Total column-integrated condensate</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="129">140</GRIB1>
+      </parameter>
+      <parameter code="21">
+        <description>Ice fraction of total condensate</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="129">132</GRIB1>
+      </parameter>
+      <parameter code="22">
+        <description>Cloud cover</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="23">
+        <description>Cloud ice mixing ratio</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="98" tableVersion="201">33</GRIB1>
+      </parameter>
+      <parameter code="24">
+        <description>Sunshine</description>
+        <units>Numeric</units>
+        <GCMD>86c95fdb-17b9-4224-a020-b1aacbea00fd</GCMD>
+      </parameter>
+      <parameter code="25">
+        <description>Horizontal extent of cumulonimbus (CB)</description>
+        <units>%</units>
+        <GRIB1 center="7" tableVersion="140">174</GRIB1>
+      </parameter>
+      <parameter code="26">
+        <description>Height of convective cloud base</description>
+        <units>m</units>
+        <GRIB1 center="98" tableVersion="201">68</GRIB1>
+      </parameter>
+      <parameter code="27">
+        <description>Height of convective cloud top</description>
+        <units>m</units>
+        <GRIB1 center="98" tableVersion="201">69</GRIB1>
+      </parameter>
+      <parameter code="28">
+        <description>Number of cloud droplets per unit mass of air</description>
+        <units>kg^-1</units>
+        <GCMD>cbb0d517-462a-46fe-a0e6-32555f7e7f23</GCMD>
+      </parameter>
+      <parameter code="29">
+        <description>Number of cloud ice particles per unit mass of air</description>
+        <units>kg^-1</units>
+      </parameter>
+      <parameter code="30">
+        <description>Number density of cloud droplets</description>
+        <units>m^-3</units>
+        <GCMD>47812ef8-b64b-4988-9ae4-31f3581ae9a5</GCMD>
+      </parameter>
+      <parameter code="31">
+        <description>Number density of cloud ice particles</description>
+        <units>m^-3</units>
+      </parameter>
+      <parameter code="32">
+        <description>Fraction of cloud cover</description>
+        <units>Numeric</units>
+        <GRIB1 center="98" tableVersion="128">248</GRIB1>
+        <GCMD>b296b688-0ff0-4212-9b30-30e9fe413709</GCMD>
+      </parameter>
+      <parameter code="33">
+        <description>Sunshine duration</description>
+        <units>s</units>
+        <GRIB1 center="7" tableVersion="133">191</GRIB1>
+        <GCMD>86c95fdb-17b9-4224-a020-b1aacbea00fd</GCMD>
+      </parameter>
+      <parameter code="34">
+        <description>Surface long-wave effective total cloudiness</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="35">
+        <description>Surface short-wave effective total cloudiness</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="36">
+        <description>Fraction of stratiform precipitation cover</description>
+        <units>Proportion</units>
+      </parameter>
+      <parameter code="37">
+        <description>Fraction of convective precipitation cover</description>
+        <units>Proportion</units>
+      </parameter>
+      <parameter code="38">
+        <description>Mass density of cloud droplets</description>
+        <units>kg m^-3</units>
+        <GCMD>47812ef8-b64b-4988-9ae4-31f3581ae9a5</GCMD>
+      </parameter>
+      <parameter code="39">
+        <description>Mass density of cloud ice</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="40">
+        <description>Mass density of convective cloud water droplets</description>
+        <units>kg m^-3</units>
+        <GCMD>47812ef8-b64b-4988-9ae4-31f3581ae9a5</GCMD>
+      </parameter>
+      <parameter code="47">
+        <description>Volume fraction of cloud water droplets</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="48">
+        <description>Volume fraction of cloud ice particles</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="49">
+        <description>Volume fraction of cloud (ice and/or water)</description>
+        <units>Numeric</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="7">
+      <description>thermodynamic stability indices</description>
+      <parameter code="0">
+        <description>Parcel lifted index (to 500 hPa)</description>
+        <units>K</units>
+        <GRIB1>24</GRIB1>
+      </parameter>
+      <parameter code="1">
+        <description>Best lifted index (to 500 hPa)</description>
+        <units>K</units>
+        <GRIB1>77</GRIB1>
+      </parameter>
+      <parameter code="2">
+        <description>K index</description>
+        <units>K</units>
+        <GRIB1 center="7" tableVersion="2">133</GRIB1>
+        <GRIB1 center="98" tableVersion="228">121</GRIB1>
+      </parameter>
+      <parameter code="3">
+        <description>KO index</description>
+        <units>K</units>
+        <GRIB1 center="98" tableVersion="203">140</GRIB1>
+      </parameter>
+      <parameter code="4">
+        <description>Total totals index</description>
+        <units>K</units>
+        <GRIB1 center="98" tableVersion="228">123</GRIB1>
+      </parameter>
+      <parameter code="5">
+        <description>Sweat index</description>
+        <units>Numeric</units>
+        <GRIB1 center="7" tableVersion="2">134</GRIB1>
+      </parameter>
+      <parameter code="6">
+        <description>Convective available potential energy</description>
+        <units>J kg^-1</units>
+        <GRIB1 center="7" tableVersion="2">157</GRIB1>
+        <GRIB1 center="98" tableVersion="128">59</GRIB1>
+        <CF ifLevelType="1">atmosphere_convective_available_potential_energy_wrt_surface</CF>
+        <CF ifLevelType="1">atmosphere_convective_available_potential_energy</CF>
+      </parameter>
+      <parameter code="7">
+        <description>Convective inhibition</description>
+        <units>J kg^-1</units>
+        <GRIB1 center="7" tableVersion="2">156</GRIB1>
+        <GRIB1 center="98" tableVersion="228">1</GRIB1>
+        <CF ifLevelType="1">atmosphere_convective_inhibition_wrt_surface</CF>
+        <CF ifLevelType="1">atmosphere_convective_inhibition</CF>
+      </parameter>
+      <parameter code="8">
+        <description>Storm relative helicity</description>
+        <units>J kg^-1</units>
+        <GRIB1 center="7" tableVersion="2">190</GRIB1>
+        <GRIB1 center="98" tableVersion="203">30</GRIB1>
+      </parameter>
+      <parameter code="9">
+        <description>Energy helicity index</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="10">
+        <description>Surface lifted index</description>
+        <units>K</units>
+        <GRIB1 center="7" tableVersion="2">131</GRIB1>
+      </parameter>
+      <parameter code="11">
+        <description>Best (4-layer) lifted index</description>
+        <units>K</units>
+        <GRIB1 center="7" tableVersion="2">132</GRIB1>
+      </parameter>
+      <parameter code="12">
+        <description>Richardson number</description>
+        <units>Numeric</units>
+        <GRIB1 center="7" tableVersion="2">254</GRIB1>
+      </parameter>
+      <parameter code="13">
+        <description>Showalter index</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="15">
+        <description>Updraught helicity</description>
+        <units>m^2 s^-2</units>
+        <GRIB1 center="7" tableVersion="129">227</GRIB1>
+      </parameter>
+      <parameter code="16">
+        <description>Bulk Richardson number</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="17">
+        <description>Gradient Richardson number</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="18">
+        <description>Flux Richardson number</description>
+        <units>Numeric</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="13">
+      <description>aerosols</description>
+      <parameter code="0">
+        <description>Aerosol type</description>
+        <units>(Code table 4.205)</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="14">
+      <description>trace gases</description>
+      <parameter code="0">
+        <description>Total ozone</description>
+        <units>DU</units>
+        <GRIB1>10</GRIB1>
+        <CF>equivalent_thickness_at_stp_of_atmosphere_ozone_content</CF>
+        <GCMD>426aee98-764c-4c21-ab65-1e9d4bd6b0d0</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Ozone mixing ratio</description>
+        <units>kg kg^-1</units>
+        <GRIB1 center="7" tableVersion="2">154</GRIB1>
+        <GRIB1 center="98" tableVersion="202">180</GRIB1>
+        <GCMD>426aee98-764c-4c21-ab65-1e9d4bd6b0d0</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Total column integrated ozone</description>
+        <units>DU</units>
+        <GRIB1 center="98" tableVersion="200">10</GRIB1>
+        <CF>equivalent_thickness_at_stp_of_atmosphere_ozone_content</CF>
+        <GCMD>426aee98-764c-4c21-ab65-1e9d4bd6b0d0</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="15">
+      <description>radar</description>
+      <parameter code="0">
+        <description>Base spectrum width</description>
+        <units>m s^-1</units>
+        <GCMD>41a7f02b-5ab6-4c1e-8583-abb870507ea1</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Base reflectivity</description>
+        <units>dB</units>
+        <GRIB1 center="98" tableVersion="201">230</GRIB1>
+        <GCMD>46975e66-863a-49c9-b673-b2e099a04c85</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Base radial velocity</description>
+        <units>m s^-1</units>
+        <CF>radial_velocity_of_scatterers_away_from_instrument</CF>
+      </parameter>
+      <parameter code="3">
+        <description>Vertically integrated liquid water (VIL)</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="130">206</GRIB1>
+      </parameter>
+      <parameter code="4">
+        <description>Layer-maximum base reflectivity</description>
+        <units>dB</units>
+        <GCMD>46975e66-863a-49c9-b673-b2e099a04c85</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Precipitation</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="6">
+        <description>Radar spectra (1)</description>
+        <GRIB1>21</GRIB1>
+      </parameter>
+      <parameter code="7">
+        <description>Radar spectra (2)</description>
+        <GRIB1>22</GRIB1>
+      </parameter>
+      <parameter code="8">
+        <description>Radar spectra (3)</description>
+        <GRIB1>23</GRIB1>
+      </parameter>
+      <parameter code="9">
+        <description>Reflectivity of cloud droplets</description>
+        <units>dB</units>
+        <GCMD>46975e66-863a-49c9-b673-b2e099a04c85</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Reflectivity of cloud ice</description>
+        <units>dB</units>
+        <GCMD>46975e66-863a-49c9-b673-b2e099a04c85</GCMD>
+      </parameter>
+      <parameter code="11">
+        <description>Reflectivity of snow</description>
+        <units>dB</units>
+        <GCMD>46975e66-863a-49c9-b673-b2e099a04c85</GCMD>
+      </parameter>
+      <parameter code="12">
+        <description>Reflectivity of rain</description>
+        <units>dB</units>
+        <GCMD>46975e66-863a-49c9-b673-b2e099a04c85</GCMD>
+      </parameter>
+      <parameter code="13">
+        <description>Reflectivity of graupel</description>
+        <units>dB</units>
+        <GCMD>46975e66-863a-49c9-b673-b2e099a04c85</GCMD>
+      </parameter>
+      <parameter code="14">
+        <description>Reflectivity of hail</description>
+        <units>dB</units>
+        <GCMD>46975e66-863a-49c9-b673-b2e099a04c85</GCMD>
+      </parameter>
+      <parameter code="15">
+        <description>Hybrid scan reflectivity</description>
+        <units>dB</units>
+        <GCMD>46975e66-863a-49c9-b673-b2e099a04c85</GCMD>
+      </parameter>
+      <parameter code="16">
+        <description>Hybrid scan reflectivity height</description>
+        <units>m</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="16">
+      <description>forecast radar imagery</description>
+      <parameter code="0">
+        <description>Equivalent radar reflectivity factor for rain</description>
+        <units>mm^6 m^-3</units>
+      </parameter>
+      <parameter code="1">
+        <description>Equivalent radar reflectivity factor for snow</description>
+        <units>mm^6 m^-3</units>
+      </parameter>
+      <parameter code="2">
+        <description>Equivalent radar reflectivity factor for parameterized convection</description>
+        <units>mm^6 m^-3</units>
+      </parameter>
+      <parameter code="3">
+        <description>Echo top</description>
+        <units>m</units>
+        <GRIB1 center="7" tableVersion="129">240</GRIB1>
+      </parameter>
+      <parameter code="4">
+        <description>Reflectivity</description>
+        <units>dB</units>
+      </parameter>
+      <parameter code="5">
+        <description>Composite reflectivity</description>
+        <units>dB</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="17">
+      <description>electrodynamics</description>
+      <parameter code="0">
+        <description>Lightning strike density</description>
+        <units>m^-2 s^-1</units>
+        <GRIB1 center="7" tableVersion="131">137</GRIB1>
+      </parameter>
+      <parameter code="1">
+        <description>Lightning potential index (LPI)</description>
+        <units>J kg^-1</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="18">
+      <description>nuclear/radiology</description>
+      <parameter code="0">
+        <description>Air concentration of caesium 137</description>
+        <units>Bq m^-3</units>
+      </parameter>
+      <parameter code="1">
+        <description>Air concentration of iodine 131</description>
+        <units>Bq m^-3</units>
+      </parameter>
+      <parameter code="2">
+        <description>Air concentration of radioactive pollutant</description>
+        <units>Bq m^-3</units>
+      </parameter>
+      <parameter code="3">
+        <description>Ground deposition of caesium 137</description>
+        <units>Bq m^-2</units>
+      </parameter>
+      <parameter code="4">
+        <description>Ground deposition of iodine 131</description>
+        <units>Bq m^-2</units>
+      </parameter>
+      <parameter code="5">
+        <description>Ground deposition of radioactive pollutant</description>
+        <units>Bq m^-2</units>
+      </parameter>
+      <parameter code="6">
+        <description>Time-integrated air concentration of caesium pollutant</description>
+        <units>Bq s m^-3</units>
+      </parameter>
+      <parameter code="7">
+        <description>Time-integrated air concentration of iodine pollutant</description>
+        <units>Bq s m^-3</units>
+      </parameter>
+      <parameter code="8">
+        <description>Time-integrated air concentration of radioactive pollutant</description>
+        <units>Bq s m^-3</units>
+      </parameter>
+      <parameter code="10">
+        <description>Air concentration</description>
+        <units>Bq m^-3</units>
+      </parameter>
+      <parameter code="11">
+        <description>Wet deposition</description>
+        <units>Bq m^-2</units>
+      </parameter>
+      <parameter code="12">
+        <description>Dry deposition</description>
+        <units>Bq m^-2</units>
+      </parameter>
+      <parameter code="13">
+        <description>Total deposition (wet + dry)</description>
+        <units>Bq m^-2</units>
+      </parameter>
+      <parameter code="14">
+        <description>Specific activity concentration</description>
+        <units>Bq kg^-1</units>
+      </parameter>
+      <parameter code="15">
+        <description>Maximum of air concentration in layer</description>
+        <units>Bq m^-3</units>
+      </parameter>
+      <parameter code="16">
+        <description>Height of maximum air concentration</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="17">
+        <description>Column-integrated air concentration</description>
+        <units>Bq m^-2</units>
+      </parameter>
+      <parameter code="18">
+        <description>Column-averaged air concentration in layer</description>
+        <units>Bq m^-3</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="19">
+      <description>physical atmospheric properties</description>
+      <parameter code="0">
+        <description>Visibility</description>
+        <units>m</units>
+        <GRIB1>20</GRIB1>
+        <CF>visibility_in_air</CF>
+        <GCMD>9337898d-68dc-43d7-93a9-6afdb4ab1784</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Albedo</description>
+        <units>%</units>
+        <GRIB1>84</GRIB1>
+        <CF>surface_albedo</CF>
+        <GCMD>136b1de3-4b2e-49e6-80cd-cf2e9bac2c48</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Thunderstorm probability</description>
+        <units>%</units>
+        <GRIB1>60</GRIB1>
+        <CF>thunderstorm_probability</CF>
+      </parameter>
+      <parameter code="3">
+        <description>Mixed layer depth</description>
+        <units>m</units>
+        <GRIB1>67</GRIB1>
+        <CF>ocean_mixed_layer_thickness</CF>
+        <GCMD>48ec6449-373c-41f6-8a61-8f1e9ed95737</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Volcanic ash</description>
+        <units>(Code table 4.206)</units>
+      </parameter>
+      <parameter code="5">
+        <description>Icing top</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="6">
+        <description>Icing base</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="7">
+        <description>Icing</description>
+        <units>(Code table 4.207)</units>
+      </parameter>
+      <parameter code="8">
+        <description>Turbulence top</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="9">
+        <description>Turbulence base</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="10">
+        <description>Turbulence</description>
+        <units>(Code table 4.208)</units>
+      </parameter>
+      <parameter code="11">
+        <description>Turbulent kinetic energy</description>
+        <units>J kg^-1</units>
+        <GRIB1 center="7" tableVersion="2">158</GRIB1>
+        <GRIB1 center="98" tableVersion="201">152</GRIB1>
+      </parameter>
+      <parameter code="12">
+        <description>Planetary boundary-layer regime</description>
+        <units>(Code table 4.209)</units>
+      </parameter>
+      <parameter code="13">
+        <description>Contrail intensity</description>
+        <units>(Code table 4.210)</units>
+        <GCMD>cf75769c-2430-4280-b9c2-ba384849a548</GCMD>
+      </parameter>
+      <parameter code="14">
+        <description>Contrail engine type</description>
+        <units>(Code table 4.211)</units>
+        <GCMD>cf75769c-2430-4280-b9c2-ba384849a548</GCMD>
+      </parameter>
+      <parameter code="15">
+        <description>Contrail top</description>
+        <units>m</units>
+        <GCMD>cf75769c-2430-4280-b9c2-ba384849a548</GCMD>
+      </parameter>
+      <parameter code="16">
+        <description>Contrail base</description>
+        <units>m</units>
+        <GCMD>cf75769c-2430-4280-b9c2-ba384849a548</GCMD>
+      </parameter>
+      <parameter code="17">
+        <description>Maximum snow albedo</description>
+        <units>%</units>
+        <GRIB1 center="7" tableVersion="130">159</GRIB1>
+        <GCMD>2ddd003d-c19f-4336-9837-316cce5efe0b</GCMD>
+      </parameter>
+      <parameter code="18">
+        <description>Snow free albedo</description>
+        <units>%</units>
+        <GRIB1 center="7" tableVersion="130">170</GRIB1>
+        <GCMD>136b1de3-4b2e-49e6-80cd-cf2e9bac2c48</GCMD>
+      </parameter>
+      <parameter code="19">
+        <description>Snow albedo</description>
+        <units>%</units>
+        <GRIB1 center="7" tableVersion="130">184</GRIB1>
+        <GCMD>2ddd003d-c19f-4336-9837-316cce5efe0b</GCMD>
+      </parameter>
+      <parameter code="20">
+        <description>Icing</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="21">
+        <description>In-cloud turbulence</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="22">
+        <description>Clear air turbulence (CAT)</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="23">
+        <description>Supercooled large droplet probability</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="24">
+        <description>Convective turbulent kinetic energy</description>
+        <units>J kg^-1</units>
+        <GRIB1 center="98" tableVersion="201">147</GRIB1>
+      </parameter>
+      <parameter code="25">
+        <description>Weather</description>
+        <units>(Code table 4.225)</units>
+        <GRIB1 center="98" tableVersion="203">99</GRIB1>
+      </parameter>
+      <parameter code="26">
+        <description>Convective outlook</description>
+        <units>(Code table 4.224)</units>
+      </parameter>
+      <parameter code="27">
+        <description>Icing scenario</description>
+        <units>(Code table 4.227)</units>
+      </parameter>
+      <parameter code="28">
+        <description>Mountain wave turbulence (eddy dissipation rate)</description>
+        <units>m^2/3 s^-1</units>
+      </parameter>
+      <parameter code="29">
+        <description>Clear air turbulence (CAT)</description>
+        <units>m^2/3 s^-1</units>
+      </parameter>
+      <parameter code="30">
+        <description>Eddy dissipation parameter</description>
+        <units>m^2/3 s^-1</units>
+      </parameter>
+      <parameter code="31">
+        <description>Maximum of Eddy dissipation parameter in layer</description>
+        <units>m^2/3 s^-1</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="20">
+      <description>atmospheric chemical constituents</description>
+      <parameter code="0">
+        <description>Mass density (concentration)</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="1">
+        <description>Column-integrated mass density</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="2">
+        <description>Mass mixing ratio (mass fraction in air)</description>
+        <units>kg kg^-1</units>
+      </parameter>
+      <parameter code="3">
+        <description>Atmosphere emission mass flux</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="4">
+        <description>Atmosphere net production mass flux</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="5">
+        <description>Atmosphere net production and emission mass flux</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="6">
+        <description>Surface dry deposition mass flux</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="7">
+        <description>Surface wet deposition mass flux</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="8">
+        <description>Atmosphere re-emission mass flux</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="9">
+        <description>Wet deposition by large-scale precipitation mass flux</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="10">
+        <description>Wet deposition by convective precipitation mass flux</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="11">
+        <description>Sedimentation mass flux</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="12">
+        <description>Dry deposition mass flux</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="13">
+        <description>Transfer from hydrophobic to hydrophilic</description>
+        <units>kg kg^-1 s^-1</units>
+      </parameter>
+      <parameter code="14">
+        <description>Transfer from SO2 (sulphur dioxide) to SO4 (sulphate)</description>
+        <units>kg kg^-1 s^-1</units>
+      </parameter>
+      <parameter code="50">
+        <description>Amount in atmosphere</description>
+        <units>mol</units>
+      </parameter>
+      <parameter code="51">
+        <description>Concentration in air</description>
+        <units>mol m^-3</units>
+      </parameter>
+      <parameter code="52">
+        <description>Volume mixing ratio (fraction in air)</description>
+        <units>mol mol^-1</units>
+      </parameter>
+      <parameter code="53">
+        <description>Chemical gross production rate of concentration</description>
+        <units>mol m^-3 s^-1</units>
+      </parameter>
+      <parameter code="54">
+        <description>Chemical gross destruction rate of concentration</description>
+        <units>mol m^-3 s^-1</units>
+      </parameter>
+      <parameter code="55">
+        <description>Surface flux</description>
+        <units>mol m^-2 s^-1</units>
+      </parameter>
+      <parameter code="56">
+        <description>Changes of amount in atmosphere</description>
+        <units>mol s^-1</units>
+      </parameter>
+      <parameter code="57">
+        <description>Total yearly average burden of the atmosphere</description>
+        <units>mol</units>
+      </parameter>
+      <parameter code="58">
+        <description>Total yearly averaged atmospheric loss</description>
+        <units>mol s^-1</units>
+      </parameter>
+      <parameter code="59">
+        <description>Aerosol number concentration</description>
+        <units>m^-3</units>
+      </parameter>
+      <parameter code="60">
+        <description>Aerosol specific number concentration</description>
+        <units>kg^-1</units>
+      </parameter>
+      <parameter code="61">
+        <description>Maximum of mass density in layer</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="62">
+        <description>Height of maximum mass density</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="63">
+        <description>Column-averaged mass density in layer</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="100">
+        <description>Surface area density (aerosol)</description>
+        <units>m^-1</units>
+      </parameter>
+      <parameter code="101">
+        <description>Vertical visual range</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="102">
+        <description>Aerosol optical thickness</description>
+        <units>Numeric</units>
+        <GCMD>61c3b720-abc8-4430-866c-f1da35d2cd0b</GCMD>
+      </parameter>
+      <parameter code="103">
+        <description>Single scattering albedo</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="104">
+        <description>Asymmetry factor</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="105">
+        <description>Aerosol extinction coefficient</description>
+        <units>m^-1</units>
+      </parameter>
+      <parameter code="106">
+        <description>Aerosol absorption coefficient</description>
+        <units>m^-1</units>
+      </parameter>
+      <parameter code="107">
+        <description>Aerosol lidar backscatter from satellite</description>
+        <units>m^-1 sr^-1</units>
+      </parameter>
+      <parameter code="108">
+        <description>Aerosol lidar backscatter from the ground</description>
+        <units>m^-1 sr^-1</units>
+      </parameter>
+      <parameter code="109">
+        <description>Aerosol lidar extinction from satellite</description>
+        <units>m^-1</units>
+      </parameter>
+      <parameter code="110">
+        <description>Aerosol lidar extinction from the ground</description>
+        <units>m^-1</units>
+      </parameter>
+      <parameter code="111">
+        <description>Angstrom exponent</description>
+        <units>Numeric</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="190">
+      <description>CCITT IA5 string</description>
+      <parameter code="0">
+        <description>Arbitrary text string</description>
+        <units>CCITT IA5</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="191">
+      <description>miscellaneous</description>
+      <parameter code="0">
+        <description>Seconds prior to initial reference time (defined in Section 1)</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="1">
+        <description>Geographical latitude</description>
+        <units>deg N</units>
+      </parameter>
+      <parameter code="2">
+        <description>Geographical longitude</description>
+        <units>deg E</units>
+      </parameter>
+      <parameter code="3">
+        <description>Days since last observation</description>
+        <units>d</units>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+  <discipline code="1">
+    <description>Hydrological products</description>
+    <parameterCategory code="0">
+      <description>hydrology basic products</description>
+      <parameter code="0">
+        <description>Flash flood guidance (Encoded as an accumulation over a floating subinterval of time between the reference time and valid time)</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="1">
+        <description>Flash flood runoff (Encoded as an accumulation over a floating subinterval of time)</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="2">
+        <description>Remotely-sensed snow cover</description>
+        <units>(Code table 4.215)</units>
+      </parameter>
+      <parameter code="3">
+        <description>Elevation of snow-covered terrain</description>
+        <units>(Code table 4.216)</units>
+      </parameter>
+      <parameter code="4">
+        <description>Snow water equivalent per cent of normal</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="5">
+        <description>Baseflow-groundwater runoff</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="2">234</GRIB1>
+      </parameter>
+      <parameter code="6">
+        <description>Storm surface runoff</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="2">235</GRIB1>
+      </parameter>
+      <parameter code="7">
+        <description>Discharge from rivers or streams</description>
+        <units>m^3 s^-1</units>
+        <GCMD>12dc1f4f-2116-4b74-a1bd-bc61e8e57a5b</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Groundwater upper storage</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="9">
+        <description>Groundwater lower storage</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="10">
+        <description>Side flow into river channel</description>
+        <units>m^3 s^-1 m^-1</units>
+      </parameter>
+      <parameter code="11">
+        <description>River storage of water</description>
+        <units>m^3</units>
+      </parameter>
+      <parameter code="12">
+        <description>Floodplain storage of water</description>
+        <units>m^3</units>
+      </parameter>
+      <parameter code="13">
+        <description>Depth of water on soil surface</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="14">
+        <description>Upstream accumulated precipitation</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="15">
+        <description>Upstream accumulated snow melt</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="16">
+        <description>Percolation rate</description>
+        <units>kg m^-2 s^-1</units>
+        <GCMD>acdb39a8-1816-4d8d-bb80-38a94024035e</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="1">
+      <description>hydrology probabilities</description>
+      <parameter code="0">
+        <description>Conditional per cent precipitation amount fractile for an overall period (Encoded as an accumulation)</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="1">
+        <description>Per cent precipitation in a sub-period of an overall period (Encoded as per cent accumulation over the sub-period)</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="2">
+        <description>Probability of 0.01 inch of precipitation (POP)</description>
+        <units>%</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="2">
+      <description>inland water and sediment properties</description>
+      <parameter code="0">
+        <description>Water depth</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="1">
+        <description>Water temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="2">
+        <description>Water fraction</description>
+        <units>Proportion</units>
+      </parameter>
+      <parameter code="3">
+        <description>Sediment thickness</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="4">
+        <description>Sediment temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="5">
+        <description>Ice thickness</description>
+        <units>m</units>
+        <GRIB1>92</GRIB1>
+        <GCMD>fa751659-7032-447c-a581-f4e9de854070</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Ice temperature</description>
+        <units>K</units>
+        <GCMD>1341f3e1-9279-4ae6-9a93-6a612957efd1</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Ice cover</description>
+        <units>Proportion</units>
+        <GRIB1>91</GRIB1>
+        <CF>sea_ice_area_fraction</CF>
+        <GCMD>87feb47e-aee3-42f1-8c39-5109d9d5422e</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Land cover (0 = water, 1 = land)</description>
+        <units>Proportion</units>
+        <GRIB1>81</GRIB1>
+        <CF>land_area_fraction</CF>
+        <GCMD>5066def0-b14b-4a2c-b40f-dc9953860366</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Shape factor with respect to salinity profile</description>
+      </parameter>
+      <parameter code="10">
+        <description>Shape factor with respect to temperature profile in thermocline</description>
+      </parameter>
+      <parameter code="11">
+        <description>Attenuation coefficient of water with respect to solar radiation</description>
+        <units>m^-1</units>
+      </parameter>
+      <parameter code="12">
+        <description>Salinity</description>
+        <units>kg kg^-1</units>
+        <GRIB1>88</GRIB1>
+      </parameter>
+      <parameter code="13">
+        <description>Cross-sectional area of flow in channel</description>
+        <units>m^2</units>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+  <discipline code="2">
+    <description>Land surface products</description>
+    <parameterCategory code="0">
+      <description>vegetation/biomass</description>
+      <parameter code="0">
+        <description>Land cover (0 = sea, 1 = land)</description>
+        <units>Proportion</units>
+        <GRIB1>81</GRIB1>
+      </parameter>
+      <parameter code="1">
+        <description>Surface roughness</description>
+        <units>m</units>
+        <GRIB1>83</GRIB1>
+        <CF>surface_roughness_length</CF>
+        <GCMD>21474df3-f9a6-48ca-be15-bdb3611fe062</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Soil temperature</description>
+        <units>K</units>
+        <GRIB1>85</GRIB1>
+        <CF>soil_temperature</CF>
+        <GCMD>0546b91a-294d-45d9-8b45-76aaad0cc024</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Soil moisture content</description>
+        <units>kg m^-2</units>
+        <GRIB1>86</GRIB1>
+        <CF>soil_moisture_content</CF>
+        <GCMD>bbe2ea34-8842-4a9f-9b0b-95dd3c71857f</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Vegetation</description>
+        <units>%</units>
+        <GRIB1>87</GRIB1>
+        <CF>vegetation_area_fraction</CF>
+        <GCMD>5bdb3251-4811-439c-b172-9bbcd98e84b3</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Water runoff</description>
+        <units>kg m^-2</units>
+        <GRIB1>90</GRIB1>
+        <CF>surface_runoff_amount</CF>
+        <GCMD>f6a54329-486b-4d5f-b105-c639cec42351</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Evapotranspiration</description>
+        <units>kg^-2 s^-1</units>
+        <GRIB1 center="98" tableVersion="200">202</GRIB1>
+        <GCMD>26fc4850-7ba9-44d8-a156-5c623e17b72f</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Model terrain height</description>
+        <units>m</units>
+        <GRIB1 center="7" tableVersion="130">196</GRIB1>
+      </parameter>
+      <parameter code="8">
+        <description>Land use</description>
+        <units>(Code table 4.212)</units>
+      </parameter>
+      <parameter code="9">
+        <description>Volumetric soil moisture content</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="2">144</GRIB1>
+      </parameter>
+      <parameter code="10">
+        <description>Ground heat flux</description>
+        <units>W m^-2</units>
+        <GRIB1 center="7" tableVersion="2">155</GRIB1>
+        <GRIB1 center="98" tableVersion="200">155</GRIB1>
+      </parameter>
+      <parameter code="11">
+        <description>Moisture availability</description>
+        <units>%</units>
+        <GRIB1 center="7" tableVersion="2">207</GRIB1>
+      </parameter>
+      <parameter code="12">
+        <description>Exchange coefficient</description>
+        <units>kg m^-2 s^-1</units>
+        <GRIB1 center="7" tableVersion="2">208</GRIB1>
+      </parameter>
+      <parameter code="13">
+        <description>Plant canopy surface water</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="7" tableVersion="2">223</GRIB1>
+        <GRIB1 center="98" tableVersion="201">200</GRIB1>
+        <CF>canopy_water_amount</CF>
+      </parameter>
+      <parameter code="14">
+        <description>Blackadar's mixing length scale</description>
+        <units>m</units>
+        <GRIB1 center="7" tableVersion="2">226</GRIB1>
+      </parameter>
+      <parameter code="15">
+        <description>Canopy conductance</description>
+        <units>m s^-1</units>
+        <GRIB1 center="7" tableVersion="130">181</GRIB1>
+      </parameter>
+      <parameter code="16">
+        <description>Minimal stomatal resistance</description>
+        <units>s m^-1</units>
+        <GRIB1 center="7" tableVersion="130">203</GRIB1>
+        <GRIB1 center="98" tableVersion="201">212</GRIB1>
+      </parameter>
+      <parameter code="17">
+        <description>Wilting point</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="130">219</GRIB1>
+      </parameter>
+      <parameter code="18">
+        <description>Solar parameter in canopy conductance</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="130">246</GRIB1>
+      </parameter>
+      <parameter code="19">
+        <description>Temperature parameter in canopy</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="130">247</GRIB1>
+      </parameter>
+      <parameter code="20">
+        <description>Humidity parameter in canopy conductance</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="130">248</GRIB1>
+      </parameter>
+      <parameter code="21">
+        <description>Soil moisture parameter in canopy conductance</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="130">249</GRIB1>
+      </parameter>
+      <parameter code="22">
+        <description>Soil moisture</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="23">
+        <description>Column-integrated soil water</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="24">
+        <description>Heat flux</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="25">
+        <description>Volumetric soil moisture</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+      <parameter code="26">
+        <description>Wilting point</description>
+        <units>kg m^-3</units>
+        <GRIB1 center="98" tableVersion="228">171</GRIB1>
+      </parameter>
+      <parameter code="27">
+        <description>Volumetric wilting point</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+      <parameter code="28">
+        <description>Leaf area index</description>
+        <units>Numeric</units>
+        <GRIB1 center="7" tableVersion="130">182</GRIB1>
+        <GRIB1 center="98" tableVersion="202">61</GRIB1>
+        <CF>leaf_area_index</CF>
+      </parameter>
+      <parameter code="29">
+        <description>Evergreen forest cover</description>
+        <units>Proportion</units>
+        <GRIB1 center="98" tableVersion="202">75</GRIB1>
+      </parameter>
+      <parameter code="30">
+        <description>Deciduous forest cover</description>
+        <units>Proportion</units>
+        <GRIB1 center="98" tableVersion="202">76</GRIB1>
+      </parameter>
+      <parameter code="31">
+        <description>Normalized differential vegetation index (NDVI)</description>
+        <units>Numeric</units>
+        <GRIB1 center="98" tableVersion="202">78</GRIB1>
+      </parameter>
+      <parameter code="32">
+        <description>Root depth of vegetation</description>
+        <units>m</units>
+        <GRIB1 center="98" tableVersion="202">62</GRIB1>
+        <CF>root_depth</CF>
+      </parameter>
+      <parameter code="33">
+        <description>Water runoff and drainage</description>
+        <units>kg m^-2</units>
+        <CF>runoff_amount</CF>
+      </parameter>
+      <parameter code="34">
+        <description>Surface water runoff</description>
+        <units>kg m^-2</units>
+        <GRIB1 center="78" tableVersion="174">8</GRIB1>
+        <CF>runoff_amount</CF>
+      </parameter>
+      <parameter code="35">
+        <description>Tile class</description>
+        <units>Code table 4.243</units>
+      </parameter>
+      <parameter code="36">
+        <description>Tile fraction</description>
+        <units>Proportion</units>
+      </parameter>
+      <parameter code="37">
+        <description>Tile percentage</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="38">
+        <description>Soil volumetric ice content (water equivalent)</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="3">
+      <description>soil products</description>
+      <parameter code="0">
+        <description>Soil type</description>
+        <units>(Code table 4.213)</units>
+        <GRIB1 center="7" tableVersion="2">224</GRIB1>
+      </parameter>
+      <parameter code="1">
+        <description>Upper layer soil temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="2">
+        <description>Upper layer soil moisture</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="3">
+        <description>Lower layer soil moisture</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="4">
+        <description>Bottom layer soil temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="5">
+        <description>Liquid volumetric soil moisture (non-frozen)</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="130">160</GRIB1>
+      </parameter>
+      <parameter code="6">
+        <description>Number of soil layers in root zone</description>
+        <units>Numeric</units>
+        <GRIB1 center="7" tableVersion="130">171</GRIB1>
+      </parameter>
+      <parameter code="7">
+        <description>Transpiration stress-onset (soil moisture)</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="130">230</GRIB1>
+      </parameter>
+      <parameter code="8">
+        <description>Direct evaporation cease (soil moisture)</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="130">231</GRIB1>
+      </parameter>
+      <parameter code="9">
+        <description>Soil porosity</description>
+        <units>Proportion</units>
+        <GRIB1 center="7" tableVersion="130">240</GRIB1>
+      </parameter>
+      <parameter code="10">
+        <description>Liquid volumetric soil moisture (non-frozen)</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+      <parameter code="11">
+        <description>Volumetric transpiration stress-onset (soil moisture)</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+      <parameter code="12">
+        <description>Transpiration stress-onset (soil moisture)</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="13">
+        <description>Volumetric direct evaporation cease (soil moisture)</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+      <parameter code="14">
+        <description>Direct evaporation cease (soil moisture)</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="15">
+        <description>Soil porosity</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+      <parameter code="16">
+        <description>Volumetric saturation of soil moisture</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+      <parameter code="17">
+        <description>Saturation of soil moisture</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="18">
+        <description>Soil temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="19">
+        <description>Soil moisture</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="20">
+        <description>Column-integrated soil moisture</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="21">
+        <description>Soil ice</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="22">
+        <description>Column-integrated soil ice</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="23">
+        <description>Liquid water in snow pack</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="24">
+        <description>Frost index</description>
+        <units>K day^-1</units>
+      </parameter>
+      <parameter code="25">
+        <description>Snow depth at elevation bands</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="26">
+        <description>Soil heat flux</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="27">
+        <description>Soil depth</description>
+        <units>m</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="4">
+      <description>fire weather products</description>
+      <parameter code="0">
+        <description>Fire outlook</description>
+        <units>Code table 4.224</units>
+      </parameter>
+      <parameter code="1">
+        <description>Fire outlook due to dry thunderstorm</description>
+        <units>Code table 4.224</units>
+      </parameter>
+      <parameter code="2">
+        <description>Haines index</description>
+        <units>Numeric</units>
+        <GRIB1 center="7" tableVersion="129">250</GRIB1>
+      </parameter>
+      <parameter code="3">
+        <description>Fire burned area</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="4">
+        <description>Fosberg index</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="5">
+        <description>Forest Fire Weather Index (Canadian Forest Service)</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="6">
+        <description>Fine Fuel Moisture Code (Canadian Forest Service)</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="7">
+        <description>Duff Moisture Code (Canadian Forest Service)</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="8">
+        <description>Drought Code (Canadian Forest Service)</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="9">
+        <description>Initial Fire Spread Index (Canadian Forest Service)</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="10">
+        <description>Fire Buildup Index (Canadian Forest Service)</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="11">
+        <description>Fire Daily Severity Rating (Canadian Forest Service)</description>
+        <units>Numeric</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="5">
+      <description>glaciers and inland ice</description>
+      <parameter code="1">
+        <description>Glacier temperature</description>
+        <units>K</units>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+  <discipline code="3">
+    <description>Space products</description>
+    <parameterCategory code="0">
+      <description>image format products</description>
+      <parameter code="0">
+        <description>Scaled radiance</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="1">
+        <description>Scaled albedo</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="2">
+        <description>Scaled brightness temperature</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="3">
+        <description>Scaled precipitable water</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="4">
+        <description>Scaled lifted index</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="5">
+        <description>Scaled cloud top pressure</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="6">
+        <description>Scaled skin temperature</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="7">
+        <description>Cloud mask</description>
+        <units>Code table 4.217</units>
+      </parameter>
+      <parameter code="8">
+        <description>Pixel scene type</description>
+        <units>Code table 4.218</units>
+      </parameter>
+      <parameter code="9">
+        <description>Fire detection indicator</description>
+        <units>Code table 4.223</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="1">
+      <description>quantitative products</description>
+      <parameter code="0">
+        <description>Estimated precipitation</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="1">
+        <description>Instantaneous rain rate</description>
+        <units>kg m^-2 s^-1</units>
+      </parameter>
+      <parameter code="2">
+        <description>Cloud top height</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="3">
+        <description>Cloud top height quality indicator</description>
+        <units>Code table 4.219</units>
+      </parameter>
+      <parameter code="4">
+        <description>Estimated u-component of wind</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="5">
+        <description>Estimated v-component of wind</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="6">
+        <description>Number of pixel used</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="7">
+        <description>Solar zenith angle</description>
+        <units>deg</units>
+      </parameter>
+      <parameter code="8">
+        <description>Relative azimuth angle</description>
+        <units>deg</units>
+      </parameter>
+      <parameter code="9">
+        <description>Reflectance in 0.6 micron channel</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="10">
+        <description>Reflectance in 0.8 micron channel</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="11">
+        <description>Reflectance in 1.6 micron channel</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="12">
+        <description>Reflectance in 3.9 micron channel</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="13">
+        <description>Atmospheric divergence</description>
+        <units>s^-1</units>
+      </parameter>
+      <parameter code="14">
+        <description>Cloudy brightness temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="15">
+        <description>Clear-sky brightness temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="16">
+        <description>Cloudy radiance (with respect to wave number)</description>
+        <units>W m^-1 sr^-1</units>
+      </parameter>
+      <parameter code="17">
+        <description>Clear-sky radiance (with respect to wave number)</description>
+        <units>W m^-1 sr^-1</units>
+      </parameter>
+      <parameter code="19">
+        <description>Wind speed</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="20">
+        <description>Aerosol optical thickness at 0.635 μm</description>
+        <units>Aerosol optical thickness at 0.635 μm</units>
+      </parameter>
+      <parameter code="21">
+        <description>Aerosol optical thickness at 0.810 μm</description>
+        <units>Aerosol optical thickness at 0.810 μm</units>
+      </parameter>
+      <parameter code="22">
+        <description>Aerosol optical thickness at 1.640 μm</description>
+        <units>Aerosol optical thickness at 1.640 μm</units>
+      </parameter>
+      <parameter code="23">
+        <description>Angstrom coefficient</description>
+        <units>Angstrom coefficient</units>
+      </parameter>
+      <parameter code="27">
+        <description>Bidirectional reflectance factor</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="28">
+        <description>Brightness temperature</description>
+        <units>K</units>
+        <GRIB1>118</GRIB1>
+        <GCMD>d8525750-2ca4-4b1f-a717-08fda61fd547</GCMD>
+      </parameter>
+      <parameter code="29">
+        <description>Scaled radiance</description>
+        <units>Numeric</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="2">
+      <description>cloud properties</description>
+      <parameter code="0">
+        <description>Clear sky probability</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="1">
+        <description>Cloud top temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="2">
+        <description>Cloud top pressure</description>
+        <units>Pa</units>
+      </parameter>
+      <parameter code="3">
+        <description>Cloud type</description>
+        <units>Code table 4.218</units>
+      </parameter>
+      <parameter code="4">
+        <description>Cloud phase</description>
+        <units>Code table 4.218</units>
+      </parameter>
+      <parameter code="5">
+        <description>Cloud optical depth</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="6">
+        <description>Cloud particle effective radius</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="7">
+        <description>Cloud liquid water path</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="8">
+        <description>Cloud ice water path</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="9">
+        <description>Cloud albedo</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="10">
+        <description>Cloud emissivity</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="11">
+        <description>Effective absorption optical depth ratio</description>
+        <units>Numeric</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="3">
+      <description>flight rule conditions</description>
+      <parameter code="0">
+        <description>Probability of encountering marginal visual flight rule conditions</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="1">
+        <description>Probability of encountering low instrument flight rule conditions</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="2">
+        <description>Probability of encountering instrument flight rule conditions</description>
+        <units>%</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="4">
+      <description>volcanic ash</description>
+      <parameter code="0">
+        <description>Volcanic ash probability</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="1">
+        <description>Volcanic ash cloud top temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="2">
+        <description>Volcanic ash cloud top pressure</description>
+        <units>Pa</units>
+      </parameter>
+      <parameter code="3">
+        <description>Volcanic ash cloud top height</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="4">
+        <description>Volcanic ash cloud emissivity</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="5">
+        <description>Volcanic ash effective absorption optical depth ratio</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="6">
+        <description>Volcanic ash cloud optical depth</description>
+        <units>Numeric</units>
+      </parameter>
+      <parameter code="7">
+        <description>Volcanic ash column density</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="8">
+        <description>Volcanic ash particle effective radius</description>
+        <units>m</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="5">
+      <description>sea-surface temperature</description>
+      <parameter code="0">
+        <description>Interface sea-surface temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="1">
+        <description>Skin sea-surface temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="2">
+        <description>Sub-skin sea-surface temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="3">
+        <description>Foundation sea-surface temperature</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="4">
+        <description>Estimated bias between sea-surface temperature and standard</description>
+        <units>K</units>
+      </parameter>
+      <parameter code="5">
+        <description>Estimated standard deviation between sea surface temperature and standard</description>
+        <units>K</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="6">
+      <description>solar radiation</description>
+      <parameter code="0">
+        <description>Global solar irradiance</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="1">
+        <description>Global solar exposure</description>
+        <units>J m^-2</units>
+      </parameter>
+      <parameter code="2">
+        <description>Direct solar irradiance</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="3">
+        <description>Direct solar exposure</description>
+        <units>J m^-2</units>
+      </parameter>
+      <parameter code="4">
+        <description>Diffuse solar irradiance</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="5">
+        <description>Diffuse solar exposure</description>
+        <units>J m^-2</units>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+  <discipline code="10">
+    <description>Oceanographic products</description>
+    <parameterCategory code="0">
+      <description>waves</description>
+      <parameter code="0">
+        <description>Wave spectra (1)</description>
+        <GRIB1>28</GRIB1>
+      </parameter>
+      <parameter code="1">
+        <description>Wave spectra (2)</description>
+        <GRIB1>29</GRIB1>
+      </parameter>
+      <parameter code="2">
+        <description>Wave spectra (3)</description>
+        <GRIB1>30</GRIB1>
+      </parameter>
+      <parameter code="3">
+        <description>Significant height of combined wind waves and swell</description>
+        <units>m</units>
+        <GRIB1>100</GRIB1>
+        <CF>significant_height_of_wind_and_swell_waves</CF>
+        <GCMD>1ac6850e-9266-4e90-ba83-b6a6cc4ae365</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Direction of wind waves</description>
+        <units>degree true</units>
+        <GRIB1>101</GRIB1>
+        <CF>direction_of_wind_wave_velocity</CF>
+        <GCMD>e52114b2-adbc-4e3e-9c87-1a7f245fe5ef</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Significant height of wind waves</description>
+        <units>m</units>
+        <GRIB1>102</GRIB1>
+        <CF>significant_height_of_wind_waves</CF>
+        <GCMD>1ac6850e-9266-4e90-ba83-b6a6cc4ae365</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Mean period of wind waves</description>
+        <units>s</units>
+        <GRIB1>103</GRIB1>
+        <CF>wind_wave_period</CF>
+        <GCMD>99ea6719-b751-4a4f-95d4-aaa02e961bc1</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Direction of swell waves</description>
+        <units>degree true</units>
+        <GRIB1>104</GRIB1>
+        <CF>direction_of_swell_wave_velocity</CF>
+        <GCMD>4e4d3c18-cdd4-474a-a936-6e127ec526f7</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Significant height of swell waves</description>
+        <units>m</units>
+        <GRIB1>105</GRIB1>
+        <CF>significant_height_of_swell_waves</CF>
+        <GCMD>4e4d3c18-cdd4-474a-a936-6e127ec526f7</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Mean period of swell waves</description>
+        <units>s</units>
+        <GRIB1>106</GRIB1>
+        <CF>swell_wave_period</CF>
+        <GCMD>4e4d3c18-cdd4-474a-a936-6e127ec526f7</GCMD>
+      </parameter>
+      <parameter code="10">
+        <description>Primary wave direction</description>
+        <units>degree true</units>
+        <GRIB1>107</GRIB1>
+        <GCMD>e52114b2-adbc-4e3e-9c87-1a7f245fe5ef</GCMD>
+      </parameter>
+      <parameter code="11">
+        <description>Primary wave mean period</description>
+        <units>s</units>
+        <GRIB1>108</GRIB1>
+        <GCMD>99ea6719-b751-4a4f-95d4-aaa02e961bc1</GCMD>
+      </parameter>
+      <parameter code="12">
+        <description>Secondary wave direction</description>
+        <units>degree true</units>
+        <GRIB1>109</GRIB1>
+        <GCMD>e52114b2-adbc-4e3e-9c87-1a7f245fe5ef</GCMD>
+      </parameter>
+      <parameter code="13">
+        <description>Secondary wave mean period</description>
+        <units>s</units>
+        <GRIB1>110</GRIB1>
+        <GCMD>99ea6719-b751-4a4f-95d4-aaa02e961bc1</GCMD>
+      </parameter>
+      <parameter code="14">
+        <description>Direction of combined wind waves and swell</description>
+        <units>degree true</units>
+      </parameter>
+      <parameter code="15">
+        <description>Mean period of combined wind waves and swell</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="16">
+        <description>Coefficient of drag with waves</description>
+        <GRIB1 center="98" tableVersion="140">233</GRIB1>
+      </parameter>
+      <parameter code="17">
+        <description>Friction velocity</description>
+        <units>m s^-1</units>
+        <GRIB1 center="7" tableVersion="2">253</GRIB1>
+        <GRIB1 center="98" tableVersion="228">3</GRIB1>
+      </parameter>
+      <parameter code="18">
+        <description>Wave stress</description>
+        <units>N m^-2</units>
+      </parameter>
+      <parameter code="19">
+        <description>Normalized wave stress</description>
+      </parameter>
+      <parameter code="20">
+        <description>Mean square slope of waves</description>
+      </parameter>
+      <parameter code="21">
+        <description>u-component surface Stokes drift</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="22">
+        <description>v-component surface Stokes drift</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="23">
+        <description>Period of maximum individual wave height</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="24">
+        <description>Maximum individual wave height</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="25">
+        <description>Inverse mean wave frequency</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="26">
+        <description>Inverse mean frequency of wind waves</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="27">
+        <description>Inverse mean frequency of total swell</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="28">
+        <description>Mean zero-crossing wave period</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="29">
+        <description>Mean zero-crossing period of wind waves</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="30">
+        <description>Mean zero-crossing period of total swell</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="31">
+        <description>Wave directional width</description>
+      </parameter>
+      <parameter code="32">
+        <description>Directional width of wind waves</description>
+      </parameter>
+      <parameter code="33">
+        <description>Directional width of total swell</description>
+      </parameter>
+      <parameter code="34">
+        <description>Peak wave period</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="35">
+        <description>Peak period of wind waves</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="36">
+        <description>Peak period of total swell</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="37">
+        <description>Altimeter wave height</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="38">
+        <description>Altimeter corrected wave height</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="39">
+        <description>Altimeter range relative correction</description>
+      </parameter>
+      <parameter code="40">
+        <description>10-metre neutral wind speed over waves</description>
+        <units>m s^-1</units>
+      </parameter>
+      <parameter code="41">
+        <description>10-metre wind direction over waves</description>
+        <units>deg</units>
+      </parameter>
+      <parameter code="42">
+        <description>Wave energy spectrum</description>
+        <units>m^2 s rad^-1</units>
+      </parameter>
+      <parameter code="43">
+        <description>Kurtosis of the sea-surface elevation due to waves</description>
+      </parameter>
+      <parameter code="44">
+        <description>Benjamin-Feir index</description>
+        <GRIB1 center="98" tableVersion="140">253</GRIB1>
+      </parameter>
+      <parameter code="45">
+        <description>Spectral peakedness factor</description>
+        <units>s^-1</units>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="1">
+      <description>currents</description>
+      <parameter code="0">
+        <description>Current direction</description>
+        <units>degree true</units>
+        <GRIB1>47</GRIB1>
+        <CF>direction_of_sea_water_velocity</CF>
+        <GCMD>510c5f78-e19e-4ce4-b59a-8937aeb84631</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Current speed</description>
+        <units>m s^-1</units>
+        <GRIB1>48</GRIB1>
+        <CF>sea_water_speed</CF>
+        <GCMD>510c5f78-e19e-4ce4-b59a-8937aeb84631</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>u-component of current</description>
+        <units>m s^-1</units>
+        <GRIB1>49</GRIB1>
+        <CF>eastward_sea_water_velocity</CF>
+        <GCMD>510c5f78-e19e-4ce4-b59a-8937aeb84631</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>v-component of current</description>
+        <units>m s^-1</units>
+        <GRIB1>50</GRIB1>
+        <CF>northward_sea_water_velocity</CF>
+        <GCMD>510c5f78-e19e-4ce4-b59a-8937aeb84631</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="2">
+      <description>ice</description>
+      <parameter code="0">
+        <description>Ice cover</description>
+        <units>Proportion</units>
+      </parameter>
+      <parameter code="1">
+        <description>Ice thickness</description>
+        <units>m</units>
+        <GRIB1>92</GRIB1>
+        <CF>sea_ice_thickness</CF>
+        <GCMD>a735d8ca-182c-4307-9305-186a065e84a4</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Direction of ice drift</description>
+        <units>degree true</units>
+        <GRIB1>93</GRIB1>
+        <CF>direction_of_sea_ice_velocity</CF>
+        <GCMD>a47ab696-7ed9-4374-8965-c8996e61463d</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Speed of ice drift</description>
+        <units>m s^-1</units>
+        <GRIB1>94</GRIB1>
+        <CF>sea_ice_speed</CF>
+        <GCMD>a47ab696-7ed9-4374-8965-c8996e61463d</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>u-component of ice drift</description>
+        <units>m s^-1</units>
+        <GRIB1>95</GRIB1>
+        <CF>eastward_sea_ice_velocity</CF>
+        <GCMD>a47ab696-7ed9-4374-8965-c8996e61463d</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>v-component of ice drift</description>
+        <units>m s^-1</units>
+        <GRIB1>96</GRIB1>
+        <CF>northward_sea_ice_velocity</CF>
+        <GCMD>a47ab696-7ed9-4374-8965-c8996e61463d</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Ice growth rate</description>
+        <units>m s^-1</units>
+        <GRIB1>97</GRIB1>
+        <CF>tendency_of_sea_ice_thickness_due_to_thermodynamics</CF>
+        <GCMD>89fc22ca-326e-468c-ad3d-171c4ad34977</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Ice divergence</description>
+        <units>s^-1</units>
+        <GRIB1>98</GRIB1>
+        <CF>divergence_of_sea_ice_velocity</CF>
+        <GCMD>a47ab696-7ed9-4374-8965-c8996e61463d</GCMD>
+      </parameter>
+      <parameter code="8">
+        <description>Ice temperature</description>
+        <units>K</units>
+        <CF>sea_ice_temperature</CF>
+        <GCMD>2a664e2d-4e50-463a-af9f-b14b86eb42a7</GCMD>
+      </parameter>
+      <parameter code="9">
+        <description>Module of ice internal pressure</description>
+        <units>Pa m</units>
+      </parameter>
+      <parameter code="10">
+        <description>Zonal vector component of vertically integrated ice internal pressure</description>
+        <units>Pa m</units>
+      </parameter>
+      <parameter code="11">
+        <description>Meridional vector component of vertically integrated ice internal pressure</description>
+        <units>Pa m</units>
+      </parameter>
+      <parameter code="12">
+        <description>Compressive ice strength</description>
+        <units>N m^-1</units>
+        <CF>compressive_strength_of_sea_ice</CF>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="3">
+      <description>surface properties</description>
+      <parameter code="0">
+        <description>Water temperature</description>
+        <units>K</units>
+        <GRIB1>80</GRIB1>
+        <CF>sea_water_temperature</CF>
+        <GCMD>46206e8c-8def-406f-9e62-da4e74633a58</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Deviation of sea level from mean</description>
+        <units>m</units>
+        <GRIB1>82</GRIB1>
+      </parameter>
+      <parameter code="2">
+        <description>Heat exchange coefficient</description>
+        <GRIB1 center="7" tableVersion="128">144</GRIB1>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="4">
+      <description>subsurface properties</description>
+      <parameter code="0">
+        <description>Main thermocline depth</description>
+        <units>m</units>
+        <GRIB1>69</GRIB1>
+        <GCMD>68772b70-e493-48d5-b063-00b9d2dd4078</GCMD>
+      </parameter>
+      <parameter code="1">
+        <description>Main thermocline anomaly</description>
+        <units>m</units>
+        <GRIB1>70</GRIB1>
+        <GCMD>68772b70-e493-48d5-b063-00b9d2dd4078</GCMD>
+      </parameter>
+      <parameter code="2">
+        <description>Transient thermocline depth</description>
+        <units>m</units>
+        <GRIB1>68</GRIB1>
+        <GCMD>68772b70-e493-48d5-b063-00b9d2dd4078</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Salinity</description>
+        <units>kg kg^-1</units>
+        <CF>sea_water_salinity</CF>
+        <GRIB1>88</GRIB1>
+        <GCMD>7e95b5fc-1d58-431a-af36-948b29fa870d</GCMD>
+      </parameter>
+      <parameter code="4">
+        <description>Ocean vertical heat diffusivity</description>
+        <units>m^2 s^-1</units>
+        <GRIB1 center="7" tableVersion="128">195</GRIB1>
+        <GCMD>6fe4680b-96e8-4304-ab32-c17a0769932c</GCMD>
+      </parameter>
+      <parameter code="5">
+        <description>Ocean vertical salt diffusivity</description>
+        <units>m^2 s^-1</units>
+        <GRIB1 center="7" tableVersion="128">196</GRIB1>
+        <GCMD>6fe4680b-96e8-4304-ab32-c17a0769932c</GCMD>
+      </parameter>
+      <parameter code="6">
+        <description>Ocean vertical momentum diffusivity</description>
+        <units>m^2 s^-1</units>
+        <GRIB1 center="7" tableVersion="128">197</GRIB1>
+        <GCMD>6fe4680b-96e8-4304-ab32-c17a0769932c</GCMD>
+      </parameter>
+      <parameter code="7">
+        <description>Bathymetry</description>
+        <units>m</units>
+        <GCMD>80d79c7e-6c64-4ada-bfcc-4093969758a5</GCMD>
+      </parameter>
+      <parameter code="11">
+        <description>Shape factor with respect to salinity profile</description>
+      </parameter>
+      <parameter code="12">
+        <description>Shape factor with respect to temperature profile in thermocline</description>
+      </parameter>
+      <parameter code="13">
+        <description>Attenuation coefficient of water with respect to solar radiation</description>
+        <units>m^-1</units>
+      </parameter>
+      <parameter code="14">
+        <description>Water depth</description>
+        <units>m</units>
+        <GCMD>ca477721-473b-40d7-a72b-4ffa963e48fb</GCMD>
+      </parameter>
+      <parameter code="15">
+        <description>Water temperature</description>
+        <units>K</units>
+        <GRIB1>80</GRIB1>
+        <CF>sea_water_temperature</CF>
+        <GCMD>46206e8c-8def-406f-9e62-da4e74633a58</GCMD>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="191">
+      <description>miscellaneous</description>
+      <parameter code="0">
+        <description>Seconds prior to initial reference time (defined in Section 1)</description>
+        <units>s</units>
+      </parameter>
+      <parameter code="1">
+        <description>Meridional overturning stream function</description>
+        <units>m^3 s^-1</units>
+        <GRIB1 center="7" tableVersion="133">192</GRIB1>
+        <CF>ocean_meridional_overturning_streamfunction</CF>
+        <GCMD>dbf8a0cf-1e9b-4bc4-95a2-819bb16af00c</GCMD>
+      </parameter>
+      <parameter code="3">
+        <description>Days since last observation</description>
+        <units>d</units>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+</parameterMap>
