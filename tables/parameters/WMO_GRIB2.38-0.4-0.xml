@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <parameterMap>
-  <title>European Centre for Medium-Range Weather Forecasts (ECMWF) GRIB2 Parameter Table Version 4.0</title>
-  <center ID="98" subcenterID="0">European Centre for Medium Range Weather Forecasts (ECMWF) (RSMC)</center>
+  <title>China Meteorological Administration (CMA) GRIB2 Parameter Table Version 4.0</title>
+  <center ID="38" subcenterID="0">Beijing (RSMC)</center>
   <table masterVersion="4" localVersion="0">4.0</table>
   <discipline code="0">
     <description>Meteorological products</description>
