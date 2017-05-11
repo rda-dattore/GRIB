@@ -1415,10 +1415,12 @@
       <parameter code="5">
         <description>Net long-wave radiation flux</description>
         <units>W m^-2</units>
+        <GCMD>68323795-3614-462f-8259-bd5293620799</GCMD>
       </parameter>
       <parameter code="6">
         <description>Net long-wave radiation flux, clear sky</description>
         <units>W m^-2</units>
+        <GCMD>68323795-3614-462f-8259-bd5293620799</GCMD>
       </parameter>
       <parameter code="7">
         <description>Brightness temperature</description>
