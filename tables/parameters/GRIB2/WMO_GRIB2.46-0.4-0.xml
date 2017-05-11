@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<parameterMap>
+  <title>Centro de Previsao Tempo e Estudos Climaticos (CPTEC) GRIB2 Parameter Table Version 4.0</title>
+  <center ID="46" subcenterID="0">Brazilian Space Agency - INPE</center>
+  <table masterVersion="4" localVersion="0">4.0</table>
+  <discipline code="0">
+    <description>Meteorological products</description>
+    <parameterCategory code="0">
+      <description>temperature</description>
+      <parameter code="0">
+        <shortName>T</shortName>
+      </parameter>
+      <parameter code="2">
+        <shortName>PT</shortName>
+      </parameter>
+      <parameter code="6">
+        <shortName>2D</shortName>
+      </parameter>
+      <parameter code="10">
+        <shortName>SLHF</shortName>
+      </parameter>
+      <parameter code="11">
+        <shortName>SSHF</shortName>
+      </parameter>
+      <parameter code="17">
+        <shortName>SKT</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="1">
+      <description>moisture</description>
+      <parameter code="0">
+        <shortName>Q</shortName>
+      </parameter>
+      <parameter code="51">
+        <shortName>TCW</shortName>
+      </parameter>
+      <parameter code="52">
+        <shortName>TP</shortName>
+      </parameter>
+      <parameter code="53">
+        <shortName>SF</shortName>
+      </parameter>
+      <parameter code="60">
+        <shortName>SD</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="2">
+      <description>momentum</description>
+      <parameter code="2">
+        <shortName>U</shortName>
+      </parameter>
+      <parameter code="3">
+        <shortName>V</shortName>
+      </parameter>
+      <parameter code="14">
+        <shortName>PV</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="3">
+      <description>mass</description>
+      <parameter code="0">
+        <shortName>PRES</shortName>
+      </parameter>
+      <parameter code="5">
+        <shortName>GH</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="4">
+      <description>short-wave radiation</description>
+      <parameter code="9">
+        <shortName>SSR</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="5">
+      <description>long-wave radiation</description>
+      <parameter code="5">
+        <shortName>TTR</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="6">
+      <description>cloud</description>
+      <parameter code="1">
+        <shortName>TCC</shortName>
+      </parameter>
+      <parameter code="24">
+        <shortName>SUND</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="7">
+      <description>thermodynamic stability indices</description>
+      <parameter code="6">
+        <shortName>CAPE</shortName>
+      </parameter>
+      <parameter code="7">
+        <shortName>CI</shortName>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+  <discipline code="2">
+    <description>Land surface products</description>
+    <parameterCategory code="0">
+      <description>vegetation/biomass</description>
+      <parameter code="0">
+        <shortName>LSM</shortName>
+      </parameter>
+      <parameter code="2">
+        <shortName>ST</shortName>
+      </parameter>
+      <parameter code="22">
+        <shortName>SM</shortName>
+      </parameter>
+      <parameter code="26">
+        <shortName>WILT</shortName>
+      </parameter>
+    </parameterCategory>
+    <parameterCategory code="3">
+      <description>soil products</description>
+      <parameter code="12">
+        <shortName>CAP</shortName>
+      </parameter>
+    </parameterCategory>
+  </discipline>
+</parameterMap>
+
