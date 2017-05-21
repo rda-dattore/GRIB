@@ -10,4 +10,4 @@ GRIB parameter and level tables that support the NCAR Research Data Archive's GR
 
 ### **tables:**
 
-- This directory contains GRIB parameter tables, including master tables, and center-specific tables
+- This directory contains GRIB parameter and level code tables, including master tables, and center-specific implementations
