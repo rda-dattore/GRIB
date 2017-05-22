@@ -2,11 +2,13 @@
 
 ## Description
 
-GRIB parameter and level tables that support the NCAR Research Data Archive's GRIB data files
+- Tools for decoding and converting GRIB1 and GRIB2
+- Parameter and level code tables that support the NCAR Research Data Archive's GRIB data files
+  - Tables include mappings to Global Change Master Directory (GCMD) and Climate and Forecast (CF) keywords
 
 ### **src:**
 
-- This directory contains various codes for reading GRIB1 and GRIB2, and converting between them
+- This directory contains C code for reading GRIB1 and GRIB2, and converting between them
 
 ### **tables:**
 
