@@ -1,12 +1,12 @@
 # GRIB Edition 2 Parameter Code Tables
 
-Master tables (maintained by WMO) have the format:
+**Master tables** (maintained by WMO) have the format:
 - WMO_GRIB2.\<V\>.xml
 
 where \<V\> = \<M\>-0, with \<M\> being the master version number
 - e.g. "WMO_GRIB2.18-0.xml" for master version 18
 
-Local tables (maintained by individual data centers) have the format:
+**Local tables** (maintained by individual data centers) have the format:
 - WMO_GRIB2.\<C\>.\<V\>.xml
 
 where \<C\> = \<C1\>-\<C2\>, with \<C1\> being the data center code (allocated by WMO) and \<C2\> being the sub-center code (allocated by the data center)
