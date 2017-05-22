@@ -362,7 +362,7 @@ typedef struct {
   size_t grid_capacity;
 } GRIB2Message;
 
-/* getBits gets the contents of the various GRIB octets
+/* get_bits gets the contents of the various GRIB octets
 **   buf is the GRIB2 buffer as a stream of bytes
 **   loc is the variable to hold the octet contents
 **   off is the offset in BITS from the beginning of the buffer to the beginning
@@ -370,7 +370,7 @@ typedef struct {
 **   bits is the number of BITS to unpack - will be a multiple of 8 since GRIB2
 **       octets are 8 bits long
 */
-void getBits(unsigned char *buf,int *loc,size_t off,size_t bits)
+void get_bits(unsigned char *buf,int *loc,size_t off,size_t bits)
 {
 /* no work to do */
   if (bits == 0) {
@@ -434,7 +434,7 @@ void initialize(GRIB2Message *grib2_msg)
   grib2_msg->md.stat_proc.proc_code=NULL;
 }
 
-int unpackIS(FILE *fp,GRIB2Message *grib2_msg)
+int unpack_IS(FILE *fp,GRIB2Message *grib2_msg)
 {
   grib2_msg->num_grids=0;
   unsigned char temp[16];
@@ -501,9 +501,9 @@ int unpackIS(FILE *fp,GRIB2Message *grib2_msg)
   if ( (status=fread(&temp[4],1,12,fp)) == 0) {
     return 1;
   }
-  getBits(temp,&grib2_msg->disc,48,8);
-  getBits(temp,&grib2_msg->ed_num,56,8);
-  getBits(temp,&grib2_msg->total_len,96,32);
+  get_bits(temp,&grib2_msg->disc,48,8);
+  get_bits(temp,&grib2_msg->ed_num,56,8);
+  get_bits(temp,&grib2_msg->total_len,96,32);
   grib2_msg->md.nx=grib2_msg->md.ny=0;
   size_t required_size=grib2_msg->total_len+4;
   if (required_size > grib2_msg->buffer_capacity) {
@@ -528,195 +528,195 @@ int unpackIS(FILE *fp,GRIB2Message *grib2_msg)
   }
 }
 
-void unpackIDS(GRIB2Message *grib2_msg)
+void unpack_IDS(GRIB2Message *grib2_msg)
 {
   int length;
 /* length of the IDS */
-  getBits(grib2_msg->buffer,&length,grib2_msg->offset,32);
+  get_bits(grib2_msg->buffer,&length,grib2_msg->offset,32);
 /* center ID */
-  getBits(grib2_msg->buffer,&grib2_msg->center_id,grib2_msg->offset+40,16);
+  get_bits(grib2_msg->buffer,&grib2_msg->center_id,grib2_msg->offset+40,16);
 /* sub-center ID */
-  getBits(grib2_msg->buffer,&grib2_msg->sub_center_id,grib2_msg->offset+56,16);
+  get_bits(grib2_msg->buffer,&grib2_msg->sub_center_id,grib2_msg->offset+56,16);
 /* table version */
-  getBits(grib2_msg->buffer,&grib2_msg->table_ver,grib2_msg->offset+72,8);
+  get_bits(grib2_msg->buffer,&grib2_msg->table_ver,grib2_msg->offset+72,8);
 /* local table version */
-  getBits(grib2_msg->buffer,&grib2_msg->local_table_ver,grib2_msg->offset+80,8);
+  get_bits(grib2_msg->buffer,&grib2_msg->local_table_ver,grib2_msg->offset+80,8);
 /* significance of reference time */
-  getBits(grib2_msg->buffer,&grib2_msg->ref_time_type,grib2_msg->offset+88,8);
+  get_bits(grib2_msg->buffer,&grib2_msg->ref_time_type,grib2_msg->offset+88,8);
 /* year */
-  getBits(grib2_msg->buffer,&grib2_msg->yr,grib2_msg->offset+96,16);
+  get_bits(grib2_msg->buffer,&grib2_msg->yr,grib2_msg->offset+96,16);
 /* month */
-  getBits(grib2_msg->buffer,&grib2_msg->mo,grib2_msg->offset+112,8);
+  get_bits(grib2_msg->buffer,&grib2_msg->mo,grib2_msg->offset+112,8);
 /* day */
-  getBits(grib2_msg->buffer,&grib2_msg->dy,grib2_msg->offset+120,8);
+  get_bits(grib2_msg->buffer,&grib2_msg->dy,grib2_msg->offset+120,8);
 /* hours */
   int hh;
-  getBits(grib2_msg->buffer,&hh,grib2_msg->offset+128,8);
+  get_bits(grib2_msg->buffer,&hh,grib2_msg->offset+128,8);
 /* minutes */
   int mm;
-  getBits(grib2_msg->buffer,&mm,grib2_msg->offset+136,8);
+  get_bits(grib2_msg->buffer,&mm,grib2_msg->offset+136,8);
 /* seconds */
   int ss;
-  getBits(grib2_msg->buffer,&ss,grib2_msg->offset+144,8);
+  get_bits(grib2_msg->buffer,&ss,grib2_msg->offset+144,8);
   grib2_msg->time=hh*10000+mm*100+ss;
 /* production status */
-  getBits(grib2_msg->buffer,&grib2_msg->prod_status,grib2_msg->offset+152,8);
+  get_bits(grib2_msg->buffer,&grib2_msg->prod_status,grib2_msg->offset+152,8);
 /* type of data */
-  getBits(grib2_msg->buffer,&grib2_msg->data_type,grib2_msg->offset+160,8);
+  get_bits(grib2_msg->buffer,&grib2_msg->data_type,grib2_msg->offset+160,8);
   grib2_msg->offset+=length*8;
 }
 
-void unpackLUS(GRIB2Message *grib2_msg)
+void unpack_LUS(GRIB2Message *grib2_msg)
 {
 }
 
-void unpackGDS(GRIB2Message *grib2_msg)
+void unpack_GDS(GRIB2Message *grib2_msg)
 {
 /* source of grid definition */
   int src;
-  getBits(grib2_msg->buffer,&src,grib2_msg->offset+40,8);
+  get_bits(grib2_msg->buffer,&src,grib2_msg->offset+40,8);
   if (src != 0) {
     fprintf(stderr,"Don't recognize predetermined grid definitions");
     exit(1);
   }
 /* quasi-regular grid indication */
   int num_in_list;
-  getBits(grib2_msg->buffer,&num_in_list,grib2_msg->offset+80,8);
+  get_bits(grib2_msg->buffer,&num_in_list,grib2_msg->offset+80,8);
   if (num_in_list > 0) {
     fprintf(stderr,"Unable to unpack quasi-regular grids");
     exit(1);
   }
 /* grid definition template number */
-  getBits(grib2_msg->buffer,&grib2_msg->md.gds_templ_num,grib2_msg->offset+96,16);
+  get_bits(grib2_msg->buffer,&grib2_msg->md.gds_templ_num,grib2_msg->offset+96,16);
   switch (grib2_msg->md.gds_templ_num) {
 /* Latitude/longitude grid */
     case 0:
     case 40:
     {
 /* shape of the earth */
-	getBits(grib2_msg->buffer,&grib2_msg->md.earth_shape,grib2_msg->offset+112,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.earth_shape,grib2_msg->offset+112,8);
 /* number of latitudes */
-	getBits(grib2_msg->buffer,&grib2_msg->md.nx,grib2_msg->offset+240,32);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.nx,grib2_msg->offset+240,32);
 /* number of longitudes */
-	getBits(grib2_msg->buffer,&grib2_msg->md.ny,grib2_msg->offset+272,32);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.ny,grib2_msg->offset+272,32);
 /* latitude of first gridpoint */
 	int sign;
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+368,1);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+368,1);
 	int value;
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+369,31);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+369,31);
 	grib2_msg->md.slat=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.slat=-grib2_msg->md.slat;
 	}
 /* longitude of first gridpoint */
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+400,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+401,31);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+400,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+401,31);
 	grib2_msg->md.slon=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.slon=-grib2_msg->md.slon;
 	}
 /* resolution and component flags */
-	getBits(grib2_msg->buffer,&grib2_msg->md.rescomp,grib2_msg->offset+432,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.rescomp,grib2_msg->offset+432,8);
 /* latitude of last gridpoint */
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+440,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+441,31);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+440,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+441,31);
 	grib2_msg->md.lats.elat=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.lats.elat=-grib2_msg->md.lats.elat;
 	}
 /* longitude of last gridpoint */
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+472,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+473,31);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+472,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+473,31);
 	grib2_msg->md.lons.elon=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.lons.elon=-grib2_msg->md.lons.elon;
 	}
 /* longitude increment */
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+504,32);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+504,32);
 	grib2_msg->md.xinc.loinc=value/1000000.;
 /* latitude increment */
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+536,32);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+536,32);
 	if (grib2_msg->md.gds_templ_num == 0) {
 	  grib2_msg->md.yinc.lainc=value/1000000.;
 	}
 /* scanning mode flag */
-	getBits(grib2_msg->buffer,&grib2_msg->md.scan_mode,grib2_msg->offset+568,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.scan_mode,grib2_msg->offset+568,8);
 	break;
     }
 /* Lambert conformal grid */
     case 30:
     {
-	getBits(grib2_msg->buffer,&grib2_msg->md.earth_shape,grib2_msg->offset+112,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.earth_shape,grib2_msg->offset+112,8);
 /* number of points along a parallel */
-	getBits(grib2_msg->buffer,&grib2_msg->md.nx,grib2_msg->offset+240,32);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.nx,grib2_msg->offset+240,32);
 /* number of points along a meridian */
-	getBits(grib2_msg->buffer,&grib2_msg->md.ny,grib2_msg->offset+272,32);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.ny,grib2_msg->offset+272,32);
 /* latitude of first gridpoint */
 	int sign;
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+304,1);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+304,1);
 	int value;
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+305,31);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+305,31);
 	grib2_msg->md.slat=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.slat=-grib2_msg->md.slat;
 	}
 /* longitude of first gridpoint */
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+336,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+337,31);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+336,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+337,31);
 	grib2_msg->md.slon=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.slon=-grib2_msg->md.slon;
 	}
 /* resolution and component flags */
-	getBits(grib2_msg->buffer,&grib2_msg->md.rescomp,grib2_msg->offset+368,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.rescomp,grib2_msg->offset+368,8);
 /* LaD */
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+376,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+377,31);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+376,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+377,31);
 	grib2_msg->md.lats.lad=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.lats.lad=-grib2_msg->md.lats.lad;
 	}
 /* LoV */
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+408,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+409,31);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+408,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+409,31);
 	grib2_msg->md.lons.lov=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.lons.lov=-grib2_msg->md.lons.lov;
 	}
 /* x-direction increment */
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+440,32);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+440,32);
 	grib2_msg->md.xinc.dxinc=value/1000.;
 /* y-direction increment */
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+472,32);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+472,32);
 	grib2_msg->md.yinc.dyinc=value/1000.;
 /* projection center flag */
-	getBits(grib2_msg->buffer,&grib2_msg->md.proj_flag,grib2_msg->offset+504,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.proj_flag,grib2_msg->offset+504,8);
 /* scanning mode flag */
-	getBits(grib2_msg->buffer,&grib2_msg->md.scan_mode,grib2_msg->offset+512,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.scan_mode,grib2_msg->offset+512,8);
 /* latin1 */
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+520,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+521,31);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+520,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+521,31);
 	grib2_msg->md.latin1=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.latin1=-grib2_msg->md.latin1;
 	}
 /* latin2 */
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+552,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+553,31);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+552,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+553,31);
 	grib2_msg->md.latin2=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.latin2=-grib2_msg->md.latin2;
 	}
 /* latitude of southern pole of projection */
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+584,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+585,31);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+584,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+585,31);
 	grib2_msg->md.splat=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.splat=-grib2_msg->md.splat;
 	}
 /* longitude of southern pole of projection */
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+616,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+617,31);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+616,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+617,31);
 	grib2_msg->md.splon=value/1000000.;
 	if (sign == 1) {
 	  grib2_msg->md.splon=-grib2_msg->md.splon;
@@ -731,17 +731,17 @@ void unpackGDS(GRIB2Message *grib2_msg)
   }
 }
 
-void unpackPDS(GRIB2Message *grib2_msg)
+void unpack_PDS(GRIB2Message *grib2_msg)
 {
 /* indication of hybrid coordinate system */
   int num_coords;
-  getBits(grib2_msg->buffer,&num_coords,grib2_msg->offset+40,16);
+  get_bits(grib2_msg->buffer,&num_coords,grib2_msg->offset+40,16);
   if (num_coords > 0) {
     fprintf(stderr,"Unable to decode hybrid coordinates");
     exit(1);
   }
 /* product definition template number */
-  getBits(grib2_msg->buffer,&grib2_msg->md.pds_templ_num,grib2_msg->offset+56,16);
+  get_bits(grib2_msg->buffer,&grib2_msg->md.pds_templ_num,grib2_msg->offset+56,16);
   grib2_msg->md.stat_proc.num_ranges=0;
   switch (grib2_msg->md.pds_templ_num) {
     case 0:
@@ -756,34 +756,34 @@ void unpackPDS(GRIB2Message *grib2_msg)
 	grib2_msg->md.derived_fcst_code=-1;
 	grib2_msg->md.spatial_proc.type=-1;
 /* parameter category */
-	getBits(grib2_msg->buffer,&grib2_msg->md.param_cat,grib2_msg->offset+72,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.param_cat,grib2_msg->offset+72,8);
 /* parameter number */
-	getBits(grib2_msg->buffer,&grib2_msg->md.param_num,grib2_msg->offset+80,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.param_num,grib2_msg->offset+80,8);
 /* generating process */
-	getBits(grib2_msg->buffer,&grib2_msg->md.gen_proc,grib2_msg->offset+88,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.gen_proc,grib2_msg->offset+88,8);
 /* time range indicator*/
-	getBits(grib2_msg->buffer,&grib2_msg->md.time_unit,grib2_msg->offset+136,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.time_unit,grib2_msg->offset+136,8);
 /* forecast time */
-	getBits(grib2_msg->buffer,&grib2_msg->md.fcst_time,grib2_msg->offset+144,32);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.fcst_time,grib2_msg->offset+144,32);
 /* type of first level */
-	getBits(grib2_msg->buffer,&grib2_msg->md.lvl1_type,grib2_msg->offset+176,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.lvl1_type,grib2_msg->offset+176,8);
 /* value of first level */
 	int factor;
-	getBits(grib2_msg->buffer,&factor,grib2_msg->offset+184,8);
+	get_bits(grib2_msg->buffer,&factor,grib2_msg->offset+184,8);
 	int sign;
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+192,1);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+192,1);
 	int value;
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+193,31);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+193,31);
 	if (sign == 1) {
 	  value=-value;
 	}
 	grib2_msg->md.lvl1=(double)value/pow(10.,(double)factor);
 /* type of second level */
-	getBits(grib2_msg->buffer,&grib2_msg->md.lvl2_type,grib2_msg->offset+224,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.lvl2_type,grib2_msg->offset+224,8);
 /* value of second level */
-	getBits(grib2_msg->buffer,&factor,grib2_msg->offset+232,8);
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+240,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+241,31);
+	get_bits(grib2_msg->buffer,&factor,grib2_msg->offset+232,8);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+240,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+241,31);
 	if (sign == 1) {
 	  value=-value;
 	}
@@ -792,26 +792,26 @@ void unpackPDS(GRIB2Message *grib2_msg)
 	  case 1:
 	  case 11:
 	  {
-	    getBits(grib2_msg->buffer,&grib2_msg->md.ens_type,grib2_msg->offset+272,8);
-	    getBits(grib2_msg->buffer,&grib2_msg->md.perturb_num,grib2_msg->offset+280,8);
-	    getBits(grib2_msg->buffer,&grib2_msg->md.nfcst_in_ensemble,grib2_msg->offset+288,8);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.ens_type,grib2_msg->offset+272,8);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.perturb_num,grib2_msg->offset+280,8);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.nfcst_in_ensemble,grib2_msg->offset+288,8);
 	    switch (grib2_msg->md.pds_templ_num) {
 		case 11:
 		{
-		  getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.eyr,grib2_msg->offset+296,16);
-		  getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.emo,grib2_msg->offset+312,8);
-		  getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.edy,grib2_msg->offset+320,8);
+		  get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.eyr,grib2_msg->offset+296,16);
+		  get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.emo,grib2_msg->offset+312,8);
+		  get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.edy,grib2_msg->offset+320,8);
 		  int hh;
-		  getBits(grib2_msg->buffer,&hh,grib2_msg->offset+328,8);
+		  get_bits(grib2_msg->buffer,&hh,grib2_msg->offset+328,8);
 		  int mm;
-		  getBits(grib2_msg->buffer,&mm,grib2_msg->offset+336,8);
+		  get_bits(grib2_msg->buffer,&mm,grib2_msg->offset+336,8);
 		  int ss;
-		  getBits(grib2_msg->buffer,&ss,grib2_msg->offset+344,8);
+		  get_bits(grib2_msg->buffer,&ss,grib2_msg->offset+344,8);
 		  grib2_msg->md.stat_proc.etime=hh*10000+mm*100+ss;
 /* number of time range specifications */
-		  getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.num_ranges,grib2_msg->offset+352,8);
+		  get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.num_ranges,grib2_msg->offset+352,8);
 /* number of values missing from process */
-		  getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.nmiss,grib2_msg->offset+360,32);
+		  get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.nmiss,grib2_msg->offset+360,32);
 		  if (grib2_msg->md.stat_proc.proc_code != NULL) {
 		    free(grib2_msg->md.stat_proc.proc_code);
 		    free(grib2_msg->md.stat_proc.incr_type);
@@ -829,12 +829,12 @@ void unpackPDS(GRIB2Message *grib2_msg)
 		  grib2_msg->md.stat_proc.incr_length=(int *)malloc(grib2_msg->md.stat_proc.num_ranges*sizeof(int));
 		  size_t off=392;
 		  for (size_t n=0; n < grib2_msg->md.stat_proc.num_ranges; ++n) {
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.proc_code[n],grib2_msg->offset+off,8);
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_type[n],grib2_msg->offset+off+8,8);
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_unit[n],grib2_msg->offset+off+16,8);
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_length[n],grib2_msg->offset+off+24,32);
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_unit[n],grib2_msg->offset+off+56,8);
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_length[n],grib2_msg->offset+off+64,32);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.proc_code[n],grib2_msg->offset+off,8);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_type[n],grib2_msg->offset+off+8,8);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_unit[n],grib2_msg->offset+off+16,8);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_length[n],grib2_msg->offset+off+24,32);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_unit[n],grib2_msg->offset+off+56,8);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_length[n],grib2_msg->offset+off+64,32);
 		    off+=96;
 		  }
 		  break;
@@ -845,25 +845,25 @@ void unpackPDS(GRIB2Message *grib2_msg)
 	  case 2:
 	  case 12:
 	  {
-	    getBits(grib2_msg->buffer,&grib2_msg->md.derived_fcst_code,grib2_msg->offset+272,8);
-	    getBits(grib2_msg->buffer,&grib2_msg->md.nfcst_in_ensemble,grib2_msg->offset+280,8);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.derived_fcst_code,grib2_msg->offset+272,8);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.nfcst_in_ensemble,grib2_msg->offset+280,8);
 	    switch (grib2_msg->md.pds_templ_num) {
 		case 12:
 		{
-		  getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.eyr,grib2_msg->offset+288,16);
-		  getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.emo,grib2_msg->offset+304,8);
-		  getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.edy,grib2_msg->offset+312,8);
+		  get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.eyr,grib2_msg->offset+288,16);
+		  get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.emo,grib2_msg->offset+304,8);
+		  get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.edy,grib2_msg->offset+312,8);
 		  int hh;
-		  getBits(grib2_msg->buffer,&hh,grib2_msg->offset+320,8);
+		  get_bits(grib2_msg->buffer,&hh,grib2_msg->offset+320,8);
 		  int mm;
-		  getBits(grib2_msg->buffer,&mm,grib2_msg->offset+328,8);
+		  get_bits(grib2_msg->buffer,&mm,grib2_msg->offset+328,8);
 		  int ss;
-		  getBits(grib2_msg->buffer,&ss,grib2_msg->offset+336,8);
+		  get_bits(grib2_msg->buffer,&ss,grib2_msg->offset+336,8);
 		  grib2_msg->md.stat_proc.etime=hh*10000+mm*100+ss;
 /* number of time range specifications */
-		  getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.num_ranges,grib2_msg->offset+344,8);
+		  get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.num_ranges,grib2_msg->offset+344,8);
 /* number of values missing from process */
-		  getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.nmiss,grib2_msg->offset+352,32);
+		  get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.nmiss,grib2_msg->offset+352,32);
 		  if (grib2_msg->md.stat_proc.proc_code != NULL) {
 		    free(grib2_msg->md.stat_proc.proc_code);
 		    free(grib2_msg->md.stat_proc.incr_type);
@@ -881,12 +881,12 @@ void unpackPDS(GRIB2Message *grib2_msg)
 		  grib2_msg->md.stat_proc.incr_length=(int *)malloc(grib2_msg->md.stat_proc.num_ranges*sizeof(int));
 		  size_t off=384;
 		  for (size_t n=0; n < grib2_msg->md.stat_proc.num_ranges; ++n) {
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.proc_code[n],grib2_msg->offset+off,8);
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_type[n],grib2_msg->offset+off+8,8);
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_unit[n],grib2_msg->offset+off+16,8);
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_length[n],grib2_msg->offset+off+24,32);
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_unit[n],grib2_msg->offset+off+56,8);
-		    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_length[n],grib2_msg->offset+off+64,32);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.proc_code[n],grib2_msg->offset+off,8);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_type[n],grib2_msg->offset+off+8,8);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_unit[n],grib2_msg->offset+off+16,8);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_length[n],grib2_msg->offset+off+24,32);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_unit[n],grib2_msg->offset+off+56,8);
+		    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_length[n],grib2_msg->offset+off+64,32);
 		    off+=96;
 		  }
 		  break;
@@ -896,20 +896,20 @@ void unpackPDS(GRIB2Message *grib2_msg)
 	  }
 	  case 8:
 	  {
-	    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.eyr,grib2_msg->offset+272,16);
-	    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.emo,grib2_msg->offset+288,8);
-	    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.edy,grib2_msg->offset+296,8);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.eyr,grib2_msg->offset+272,16);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.emo,grib2_msg->offset+288,8);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.edy,grib2_msg->offset+296,8);
 	    int hh;
-	    getBits(grib2_msg->buffer,&hh,grib2_msg->offset+304,8);
+	    get_bits(grib2_msg->buffer,&hh,grib2_msg->offset+304,8);
 	    int mm;
-	    getBits(grib2_msg->buffer,&mm,grib2_msg->offset+312,8);
+	    get_bits(grib2_msg->buffer,&mm,grib2_msg->offset+312,8);
 	    int ss;
-	    getBits(grib2_msg->buffer,&ss,grib2_msg->offset+320,8);
+	    get_bits(grib2_msg->buffer,&ss,grib2_msg->offset+320,8);
 	    grib2_msg->md.stat_proc.etime=hh*10000+mm*100+ss;
 /* number of time range specifications */
-	    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.num_ranges,grib2_msg->offset+328,8);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.num_ranges,grib2_msg->offset+328,8);
 /* number of values missing from process */
-	    getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.nmiss,grib2_msg->offset+336,32);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.nmiss,grib2_msg->offset+336,32);
 	    if (grib2_msg->md.stat_proc.proc_code != NULL) {
 		free(grib2_msg->md.stat_proc.proc_code);
 		free(grib2_msg->md.stat_proc.incr_type);
@@ -927,21 +927,21 @@ void unpackPDS(GRIB2Message *grib2_msg)
 	    grib2_msg->md.stat_proc.incr_length=(int *)malloc(grib2_msg->md.stat_proc.num_ranges*sizeof(int));
 	    size_t off=368;
 	    for (size_t n=0; n < grib2_msg->md.stat_proc.num_ranges; ++n) {
-		getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.proc_code[n],grib2_msg->offset+off,8);
-		getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_type[n],grib2_msg->offset+off+8,8);
-		getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_unit[n],grib2_msg->offset+off+16,8);
-		getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_length[n],grib2_msg->offset+off+24,32);
-		getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_unit[n],grib2_msg->offset+off+56,8);
-		getBits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_length[n],grib2_msg->offset+off+64,32);
+		get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.proc_code[n],grib2_msg->offset+off,8);
+		get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_type[n],grib2_msg->offset+off+8,8);
+		get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_unit[n],grib2_msg->offset+off+16,8);
+		get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.time_length[n],grib2_msg->offset+off+24,32);
+		get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_unit[n],grib2_msg->offset+off+56,8);
+		get_bits(grib2_msg->buffer,&grib2_msg->md.stat_proc.incr_length[n],grib2_msg->offset+off+64,32);
 		off+=96;
 	    }
 	    break;
 	  }
 	  case 15:
 	  {
-	    getBits(grib2_msg->buffer,&grib2_msg->md.spatial_proc.stat_proc,grib2_msg->offset+272,8);
-	    getBits(grib2_msg->buffer,&grib2_msg->md.spatial_proc.type,grib2_msg->offset+280,8);
-	    getBits(grib2_msg->buffer,&grib2_msg->md.spatial_proc.num_points,grib2_msg->offset+288,8);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.spatial_proc.stat_proc,grib2_msg->offset+272,8);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.spatial_proc.type,grib2_msg->offset+280,8);
+	    get_bits(grib2_msg->buffer,&grib2_msg->md.spatial_proc.num_points,grib2_msg->offset+288,8);
 	    break;
 	  }
 	}
@@ -955,7 +955,7 @@ void unpackPDS(GRIB2Message *grib2_msg)
   }
 }
 
-void unpackDRS(GRIB2Message *grib2_msg)
+void unpack_DRS(GRIB2Message *grib2_msg)
 {
   union {
     float fval;
@@ -963,9 +963,9 @@ void unpackDRS(GRIB2Message *grib2_msg)
   } u;
 
 /* number of packed values */
-  getBits(grib2_msg->buffer,&grib2_msg->md.num_packed,grib2_msg->offset+40,32);
+  get_bits(grib2_msg->buffer,&grib2_msg->md.num_packed,grib2_msg->offset+40,32);
 /* data representation template number */
-  getBits(grib2_msg->buffer,&grib2_msg->md.drs_templ_num,grib2_msg->offset+72,16);
+  get_bits(grib2_msg->buffer,&grib2_msg->md.drs_templ_num,grib2_msg->offset+72,16);
   switch (grib2_msg->md.drs_templ_num) {
     case 0:
     case 3:
@@ -974,52 +974,52 @@ void unpackDRS(GRIB2Message *grib2_msg)
     case 40000:
 #endif
     {
-	getBits(grib2_msg->buffer,(int *)&grib2_msg->md.R,grib2_msg->offset+88,32);
+	get_bits(grib2_msg->buffer,(int *)&grib2_msg->md.R,grib2_msg->offset+88,32);
 	int sign;
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+120,1);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+120,1);
 	int value;
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+121,15);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+121,15);
 	if (sign == 1) {
 	  value=-value;
 	}
 	grib2_msg->md.E=value;
-	getBits(grib2_msg->buffer,&sign,grib2_msg->offset+136,1);
-	getBits(grib2_msg->buffer,&value,grib2_msg->offset+137,15);
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+136,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+137,15);
 	if (sign == 1) {
 	  value=-value;
 	}
 	grib2_msg->md.D=value;
 	grib2_msg->md.R/=pow(10.,grib2_msg->md.D);
-	getBits(grib2_msg->buffer,&grib2_msg->md.pack_width,grib2_msg->offset+152,8);
-	getBits(grib2_msg->buffer,&grib2_msg->md.orig_val_type,grib2_msg->offset+160,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.pack_width,grib2_msg->offset+152,8);
+	get_bits(grib2_msg->buffer,&grib2_msg->md.orig_val_type,grib2_msg->offset+160,8);
 	if (grib2_msg->md.drs_templ_num == 3) {
-	  getBits(grib2_msg->buffer,&grib2_msg->md.complex_pack.split_method,grib2_msg->offset+168,8);
-	  getBits(grib2_msg->buffer,&grib2_msg->md.complex_pack.miss_val_mgmt,grib2_msg->offset+176,8);
+	  get_bits(grib2_msg->buffer,&grib2_msg->md.complex_pack.split_method,grib2_msg->offset+168,8);
+	  get_bits(grib2_msg->buffer,&grib2_msg->md.complex_pack.miss_val_mgmt,grib2_msg->offset+176,8);
 	  if (grib2_msg->md.orig_val_type == 0) {
-	    getBits(grib2_msg->buffer,&u.ival,grib2_msg->offset+184,32);
+	    get_bits(grib2_msg->buffer,&u.ival,grib2_msg->offset+184,32);
 	    grib2_msg->md.complex_pack.primary_miss_sub=u.fval;
-	    getBits(grib2_msg->buffer,&u.ival,grib2_msg->offset+216,32);
+	    get_bits(grib2_msg->buffer,&u.ival,grib2_msg->offset+216,32);
 	    grib2_msg->md.complex_pack.secondary_miss_sub=u.fval;
 	  }
 	  else if (grib2_msg->md.orig_val_type == 1) {
-	    getBits(grib2_msg->buffer,&u.ival,grib2_msg->offset+184,32);
+	    get_bits(grib2_msg->buffer,&u.ival,grib2_msg->offset+184,32);
 	    grib2_msg->md.complex_pack.primary_miss_sub=u.ival;
-	    getBits(grib2_msg->buffer,&u.ival,grib2_msg->offset+216,32);
+	    get_bits(grib2_msg->buffer,&u.ival,grib2_msg->offset+216,32);
 	    grib2_msg->md.complex_pack.secondary_miss_sub=u.ival;
 	  }
 	  else {
 	    fprintf(stderr,"Unable to decode missing value substitutes for original value type %d\n",grib2_msg->md.orig_val_type);
 	    exit(1);
 	  }
-	  getBits(grib2_msg->buffer,&grib2_msg->md.complex_pack.num_groups,grib2_msg->offset+248,32);
-	  getBits(grib2_msg->buffer,&grib2_msg->md.complex_pack.width.ref,grib2_msg->offset+280,8);
-	  getBits(grib2_msg->buffer,&grib2_msg->md.complex_pack.width.pack_width,grib2_msg->offset+288,8);
-	  getBits(grib2_msg->buffer,&grib2_msg->md.complex_pack.length.ref,grib2_msg->offset+296,32);
-	  getBits(grib2_msg->buffer,&grib2_msg->md.complex_pack.length.incr,grib2_msg->offset+328,8);
-	  getBits(grib2_msg->buffer,&grib2_msg->md.complex_pack.length.last,grib2_msg->offset+336,32);
-	  getBits(grib2_msg->buffer,&grib2_msg->md.complex_pack.length.pack_width,grib2_msg->offset+368,8);
-	  getBits(grib2_msg->buffer,&grib2_msg->md.complex_pack.spatial_diff.order,grib2_msg->offset+376,8);
-	  getBits(grib2_msg->buffer,&grib2_msg->md.complex_pack.spatial_diff.order_vals_width,grib2_msg->offset+384,8);
+	  get_bits(grib2_msg->buffer,&grib2_msg->md.complex_pack.num_groups,grib2_msg->offset+248,32);
+	  get_bits(grib2_msg->buffer,&grib2_msg->md.complex_pack.width.ref,grib2_msg->offset+280,8);
+	  get_bits(grib2_msg->buffer,&grib2_msg->md.complex_pack.width.pack_width,grib2_msg->offset+288,8);
+	  get_bits(grib2_msg->buffer,&grib2_msg->md.complex_pack.length.ref,grib2_msg->offset+296,32);
+	  get_bits(grib2_msg->buffer,&grib2_msg->md.complex_pack.length.incr,grib2_msg->offset+328,8);
+	  get_bits(grib2_msg->buffer,&grib2_msg->md.complex_pack.length.last,grib2_msg->offset+336,32);
+	  get_bits(grib2_msg->buffer,&grib2_msg->md.complex_pack.length.pack_width,grib2_msg->offset+368,8);
+	  get_bits(grib2_msg->buffer,&grib2_msg->md.complex_pack.spatial_diff.order,grib2_msg->offset+376,8);
+	  get_bits(grib2_msg->buffer,&grib2_msg->md.complex_pack.spatial_diff.order_vals_width,grib2_msg->offset+384,8);
 	}
 	break;
     }
@@ -1031,21 +1031,21 @@ void unpackDRS(GRIB2Message *grib2_msg)
   }
 }
 
-void unpackBMS(GRIB2Message *grib2_msg)
+void unpack_BMS(GRIB2Message *grib2_msg)
 {
 /* bit map indicator */
   int ind;
-  getBits(grib2_msg->buffer,&ind,grib2_msg->offset+40,8);
+  get_bits(grib2_msg->buffer,&ind,grib2_msg->offset+40,8);
   switch (ind) {
     case 0:
     {
 	int len;
-	getBits(grib2_msg->buffer,&len,grib2_msg->offset,32);
+	get_bits(grib2_msg->buffer,&len,grib2_msg->offset,32);
 	len=(len-6)*8;
 	grib2_msg->md.bitmap=(unsigned char *)malloc(len*sizeof(unsigned char));
 	for (size_t n=0; n < len; ++n) {
 	  int bit;
-	  getBits(grib2_msg->buffer,&bit,grib2_msg->offset+48+n,1);
+	  get_bits(grib2_msg->buffer,&bit,grib2_msg->offset+48+n,1);
 	  grib2_msg->md.bitmap[n]=bit;
 	}
 	break;
@@ -1067,7 +1067,7 @@ void unpackBMS(GRIB2Message *grib2_msg)
   }
 }
 
-void unpackDS(GRIB2Message *grib2_msg,int grid_num)
+void unpack_DS(GRIB2Message *grib2_msg,int grid_num)
 {
   float D=pow(10.,grib2_msg->md.D),E=pow(2.,grib2_msg->md.E);
   size_t off=grib2_msg->offset+40;
@@ -1085,7 +1085,7 @@ void unpackDS(GRIB2Message *grib2_msg,int grid_num)
 	for (size_t n=0; n < grib2_msg->md.ny*grib2_msg->md.nx; ++n) {
 	  if (grib2_msg->md.bitmap == NULL || grib2_msg->md.bitmap[n] == 1) {
 	    int pval;
-	    getBits(grib2_msg->buffer,&pval,off,grib2_msg->md.pack_width);
+	    get_bits(grib2_msg->buffer,&pval,off,grib2_msg->md.pack_width);
 	    grib2_msg->grids[grid_num].gridpoints[n]=grib2_msg->md.R+pval*E/D;
 	    off+=grib2_msg->md.pack_width;
 	  }
@@ -1120,18 +1120,18 @@ void unpackDS(GRIB2Message *grib2_msg,int grid_num)
 	  }
 	  groups.first_vals=(int *)malloc(grib2_msg->md.complex_pack.spatial_diff.order*sizeof(int));
 	  for (size_t n=0; n < grib2_msg->md.complex_pack.spatial_diff.order; ++n) {
-	    getBits(grib2_msg->buffer,&groups.first_vals[n],off,grib2_msg->md.complex_pack.spatial_diff.order_vals_width*8);
+	    get_bits(grib2_msg->buffer,&groups.first_vals[n],off,grib2_msg->md.complex_pack.spatial_diff.order_vals_width*8);
 	    off+=grib2_msg->md.complex_pack.spatial_diff.order_vals_width*8;
 	  }
-	  getBits(grib2_msg->buffer,&groups.sign,off,1);
-	  getBits(grib2_msg->buffer,&groups.omin,off+1,grib2_msg->md.complex_pack.spatial_diff.order_vals_width*8-1);
+	  get_bits(grib2_msg->buffer,&groups.sign,off,1);
+	  get_bits(grib2_msg->buffer,&groups.omin,off+1,grib2_msg->md.complex_pack.spatial_diff.order_vals_width*8-1);
 	  if (groups.sign == 1) {
 	    groups.omin=-groups.omin;
 	  }
 	  off+=grib2_msg->md.complex_pack.spatial_diff.order_vals_width*8;
 	  groups.ref_vals=(int *)malloc(grib2_msg->md.complex_pack.num_groups*sizeof(int));
 	  for (size_t n=0; n < grib2_msg->md.complex_pack.num_groups; ++n) {
-	    getBits(grib2_msg->buffer,&groups.ref_vals[n],off,grib2_msg->md.pack_width);
+	    get_bits(grib2_msg->buffer,&groups.ref_vals[n],off,grib2_msg->md.pack_width);
 	    off+=grib2_msg->md.pack_width;
 	  }
 	  int pad;
@@ -1140,7 +1140,7 @@ void unpackDS(GRIB2Message *grib2_msg,int grid_num)
 	  }
 	  groups.widths=(int *)malloc(grib2_msg->md.complex_pack.num_groups*sizeof(int));
 	  for (size_t n=0; n < grib2_msg->md.complex_pack.num_groups; ++n) {
-	    getBits(grib2_msg->buffer,&groups.widths[n],off,grib2_msg->md.complex_pack.width.pack_width);
+	    get_bits(grib2_msg->buffer,&groups.widths[n],off,grib2_msg->md.complex_pack.width.pack_width);
 	    off+=grib2_msg->md.complex_pack.width.pack_width;
 	  }
 	  if ( (pad=(off % 8)) > 0) {
@@ -1148,7 +1148,7 @@ void unpackDS(GRIB2Message *grib2_msg,int grid_num)
 	  }
 	  groups.lengths=(int *)malloc(grib2_msg->md.complex_pack.num_groups*sizeof(int));
 	  for (size_t n=0; n < grib2_msg->md.complex_pack.num_groups; ++n) {
-	    getBits(grib2_msg->buffer,&groups.lengths[n],off,grib2_msg->md.complex_pack.length.pack_width);
+	    get_bits(grib2_msg->buffer,&groups.lengths[n],off,grib2_msg->md.complex_pack.length.pack_width);
 	    off+=grib2_msg->md.complex_pack.length.pack_width;
 	  }
 	  if ( (pad=(off % 8)) > 0) {
@@ -1185,7 +1185,7 @@ void unpackDS(GRIB2Message *grib2_msg,int grid_num)
 		    grib2_msg->grids[grid_num].gridpoints[cnt]=GRIB_MISSING_VALUE;
 		  }
 		  else {
-		    getBits(grib2_msg->buffer,&pval,off,groups.widths[n]);
+		    get_bits(grib2_msg->buffer,&pval,off,groups.widths[n]);
 		    off+=groups.widths[n];
 		    grib2_msg->grids[grid_num].gridpoints[cnt]=pval+groups.ref_vals[n]+groups.omin;
 		    ++m;
@@ -1263,7 +1263,7 @@ void unpackDS(GRIB2Message *grib2_msg,int grid_num)
     case 40000:
     {
 	int len;
-	getBits(grib2_msg->buffer,&len,grib2_msg->offset,32);
+	get_bits(grib2_msg->buffer,&len,grib2_msg->offset,32);
 	len=len-5;
 	int *jvals=(int *)malloc(grib2_msg->md.ny*grib2_msg->md.nx*sizeof(int));
 	size_t required_size=grib2_msg->md.ny*grib2_msg->md.nx;
@@ -1299,17 +1299,17 @@ void unpackDS(GRIB2Message *grib2_msg,int grid_num)
 int unpackgrib2(FILE *fp,GRIB2Message *grib2_msg)
 {
   int status;
-  if ( (status=unpackIS(fp,grib2_msg)) != 0) {
+  if ( (status=unpack_IS(fp,grib2_msg)) != 0) {
     return status;
   }
-  unpackIDS(grib2_msg);
+  unpack_IDS(grib2_msg);
 /* find out how many grids are in this message */
   size_t off=grib2_msg->offset;
   while (strncmp(&((char *)grib2_msg->buffer)[off/8],"7777",4) != 0) {
     int len;
-    getBits(grib2_msg->buffer,&len,off,32);
+    get_bits(grib2_msg->buffer,&len,off,32);
     int sec_num;
-    getBits(grib2_msg->buffer,&sec_num,off+32,8);
+    get_bits(grib2_msg->buffer,&sec_num,off+32,8);
     if (sec_num == 7) {
 	++grib2_msg->num_grids;
     }
@@ -1339,39 +1339,39 @@ int unpackgrib2(FILE *fp,GRIB2Message *grib2_msg)
   int grid_num=0;
   while (strncmp(&((char *)grib2_msg->buffer)[grib2_msg->offset/8],"7777",4) != 0) {
     int len;
-    getBits(grib2_msg->buffer,&len,grib2_msg->offset,32);
+    get_bits(grib2_msg->buffer,&len,grib2_msg->offset,32);
     int sec_num;
-    getBits(grib2_msg->buffer,&sec_num,grib2_msg->offset+32,8);
+    get_bits(grib2_msg->buffer,&sec_num,grib2_msg->offset+32,8);
     switch (sec_num) {
 	case 2:
 	{
-	  unpackLUS(grib2_msg);
+	  unpack_LUS(grib2_msg);
 	  break;
 	}
 	case 3:
 	{
-	  unpackGDS(grib2_msg);
+	  unpack_GDS(grib2_msg);
 	  break;
 	}
 	case 4:
 	{
-	  unpackPDS(grib2_msg);
+	  unpack_PDS(grib2_msg);
 	  break;
 	}
 	case 5:
 	{
-	  unpackDRS(grib2_msg);
+	  unpack_DRS(grib2_msg);
 	  break;
 	}
 	case 6:
 	{
-	  unpackBMS(grib2_msg);
+	  unpack_BMS(grib2_msg);
 	  break;
 	}
 	case 7:
 	{
 	  grib2_msg->grids[grid_num].md=grib2_msg->md;
-	  unpackDS(grib2_msg,grid_num);
+	  unpack_DS(grib2_msg,grid_num);
 	  ++grid_num;
 	  break;
 	}
