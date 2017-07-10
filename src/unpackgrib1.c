@@ -21,6 +21,7 @@
 **   23 Oct 2012 - fixed a memory leak in unpack_BDS
 **   20 May 2017 - code refactoring, added bitmap to the GRIBMessage structure
 **                 to reduce memory reallocations
+**   10 Jul 2017 - decode Mercator grid definition
 **
 ** Purpose: to provide a single C-routine for unpacking GRIB grids
 **
@@ -109,11 +110,11 @@
 **   For Latitude/Longitude and Gaussian Lat/Lon Grids:
 **     nx:         Number of points along a latitude circle
 **     ny:         Number of points along a longitude meridian
-**     slat:       Latitude of the first gridpoint
-**     slon:       Longitude of the first gridpoint
+**     slat:       Latitude of the first gridpoint (*1000)
+**     slon:       Longitude of the first gridpoint (*1000)
 **     rescomp:    Resolution and component flags
-**     elat:       Latitude of the last gridpoint
-**     elon:       Longitude of the last gridpoint
+**     elat:       Latitude of the last gridpoint (*1000)
+**     elon:       Longitude of the last gridpoint (*1000)
 **     lainc:      Latitude increment (*1000) for Lat/Lon grid
 **                 -OR-
 **                 Number of latitude circles between equator and pole for
@@ -131,6 +132,33 @@
 **     xlen:       X-direction grid length in meters
 **     ylen:       Y-direction grid length in meters
 **     proj:       Projection center flag
+**     scan_mode:  Scanning mode flags
+**
+**   For Lambert Conformal Grids:
+**     nx:         Number of points in the X-direction
+**     ny:         Number of points in the Y-direction
+**     slat:       Latitude of the first gridpoint (*1000)
+**     slon:       Longitude of the first gridpoint (*1000)
+**     rescomp:    Resolution and component flags
+**     olon:       Longitude of grid orientation (*1000)
+**     xlen:       X-direction grid length in meters
+**     ylen:       Y-direction grid length in meters
+**     proj:       Projection center flag
+**     scan_mode:  Scanning mode flags
+**     std_lat1:   First standard parallel (*1000)
+**     std_lat2:   Second standard parallel (*1000)
+**
+**   For Mercator Grids:
+**     nx:         Number of points along a latitude circle
+**     ny:         Number of points along a longitude meridian
+**     slat:       Latitude of the first gridpoint (*1000)
+**     slon:       Longitude of the first gridpoint (*1000)
+**     rescomp:    Resolution and component flags
+**     elat:       Latitude of the last gridpoint (*1000)
+**     elon:       Longitude of the last gridpoint (*1000)
+**     std_lat1:   Standard parallel (*1000)
+**     xlen:       X-direction grid length in meters
+**     ylen:       Y-direction grid length in meters
 **     scan_mode:  Scanning mode flags
 ** 
 ** 
@@ -169,7 +197,7 @@ typedef struct {
   int offset;  /* offset in bytes to next GRIB section */
   int E,D;
   int data_rep,nx,ny,rescomp,scan_mode,proj;
-  double slat,slon,elat,elon,lainc,loinc,olon;
+  double slat,slon,elat,elon,lainc,loinc,olon,std_lat1,std_lat2;
   int xlen,ylen;
   unsigned char *buffer,*pds_ext,*bitmap;
   size_t buffer_capacity,bcapacity,bitmap_len;
@@ -581,6 +609,60 @@ void unpack_GDS(GRIBMessage *grib_msg)
 	get_bits(grib_msg->buffer,&grib_msg->scan_mode,grib_msg->offset+216,8);
 	break;
     }
+/* Mercator grid */
+    case 1:
+    {
+/* number of latitudes */
+	get_bits(grib_msg->buffer,&grib_msg->nx,grib_msg->offset+48,16);
+/* number of longitudes */
+	get_bits(grib_msg->buffer,&grib_msg->ny,grib_msg->offset+64,16);
+	int sign;
+	get_bits(grib_msg->buffer,&sign,grib_msg->offset+80,1);
+	int ival;
+	get_bits(grib_msg->buffer,&ival,grib_msg->offset+81,23);
+/* latitude of first gridpoint */
+	grib_msg->slat=ival*0.001;
+	if (sign == 1) {
+	  grib_msg->slat=-grib_msg->slat;
+	}
+	get_bits(grib_msg->buffer,&sign,grib_msg->offset+104,1);
+	get_bits(grib_msg->buffer,&ival,grib_msg->offset+105,23);
+/* longitude of first gridpoint */
+	grib_msg->slon=ival*0.001;
+	if (sign == 1) {
+	  grib_msg->slon=-grib_msg->slon;
+	}
+/* resolution and component flags */
+	get_bits(grib_msg->buffer,&grib_msg->rescomp,grib_msg->offset+128,8);
+	get_bits(grib_msg->buffer,&sign,grib_msg->offset+136,1);
+	get_bits(grib_msg->buffer,&ival,grib_msg->offset+137,23);
+/* latitude of last gridpoint */
+	grib_msg->elat=ival*0.001;
+	if (sign == 1) {
+	  grib_msg->elat=-grib_msg->elat;
+	}
+	get_bits(grib_msg->buffer,&sign,grib_msg->offset+160,1);
+	get_bits(grib_msg->buffer,&ival,grib_msg->offset+161,23);
+/* longitude of last gridpoint */
+	grib_msg->elon=ival*0.001;
+	if (sign == 1) {
+	  grib_msg->elon=-grib_msg->elon;
+	}
+	get_bits(grib_msg->buffer,&sign,grib_msg->offset+184,1);
+	get_bits(grib_msg->buffer,&ival,grib_msg->offset+185,23);
+/* standard parallel */
+	grib_msg->std_lat1=ival*0.001;
+	if (sign == 1) {
+	  grib_msg->std_lat1=-grib_msg->std_lat1;
+	}
+/* scanning mode flag */
+	get_bits(grib_msg->buffer,&grib_msg->scan_mode,grib_msg->offset+216,8);
+/* x-direction grid length */
+	get_bits(grib_msg->buffer,&grib_msg->xlen,grib_msg->offset+224,24);
+/* y-direction grid length */
+	get_bits(grib_msg->buffer,&grib_msg->ylen,grib_msg->offset+248,24);
+	break;
+    }
 /* Lambert Conformal grid */
     case 3:
 /* Polar Stereographic grid */
@@ -623,6 +705,22 @@ void unpack_GDS(GRIBMessage *grib_msg)
 	get_bits(grib_msg->buffer,&grib_msg->proj,grib_msg->offset+208,8);
 /* scanning mode flag */
 	get_bits(grib_msg->buffer,&grib_msg->scan_mode,grib_msg->offset+216,8);
+	if (grib_msg->data_rep == 3) {
+	  get_bits(grib_msg->buffer,&sign,grib_msg->offset+224,1);
+	  get_bits(grib_msg->buffer,&ival,grib_msg->offset+225,23);
+/* first standard parallel */
+	  grib_msg->std_lat1=ival*0.001;
+	  if (sign == 1) {
+	    grib_msg->std_lat1=-grib_msg->std_lat1;
+	  }
+	  get_bits(grib_msg->buffer,&sign,grib_msg->offset+248,1);
+	  get_bits(grib_msg->buffer,&ival,grib_msg->offset+249,23);
+/* second standard parallel */
+	  grib_msg->std_lat2=ival*0.001;
+	  if (sign == 1) {
+	    grib_msg->std_lat2=-grib_msg->std_lat2;
+	  }
+	}
 	break;
     }
     default:
@@ -721,6 +819,8 @@ void unpack_BDS(GRIBMessage *grib_msg)
 	    }
 	  }
 	}
+	case 1:
+/* Mercator grid */
 	case 3:
 /* Lambert Conformal grid */
 	case 5:
