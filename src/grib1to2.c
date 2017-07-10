@@ -10,6 +10,7 @@
 **
 ** Revision History:
 **   20 May 2017 - first version
+**   10 Jul 2017 - convert Mercator grids; always include bitmap section (6)
 **
 ** Example compile command:
 **    % cc -std=c99 -o grib1to2 grib1to2.c
@@ -1744,6 +1745,13 @@ void pack_GDS(GRIBMessage *msg,unsigned char *grib2_buffer,size_t *offset)
 	template_num=0;
 	break;
     }
+    case 1:
+    {
+// Mercator
+	length=72;
+	template_num=10;
+	break;
+    }
     case 4:
     {
 // Gaussian Latitude-Longitude
@@ -1839,6 +1847,76 @@ void pack_GDS(GRIBMessage *msg,unsigned char *grib2_buffer,size_t *offset)
 	set_bits(grib2_buffer,lround(msg->lainc*1000000.),*offset+536,32);
 // scanning mode
 	set_bits(grib2_buffer,msg->scan_mode,*offset+568,8);
+	break;
+    }
+    case 10:
+    {
+// Mercator
+// shape of the Earth
+	set_bits(grib2_buffer,6,*offset+112,8);
+// next six fields relate to shape of earth, which are not used because we used
+//  a standard radius in octet 15
+	set_bits(grib2_buffer,0,*offset+120,8);
+	set_bits(grib2_buffer,0,*offset+128,32);
+	set_bits(grib2_buffer,0,*offset+160,8);
+	set_bits(grib2_buffer,0,*offset+168,32);
+	set_bits(grib2_buffer,0,*offset+200,8);
+	set_bits(grib2_buffer,0,*offset+208,32);
+// number of points in i-direction
+	set_bits(grib2_buffer,msg->nx,*offset+240,32);
+// number of points in j-direction
+	set_bits(grib2_buffer,msg->ny,*offset+272,32);
+// latitude of first gridpoint
+	if (msg->slat < 0.) {
+	  set_bits(grib2_buffer,1,*offset+304,1);
+	}
+	else {
+	  set_bits(grib2_buffer,0,*offset+304,1);
+	}
+	set_bits(grib2_buffer,abs(msg->slat*1000000.),*offset+305,31);
+// longitude of first gridpoint
+	if (msg->slon < 0.) {
+	  set_bits(grib2_buffer,1,*offset+336,1);
+	}
+	else {
+	  set_bits(grib2_buffer,0,*offset+336,1);
+	}
+	set_bits(grib2_buffer,abs(msg->slon*1000000.),*offset+337,31);
+// resolution and component flags
+	unsigned char rcflg=((msg->rescomp & 0x80) >> 2) | ((msg->rescomp & 0x80) >> 3) | (msg->rescomp & 0xf);
+	set_bits(grib2_buffer,rcflg,*offset+368,8);
+// standard latitude (latitude where projection intersects the Earth)
+	if (msg->std_lat1 < 0.) {
+	  set_bits(grib2_buffer,1,*offset+376,1);
+	}
+	else {
+	  set_bits(grib2_buffer,0,*offset+376,1);
+	}
+	set_bits(grib2_buffer,abs(msg->std_lat1*1000000.),*offset+377,31);
+// latitude of last gridpoint
+	if (msg->elat < 0.) {
+	  set_bits(grib2_buffer,1,*offset+408,1);
+	}
+	else {
+	  set_bits(grib2_buffer,0,*offset+408,1);
+	}
+	set_bits(grib2_buffer,abs(msg->elat*1000000.),*offset+409,31);
+// longitude of last gridpoint
+	if (msg->elon < 0.) {
+	  set_bits(grib2_buffer,1,*offset+440,1);
+	}
+	else {
+	  set_bits(grib2_buffer,0,*offset+440,1);
+	}
+	set_bits(grib2_buffer,abs(msg->elon*1000000.),*offset+441,31);
+// scanning mode
+	set_bits(grib2_buffer,msg->scan_mode,*offset+472,8);
+// orientation of the grid
+	set_bits(grib2_buffer,0,*offset+480,32);
+// i-direction increment
+	set_bits(grib2_buffer,lround(msg->xlen*1000.),*offset+512,32);
+// j-direction increment
+	set_bits(grib2_buffer,lround(msg->ylen*1000.),*offset+544,32);
 	break;
     }
     case 20:
@@ -2044,6 +2122,8 @@ void pack_PDS(GRIBMessage *msg,int parameter_category,int parameter_number,unsig
 	break;
     }
     case 2:
+    case 3:
+    case 4:
     {
 	length=58;
 	template_num=8;
@@ -2291,24 +2371,34 @@ void pack_PDS(GRIBMessage *msg,int parameter_category,int parameter_number,unsig
 	  set_bits(grib2_buffer,0,*offset+336,32);
 // statistical process
 	  int process=255,time_incr;
-	  switch (msg->param) {
-	    case 15:
+	  switch (msg->t_range) {
+	    case 4:
 	    {
-// Maximum temperature
-		process=2;
-		time_incr=2;
-		break;
-	    }
-	    case 16:
-	    {
-// Minimum temperature
-		process=3;
+		process=1;
 		time_incr=2;
 		break;
 	    }
 	  }
 	  if (process == 255) {
-	    fprintf(stderr,"Unable to convert time range 2 for parameter code %d\n",msg->param);
+	    switch (msg->param) {
+		case 15:
+		{
+// Maximum temperature
+		  process=2;
+		  time_incr=2;
+		  break;
+		}
+		case 16:
+		{
+// Minimum temperature
+		  process=3;
+		  time_incr=2;
+		  break;
+		}
+	    }
+	  }
+	  if (process == 255) {
+	    fprintf(stderr,"Unable to determine statistical process type for parameter code %d\n",msg->param);
 	    exit(1);
 	  }
 	  else {
@@ -2371,18 +2461,27 @@ void pack_DRS(GRIBMessage *msg,unsigned char *grib2_buffer,size_t *offset)
 void pack_BMS(GRIBMessage *msg,unsigned char *grib2_buffer,size_t *offset)
 {
 // length of the BMS
-  size_t length=6+(msg->bitmap_len+7)/8;
+  size_t length=6;
+  if (msg->bms_included) {
+    length+=(msg->bitmap_len+7)/8;
+  }
   set_bits(grib2_buffer,length,*offset,32);
 // section number
   set_bits(grib2_buffer,6,*offset+32,8);
+  if (length > 6) {
 // bitmap indicator
-  set_bits(grib2_buffer,0,*offset+40,8);
+    set_bits(grib2_buffer,0,*offset+40,8);
 // bitmap
-  size_t off=*offset+48;
-  for (size_t n=0; n < msg->bitmap_len; ++n) {
-    int bval=msg->bitmap[n];
-    set_bits(grib2_buffer,bval,off,1);
-    ++off;
+    size_t off=*offset+48;
+    for (size_t n=0; n < msg->bitmap_len; ++n) {
+	int bval=msg->bitmap[n];
+	set_bits(grib2_buffer,bval,off,1);
+	++off;
+    }
+  }
+  else {
+// bitmap indicator
+    set_bits(grib2_buffer,255,*offset+40,8);
   }
   (*offset)+=length*8;
 }
@@ -2434,27 +2533,34 @@ int main(int argc,char **argv)
   long long length;
   while ( (status=unpackgrib1(ifile,&grib_msg)) == 0) {
     ++nmsg;
+// Identification Section
     length=21;
+// Grid Definition Section
     if (grib_msg.data_rep == 3) {
 	length+=81;
     }
     else {
 	length+=72;
     }
+// Product Definition Section
     if (grib_msg.t_range <= 1 || grib_msg.t_range == 10) {
 	length+=34;
     }
-    else if (grib_msg.t_range == 2) {
+    else if (grib_msg.t_range >= 2 && grib_msg.t_range <= 4) {
 	length+=58;
     }
     else {
 	fprintf(stderr,"Unable to convert time range indicator %d\n",grib_msg.t_range);
 	exit(1);
     }
+// Data Representation Section
     length+=21;
+// Bit-map Section
+    length+=6;
     if (grib_msg.bms_included) {
-	length+=6+(grib_msg.bitmap_len+7)/8;
+	length+=(grib_msg.bitmap_len+7)/8;
     }
+// Data Section
     length+=5+(grib_msg.nx*grib_msg.ny*grib_msg.pack_width+7)/8;
 // allocate enough memory for the GRIB2 buffer
     if (length > max_buffer_length) {
@@ -2475,10 +2581,8 @@ int main(int argc,char **argv)
     pack_PDS(&grib_msg,parameter_category,parameter_number,grib2_buffer,&offset);
 // pack the Data Representation Section
     pack_DRS(&grib_msg,grib2_buffer,&offset);
-    if (grib_msg.bms_included) {
-// pack the Bit Map Section, if present
-	pack_BMS(&grib_msg,grib2_buffer,&offset);
-    }
+// pack the Bit Map Section
+    pack_BMS(&grib_msg,grib2_buffer,&offset);
 // pack the Data Section
     pack_DS(&grib_msg,grib2_buffer,&offset);
 // output the GRIB2 message
