@@ -12,6 +12,10 @@
 **   20 May 2017 - first version
 **   10 Jul 2017 - convert Mercator grids; always include bitmap section (6)
 **
+** You will need to download the GRIB1 decoder:
+**    https://raw.githubusercontent.com/rda-dattore/GRIB/master/src/unpackgrib1.c
+** It must be in the same directory as this program.
+**
 ** Example compile command:
 **    % cc -std=c99 -o grib1to2 grib1to2.c
 **
