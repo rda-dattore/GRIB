@@ -43,6 +43,8 @@
 **          17 Apr 2017:
 **             removed restriction that grid must be oriented north-to-south to
 **               unpack DRS template 5.3
+**          13 Jul 2017:
+**             GDS Template 3.10 (Mercator grid)
 **
 ** Purpose: to provide a single C-routine for unpacking GRIB2 messages
 **
@@ -124,6 +126,20 @@
 **     loinc:           Longitude increment
 **     lainc:           Latitude increment
 **     scan_mode:       Scanning mode flags
+**
+**   For Mercator grids:
+**     nx:              Number of points along a latitude circle
+**     ny:              Number of points along a longitude meridian
+**     slat:            Latitude of the first gridpoint
+**     slon:            Longitude of the first gridpoint
+**     rescomp:         Resolution and component flags
+**     elat:            Latitude of the last gridpoint
+**     elon:            Longitude of the last gridpoint
+**     latin1:          Standard parallel
+**     dxinc:           X-direction grid length in meters
+**     dyinc:           Y-direction grid length in meters
+**     scan_mode:       Scanning mode flags
+**
 **   For Lambert conformal grids:
 **     nx:              Number of points along a latitude circle
 **     ny:              Number of points along a longitude meridian
@@ -144,6 +160,7 @@
 **                      sphere
 **     splat:           Latitude of southern pole of projection
 **     splon:           Longitude of southern pole of projection
+**
 **   pds_templ_num:   Production definition template number
 **   param_cat:       GRIB2 parameter category
 **   param_num:       GRIB2 parameter number
@@ -641,6 +658,63 @@ void unpack_GDS(GRIB2Message *grib2_msg)
 	}
 /* scanning mode flag */
 	get_bits(grib2_msg->buffer,&grib2_msg->md.scan_mode,grib2_msg->offset+568,8);
+	break;
+    }
+/* Mercator grid */
+    case 10:
+    {
+	get_bits(grib2_msg->buffer,&grib2_msg->md.earth_shape,grib2_msg->offset+112,8);
+/* number of points along a parallel */
+	get_bits(grib2_msg->buffer,&grib2_msg->md.nx,grib2_msg->offset+240,32);
+/* number of points along a meridian */
+	get_bits(grib2_msg->buffer,&grib2_msg->md.ny,grib2_msg->offset+272,32);
+/* latitude of first gridpoint */
+	int sign;
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+304,1);
+	int value;
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+305,31);
+	grib2_msg->md.slat=value/1000000.;
+	if (sign == 1) {
+	  grib2_msg->md.slat=-grib2_msg->md.slat;
+	}
+/* longitude of first gridpoint */
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+336,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+337,31);
+	grib2_msg->md.slon=value/1000000.;
+	if (sign == 1) {
+	  grib2_msg->md.slon=-grib2_msg->md.slon;
+	}
+/* resolution and component flags */
+	get_bits(grib2_msg->buffer,&grib2_msg->md.rescomp,grib2_msg->offset+368,8);
+/* latin1 */
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+376,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+377,31);
+	grib2_msg->md.latin1=value/1000000.;
+	if (sign == 1) {
+	  grib2_msg->md.latin1=-grib2_msg->md.latin1;
+	}
+/* latitude of last gridpoint */
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+408,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+409,31);
+	grib2_msg->md.lats.elat=value/1000000.;
+	if (sign == 1) {
+	  grib2_msg->md.lats.elat=-grib2_msg->md.lats.elat;
+	}
+/* longitude of last gridpoint */
+	get_bits(grib2_msg->buffer,&sign,grib2_msg->offset+440,1);
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+441,31);
+	grib2_msg->md.lons.elon=value/1000000.;
+	if (sign == 1) {
+	  grib2_msg->md.lons.elon=-grib2_msg->md.lons.elon;
+	}
+/* scanning mode flag */
+	get_bits(grib2_msg->buffer,&grib2_msg->md.scan_mode,grib2_msg->offset+472,8);
+/* x-direction increment */
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+512,32);
+	grib2_msg->md.xinc.dxinc=value/1000.;
+/* y-direction increment */
+	get_bits(grib2_msg->buffer,&value,grib2_msg->offset+544,32);
+	grib2_msg->md.yinc.dyinc=value/1000.;
 	break;
     }
 /* Lambert conformal grid */
