@@ -914,11 +914,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 131:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=0;*parameter_category=1;*parameter_number=70;
-	  }
-	  else if (grib_msg->table_ver == 129) {
-	    *discipline=0;*parameter_category=1;*parameter_number=43;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=0;*parameter_category=1;*parameter_number=70;
+		break;
+	    }
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=1;*parameter_number=43;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -926,11 +932,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 132:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=0;*parameter_category=7;*parameter_number=11;
-	  }
-	  else if (grib_msg->table_ver == 129) {
-	    *discipline=0;*parameter_category=6;*parameter_number=21;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=0;*parameter_category=7;*parameter_number=11;
+		break;
+	    }
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=6;*parameter_number=21;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -938,11 +950,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 133:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=0;*parameter_category=7;*parameter_number=2;
-	  }
-	  else if (grib_msg->table_ver == 129) {
-	    *discipline=0;*parameter_category=1;*parameter_number=44;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=0;*parameter_category=7;*parameter_number=2;
+		break;
+	    }
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=1;*parameter_number=44;
+		break;
+	    }
 	  }
 	}
 	else if (grib_msg->center_id == 98 && grib_msg->table_ver == 201) {
@@ -953,11 +971,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 134:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=0;*parameter_category=7;*parameter_number=5;
-	  }
-	  else if (grib_msg->table_ver == 129) {
-	    *discipline=0;*parameter_category=6;*parameter_number=16;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=0;*parameter_category=7;*parameter_number=5;
+		break;
+	    }
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=6;*parameter_number=16;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -965,11 +989,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 135:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=0;*parameter_category=1;*parameter_number=38;
-	  }
-	  else if (grib_msg->table_ver == 129) {
-	    *discipline=0;*parameter_category=1;*parameter_number=21;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=0;*parameter_category=1;*parameter_number=38;
+		break;
+	    }
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=1;*parameter_number=21;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -977,11 +1007,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 136:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=0;*parameter_category=2;*parameter_number=25;
-	  }
-	  else if (grib_msg->table_ver == 129) {
-	    *discipline=0;*parameter_category=1;*parameter_number=69;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=0;*parameter_category=2;*parameter_number=25;
+		break;
+	    }
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=1;*parameter_number=69;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -989,11 +1025,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 137:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 129) {
-	    *discipline=0;*parameter_category=1;*parameter_number=70;
-	  }
-	  else if (grib_msg->table_ver == 131) {
-	    *discipline=0;*parameter_category=17;*parameter_number=0;
+	  switch (grib_msg->table_ver) {
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=1;*parameter_number=70;
+		break;
+	    }
+	    case 131:
+	    {
+		*discipline=0;*parameter_category=17;*parameter_number=0;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -1015,11 +1057,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 140:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=0;*parameter_category=1;*parameter_number=33;
-	  }
-	  else if (grib_msg->table_ver == 129) {
-	    *discipline=0;*parameter_category=6;*parameter_number=20;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=0;*parameter_category=1;*parameter_number=33;
+		break;
+	    }
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=6;*parameter_number=20;
+		break;
+	    }
 	  }
 	}
 	else if (grib_msg->center_id == 98 && grib_msg->table_ver == 203) {
@@ -1051,11 +1099,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 144:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=2;*parameter_category=0;*parameter_number=9;
-	  }
-	  else if (grib_msg->table_ver == 128) {
-	    *discipline=10;*parameter_category=3;*parameter_number=2;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=2;*parameter_category=0;*parameter_number=9;
+		break;
+	    }
+	    case 128:
+	    {
+		*discipline=10;*parameter_category=3;*parameter_number=2;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -1083,11 +1137,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
 	  *discipline=0;*parameter_category=3;*parameter_number=16;
 	}
 	else if (grib_msg->center_id == 98) {
-	  if (grib_msg->table_ver == 201) {
-	    *discipline=0;*parameter_category=19;*parameter_number=24;
-	  }
-	  else if (grib_msg->table_ver == 254) {
-	    *discipline=0;*parameter_category=2;*parameter_number=27;
+	  switch (grib_msg->table_ver) {
+	    case 201:
+	    {
+		*discipline=0;*parameter_category=19;*parameter_number=24;
+		break;
+	    }
+	    case 254:
+	    {
+		*discipline=0;*parameter_category=2;*parameter_number=27;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -1167,11 +1227,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 160:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=0;*parameter_category=4;*parameter_number=53;
-	  }
-	  else if (grib_msg->table_ver == 130) {
-	    *discipline=2;*parameter_category=3;*parameter_number=5;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=0;*parameter_category=4;*parameter_number=53;
+		break;
+	    }
+	    case 130:
+	    {
+		*discipline=2;*parameter_category=3;*parameter_number=5;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -1198,19 +1264,31 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 171:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=0;*parameter_category=1;*parameter_number=25;
-	  }
-	  else if (grib_msg->table_ver == 130) {
-	    *discipline=2;*parameter_category=3;*parameter_number=6;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=0;*parameter_category=1;*parameter_number=25;
+		break;
+	    }
+	    case 130:
+	    {
+		*discipline=2;*parameter_category=3;*parameter_number=6;
+		break;
+	    }
 	  }
 	}
 	else if (grib_msg->center_id == 98) {
-	  if (grib_msg->table_ver == 201) {
-	    *discipline=0;*parameter_category=0;*parameter_number=19;
-	  }
-	  else if (grib_msg->table_ver == 228) {
-	    *discipline=2;*parameter_category=0;*parameter_number=26;
+	  switch (grib_msg->table_ver) {
+	    case 201:
+	    {
+		*discipline=0;*parameter_category=0;*parameter_number=19;
+		break;
+	    }
+	    case 228:
+	    {
+		*discipline=2;*parameter_category=0;*parameter_number=26;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -1242,11 +1320,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
 	  *discipline=0;*parameter_category=1;*parameter_number=17;
 	}
 	else if (grib_msg->center_id == 98) {
-	  if (grib_msg->table_ver == 128) {
-	    *discipline=0;*parameter_category=2;*parameter_number=38;
-	  }
-	  else if (grib_msg->table_ver == 202) {
-	    *discipline=0;*parameter_category=14;*parameter_number=1;
+	  switch (grib_msg->table_ver) {
+	    case 128:
+	    {
+		*discipline=0;*parameter_category=2;*parameter_number=38;
+		break;
+	    }
+	    case 202:
+	    {
+		*discipline=0;*parameter_category=14;*parameter_number=1;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -1327,14 +1411,22 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 196:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=0;*parameter_category=2;*parameter_number=27;
-	  }
-	  else if (grib_msg->table_ver == 128) {
-	    *discipline=10;*parameter_category=4,*parameter_number=5;
-	  }
-	  else if (grib_msg->table_ver == 130) {
-	    *discipline=2;*parameter_category=0;*parameter_number=7;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=0;*parameter_category=2;*parameter_number=27;
+		break;
+	    }
+	    case 128:
+	    {
+		*discipline=10;*parameter_category=4,*parameter_number=5;
+		break;
+	    }
+	    case 130:
+	    {
+		*discipline=2;*parameter_category=0;*parameter_number=7;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -1430,8 +1522,21 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     }
     case 211:
     {
-	if (grib_msg->center_id == 7 && grib_msg->table_ver == 2) {
-	  *discipline=0;*parameter_category=4,*parameter_number=8;
+	if (grib_msg->center_id == 7) {
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    case 130:
+	    case 131:
+	    {
+		*discipline=0;*parameter_category=4,*parameter_number=8;
+		break;
+	    }
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=16,*parameter_number=4;
+		break;
+	    }
+	  }
 	}
 	else if (grib_msg->center_id == 98 && grib_msg->table_ver == 200) {
 	  *discipline=0;*parameter_category=4,*parameter_number=8;
@@ -1444,11 +1549,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
 	  *discipline=0;*parameter_category=5;*parameter_number=4;
 	}
 	else if (grib_msg->center_id == 98) {
-	  if (grib_msg->table_ver == 200) {
-	    *discipline=0;*parameter_category=5;*parameter_number=4;
-	  }
-	  else if (grib_msg->table_ver == 201) {
-	    *discipline=2;*parameter_category=0;*parameter_number=16;
+	  switch (grib_msg->table_ver) {
+	    case 200:
+	    {
+		*discipline=0;*parameter_category=5;*parameter_number=4;
+		break;
+	    }
+	    case 201:
+	    {
+		*discipline=2;*parameter_category=0;*parameter_number=16;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -1470,11 +1581,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 219:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 129) {
-	    *discipline=0;*parameter_category=6;*parameter_number=13;
-	  }
-	  else if (grib_msg->table_ver == 130) {
-	    *discipline=2;*parameter_category=0;*parameter_number=17;
+	  switch (grib_msg->table_ver) {
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=6;*parameter_number=13;
+		break;
+	    }
+	    case 130:
+	    {
+		*discipline=2;*parameter_category=0;*parameter_number=17;
+		break;
+	    }
 	  }
 	}
 	else if (grib_msg->center_id == 98 && grib_msg->table_ver == 200) {
@@ -1511,11 +1628,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 224:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=2;*parameter_category=3;*parameter_number=0;
-	  }
-	  else if (grib_msg->table_ver == 129) {
-	    *discipline=0;*parameter_category=1;*parameter_number=66;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=2;*parameter_category=3;*parameter_number=0;
+		break;
+	    }
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=1;*parameter_number=66;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -1563,11 +1686,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 230:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 2) {
-	    *discipline=0;*parameter_category=3;*parameter_number=19;
-	  }
-	  else if (grib_msg->table_ver == 130) {
-	    *discipline=2;*parameter_category=3;*parameter_number=7;
+	  switch (grib_msg->table_ver) {
+	    case 2:
+	    {
+		*discipline=0;*parameter_category=3;*parameter_number=19;
+		break;
+	    }
+	    case 130:
+	    {
+		*discipline=2;*parameter_category=3;*parameter_number=7;
+		break;
+	    }
 	  }
 	}
 	else if (grib_msg->center_id == 98 && grib_msg->table_ver == 201) {
@@ -1623,11 +1752,17 @@ void map_GRIB1_parameter_into_GRIB2(GRIBMessage *grib_msg,int *discipline,int *p
     case 240:
     {
 	if (grib_msg->center_id == 7) {
-	  if (grib_msg->table_ver == 129) {
-	    *discipline=0;*parameter_category=16;*parameter_number=3;
-	  }
-	  else if (grib_msg->table_ver == 130) {
-	    *discipline=2;*parameter_category=3;*parameter_number=9;
+	  switch (grib_msg->table_ver) {
+	    case 129:
+	    {
+		*discipline=0;*parameter_category=16;*parameter_number=3;
+		break;
+	    }
+	    case 130:
+	    {
+		*discipline=2;*parameter_category=3;*parameter_number=9;
+		break;
+	    }
 	  }
 	}
 	return;
@@ -1876,12 +2011,11 @@ void pack_GDS(GRIBMessage *msg,unsigned char *grib2_buffer,size_t *offset)
 	set_bits(grib2_buffer,abs(msg->slat*1000000.),*offset+305,31);
 // longitude of first gridpoint
 	if (msg->slon < 0.) {
-	  set_bits(grib2_buffer,1,*offset+336,1);
+	  set_bits(grib2_buffer,(msg->slon+360.)*1000000.,*offset+336,32);
 	}
 	else {
-	  set_bits(grib2_buffer,0,*offset+336,1);
+	  set_bits(grib2_buffer,msg->slon*1000000.,*offset+336,32);
 	}
-	set_bits(grib2_buffer,abs(msg->slon*1000000.),*offset+337,31);
 // resolution and component flags
 	unsigned char rcflg=((msg->rescomp & 0x80) >> 2) | ((msg->rescomp & 0x80) >> 3) | (msg->rescomp & 0xf);
 	set_bits(grib2_buffer,rcflg,*offset+368,8);
@@ -1903,12 +2037,11 @@ void pack_GDS(GRIBMessage *msg,unsigned char *grib2_buffer,size_t *offset)
 	set_bits(grib2_buffer,abs(msg->elat*1000000.),*offset+409,31);
 // longitude of last gridpoint
 	if (msg->elon < 0.) {
-	  set_bits(grib2_buffer,1,*offset+440,1);
+	  set_bits(grib2_buffer,(msg->elon+360.)*1000000.,*offset+440,32);
 	}
 	else {
-	  set_bits(grib2_buffer,0,*offset+440,1);
+	  set_bits(grib2_buffer,msg->elon*1000000.,*offset+440,32);
 	}
-	set_bits(grib2_buffer,abs(msg->elon*1000000.),*offset+441,31);
 // scanning mode
 	set_bits(grib2_buffer,msg->scan_mode,*offset+472,8);
 // orientation of the grid
@@ -2572,6 +2705,9 @@ int main(int argc,char **argv)
     }
     int discipline,parameter_category,parameter_number;
     map_GRIB1_parameter_into_GRIB2(&grib_msg,&discipline,&parameter_category,&parameter_number);
+    if (discipline == 255) {
+	fprintf(stderr,"Warning: unable to map GRIB1 parameter %d (ctr-%d table_ver-%d) into GRIB2\n",grib_msg.param,grib_msg.center_id,grib_msg.table_ver);
+    }
     size_t offset=0;
 // pack the Identification Section
     pack_IDS(&grib_msg,grib2_buffer,&offset);
