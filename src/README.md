@@ -1,4 +1,7 @@
 # src directory
+
+(documentation for each code can be found at the top of each file)
+
 - unpackgrib1.c
   - C code for decoding GRIB1 messages
   
