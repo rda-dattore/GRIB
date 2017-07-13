@@ -13,3 +13,6 @@
   
 - grib2to1.c
   - C program for converting from GRIB2 to GRIB1 (also requires unpackgrib2.c)
+
+- grib2_read_example.c
+  - sample C program to read a GRIB2 file
