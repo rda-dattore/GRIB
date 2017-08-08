@@ -2117,6 +2117,83 @@
         <shortName>RCQ</shortName>
         <description>Humidity parameter in canopy conductance</description>
       </parameter>
+      <parameter code="22">
+        <shortName>SOILM</shortName>
+        <description>Soil moisture</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="23">
+        <shortName>CISOILW</shortName>
+        <description>Column-integrated soil water</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="24">
+        <shortName>HFLUX</shortName>
+        <description>Heat flux</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="25">
+        <shortName>VSOILM</shortName>
+        <description>Volumetric soil moisture</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+      <parameter code="26">
+        <shortName>WILT</shortName>
+        <description>Wilting point</description>
+        <units>kg m^-3</units>
+      </parameter>
+      <parameter code="27">
+        <shortName>VWILTP</shortName>
+        <description>Volumetric wilting point</description>
+        <units>m^3 m^-3</units>
+      </parameter>
+      <parameter code="28">
+        <shortName>LEAINX</shortName>
+        <description>Leaf area index</description>
+      </parameter>
+      <parameter code="29">
+        <shortName>EVGFC</shortName>
+        <description>Evergreen forest cover</description>
+        <units>Proportion</units>
+      </parameter>
+      <parameter code="30">
+        <shortName>DECFC</shortName>
+        <description>Deciduous forest cover</description>
+        <units>Proportion</units>
+      </parameter>
+      <parameter code="31">
+        <shortName>NDVINX</shortName>
+        <description>Normalized differential vegetation index (NDVI)</description>
+      </parameter>
+      <parameter code="32">
+        <shortName>RDVEG</shortName>
+        <description>Root depth of vegetation</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="33">
+        <shortName>WROD</shortName>
+        <description>Water runoff and drainage</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="34">
+        <shortName>SFCWRO</shortName>
+        <description>Surface water runoff</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="35">
+        <shortName>TCLASS</shortName>
+        <description>Tile class</description>
+      </parameter>
+      <parameter code="36">
+        <shortName>TFRCT</shortName>
+        <description>Tile fraction</description>
+        <units>Proportion</units>
+      </parameter>
+      <parameter code="37">
+        <shortName>TPERCT</shortName>
+        <description>Tile percentage</description>
+        <units>%</units>
+      </parameter>
       <parameter code="192">
         <shortName>SOILW</shortName>
         <description>Volumetric soil moisture content</description>
