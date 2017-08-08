@@ -1764,6 +1764,93 @@
         <shortName>MIXLY</shortName>
         <description>Number of mixed layers next to surface</description>
       </parameter>
+      <parameter code="205">
+        <shortName>FLGHT</shortName>
+        <description>Flight category</description>
+      </parameter>
+      <parameter code="206">
+        <shortName>CICEL</shortName>
+        <description>Confidence - ceiling</description>
+      </parameter>
+      <parameter code="207">
+        <shortName>CIVIS</shortName>
+        <description>Confidence - visibility</description>
+      </parameter>
+      <parameter code="208">
+        <shortName>CIFLT</shortName>
+        <description>Confidence - flight category</description>
+      </parameter>
+      <parameter code="209">
+        <shortName>LAVNI</shortName>
+        <description>Low-level aviation interest</description>
+      </parameter>
+      <parameter code="210">
+        <shortName>HAVNI</shortName>
+        <description>High-level aviation interest</description>
+      </parameter>
+      <parameter code="211">
+        <shortName>SBSALB</shortName>
+        <description>Visible, black sky albedo</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="212">
+        <shortName>SWSALB</shortName>
+        <description>Visible, white sky albedo</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="213">
+        <shortName>NBSALB</shortName>
+        <description>Near IR, black sky albedo</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="214">
+        <shortName>NWSALB</shortName>
+        <description>Near IR, white sky albedo</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="215">
+        <shortName>PRSVR</shortName>
+        <description>Total probability of severe thunderstorms (days 2, 3)</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="216">
+        <shortName>PRSIGSVR</shortName>
+        <description>Total probability of extreme severe thunderstorms (days 2, 3)</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="217">
+        <shortName>SIPD</shortName>
+        <description>Supercooled large droplet (SLD) icing</description>
+      </parameter>
+      <parameter code="218">
+        <shortName>EPSR</shortName>
+        <description>Radiative emissivity</description>
+      </parameter>
+      <parameter code="219">
+        <shortName>TPFI</shortName>
+        <description>Turbulence potential forecast index</description>
+      </parameter>
+      <parameter code="220">
+        <shortName>SVRTS</shortName>
+        <description>Categorical severe thunderstorm</description>
+      </parameter>
+      <parameter code="221">
+        <shortName>PROCON</shortName>
+        <description>Probability of convection</description>
+        <units>%</units>
+      </parameter>
+      <parameter code="222">
+        <shortName>CONVP</shortName>
+        <description>Convection potential</description>
+      </parameter>
+      <parameter code="233">
+        <shortName>ICPRB</shortName>
+        <description>Icing probability</description>
+      </parameter>
+      <parameter code="234">
+        <shortName>ICSEV</shortName>
+        <description>Icing severity</description>
+      </parameter>
       <parameter code="242">
         <shortName>UNK-0-19-242</shortName>
         <description>Unknown parameter (0.19.242)</description>
@@ -2119,6 +2206,90 @@
         <shortName>VEGT</shortName>
         <description>Vegetation canopy temperature</description>
         <units>K</units>
+      </parameter>
+      <parameter code="211">
+        <shortName>SSTOR</shortName>
+        <description>Surface water storage</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="212">
+        <shortName>LSOIL</shortName>
+        <description>Liquid soil moisture content (non-frozen)</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="213">
+        <shortName>EWATR</shortName>
+        <description>Open water evaporation (standing water)</description>
+        <units>W m^-2</units>
+      </parameter>
+      <parameter code="214">
+        <shortName>GWREC</shortName>
+        <description>Groundwater recharge</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="215">
+        <shortName>QREC</shortName>
+        <description>Flood plain recharge</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="216">
+        <shortName>SFCRH</shortName>
+        <description>Roughness length for heat</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="217">
+        <shortName>NDVI</shortName>
+        <description>Normalized difference vegetation index</description>
+      </parameter>
+      <parameter code="218">
+        <shortName>LANDN</shortName>
+        <description>Land-sea coverage (nearest neighbor)</description>
+        <units>[land=1, sea=0]</units>
+      </parameter>
+      <parameter code="219">
+        <shortName>AMIXL</shortName>
+        <description>Asymptotic mixing length scale</description>
+        <units>m</units>
+      </parameter>
+      <parameter code="220">
+        <shortName>WVINC</shortName>
+        <description>Water vapor added by precip assimilation</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="221">
+        <shortName>WCINC</shortName>
+        <description>Water condensate added by precip assimilation</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="222">
+        <shortName>WVCONV</shortName>
+        <description>Water vapor flux convergance (vertical int)</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="223">
+        <shortName>WCCONV</shortName>
+        <description>Water condensate flux convergance (vertical int)</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="224">
+        <shortName>WVUFLX</shortName>
+        <description>Water vapor zonal flux (vertical int)</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="225">
+        <shortName>WVVFLX</shortName>
+        <description>Water vapor meridional flux (vertical int)</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="226">
+        <shortName>WCUFLX</shortName>
+        <description>Water condensate zonal flux (vertical int)</description>
+        <units>kg m^-2</units>
+      </parameter>
+      <parameter code="227">
+        <shortName>WCVFLX</shortName>
+        <description>Water condensate meridional flux (vertical int)</description>
+        <units>kg m^-2</units>
       </parameter>
       <parameter code="228">
         <shortName>ACOND</shortName>
