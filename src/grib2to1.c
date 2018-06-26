@@ -1661,6 +1661,17 @@ ParameterData map_parameter_data(GRIB2Message *msg,int grid_number)
 		    }
 		  }
 		}
+		case 218:
+		{
+		  switch (msg->center_id) {
+		    case 7:
+		    {
+			pdata.table_version=131;
+			pdata.parameter_code=189;
+			return pdata;
+		    }
+		  }
+		}
 	    }
 	    break;
 	  }
