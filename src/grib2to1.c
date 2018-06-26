@@ -39,6 +39,7 @@
 **   21 Apr 2017 - changed return value of map_parameter_data to the
 **                 ParameterData structure because some parameter codes belong
 **                 to parameter tables other than version 3
+**   26 Jun 2018 - added NCEP mapping for 2.0.218 (LANDN)
 **
 ** Contact Bob Dattore at dattore@ucar.edu to get conversions for other products
 ** and grid definitions added.
