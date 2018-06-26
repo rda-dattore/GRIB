@@ -45,6 +45,8 @@
 **               unpack DRS template 5.3
 **          13 Jul 2017:
 **             GDS Template 3.10 (Mercator grid)
+**          26 Jun 2018:
+**             bug fix for DRS Template 5.3
 **
 ** Purpose: to provide a single C-routine for unpacking GRIB2 messages
 **
@@ -1193,7 +1195,7 @@ void unpack_DS(GRIB2Message *grib2_msg,int grid_num)
 	    groups.miss_val=GRIB_MISSING_VALUE;
 	  }
 	  groups.first_vals=(int *)malloc(grib2_msg->md.complex_pack.spatial_diff.order*sizeof(int));
-	  for (size_t n=0; n < grib2_msg->md.complex_pack.spatial_diff.order; ++n) {
+	  for (int n=0; n < grib2_msg->md.complex_pack.spatial_diff.order; ++n) {
 	    get_bits(grib2_msg->buffer,&groups.first_vals[n],off,grib2_msg->md.complex_pack.spatial_diff.order_vals_width*8);
 	    off+=grib2_msg->md.complex_pack.spatial_diff.order_vals_width*8;
 	  }
@@ -1204,7 +1206,7 @@ void unpack_DS(GRIB2Message *grib2_msg,int grid_num)
 	  }
 	  off+=grib2_msg->md.complex_pack.spatial_diff.order_vals_width*8;
 	  groups.ref_vals=(int *)malloc(grib2_msg->md.complex_pack.num_groups*sizeof(int));
-	  for (size_t n=0; n < grib2_msg->md.complex_pack.num_groups; ++n) {
+	  for (int n=0; n < grib2_msg->md.complex_pack.num_groups; ++n) {
 	    get_bits(grib2_msg->buffer,&groups.ref_vals[n],off,grib2_msg->md.pack_width);
 	    off+=grib2_msg->md.pack_width;
 	  }
@@ -1213,7 +1215,7 @@ void unpack_DS(GRIB2Message *grib2_msg,int grid_num)
 	    off+=8-pad;
 	  }
 	  groups.widths=(int *)malloc(grib2_msg->md.complex_pack.num_groups*sizeof(int));
-	  for (size_t n=0; n < grib2_msg->md.complex_pack.num_groups; ++n) {
+	  for (int n=0; n < grib2_msg->md.complex_pack.num_groups; ++n) {
 	    get_bits(grib2_msg->buffer,&groups.widths[n],off,grib2_msg->md.complex_pack.width.pack_width);
 	    off+=grib2_msg->md.complex_pack.width.pack_width;
 	  }
@@ -1221,7 +1223,7 @@ void unpack_DS(GRIB2Message *grib2_msg,int grid_num)
 	    off+=8-pad;
 	  }
 	  groups.lengths=(int *)malloc(grib2_msg->md.complex_pack.num_groups*sizeof(int));
-	  for (size_t n=0; n < grib2_msg->md.complex_pack.num_groups; ++n) {
+	  for (int n=0; n < grib2_msg->md.complex_pack.num_groups; ++n) {
 	    get_bits(grib2_msg->buffer,&groups.lengths[n],off,grib2_msg->md.complex_pack.length.pack_width);
 	    off+=grib2_msg->md.complex_pack.length.pack_width;
 	  }
@@ -1229,22 +1231,20 @@ void unpack_DS(GRIB2Message *grib2_msg,int grid_num)
 	    off+=8-pad;
 	  }
 	  groups.max_length=0;
-	  size_t group_num=0;
 	  size_t end=grib2_msg->md.complex_pack.num_groups-1;
-	  while (group_num < end) {
-	    groups.lengths[group_num]=grib2_msg->md.complex_pack.length.ref+groups.lengths[group_num]*grib2_msg->md.complex_pack.length.incr;
-	    if (groups.lengths[group_num] > groups.max_length) {
-		groups.max_length=groups.lengths[group_num];
+	  for (int n=0; n < end; ++n) {
+	    groups.lengths[n]=grib2_msg->md.complex_pack.length.ref+groups.lengths[n]*grib2_msg->md.complex_pack.length.incr;
+	    if (groups.lengths[n] > groups.max_length) {
+		groups.max_length=groups.lengths[n];
 	    }
-	    ++group_num;
 	  }
-	  groups.lengths[group_num]=grib2_msg->md.complex_pack.length.last;
-	  if (groups.lengths[group_num] > groups.max_length) {
-	    groups.max_length=groups.lengths[group_num];
+	  groups.lengths[end]=grib2_msg->md.complex_pack.length.last;
+	  if (groups.lengths[end] > groups.max_length) {
+	    groups.max_length=groups.lengths[end];
 	  }
 // unpack the field of differences
-	  size_t cnt=0;
-	  for (size_t n=0; n < grib2_msg->md.complex_pack.num_groups; ++n) {
+	  size_t gridpoint_index=0;
+	  for (int n=0; n < grib2_msg->md.complex_pack.num_groups; ++n) {
 	    if (groups.widths[n] > 0) {
 		if (grib2_msg->md.complex_pack.miss_val_mgmt > 0) {
 		  groups.group_miss_val=pow(2.,groups.widths[n])-1;
@@ -1253,67 +1253,59 @@ void unpack_DS(GRIB2Message *grib2_msg,int grid_num)
 		  groups.group_miss_val=GRIB_MISSING_VALUE;
 		}
 		int pval=0;
-		size_t m=0;
-		while (m < groups.lengths[n]) {
-		  if ((grib2_msg->md.bitmap != NULL && grib2_msg->md.bitmap[cnt] == 0) || pval == groups.group_miss_val) {
-		    grib2_msg->grids[grid_num].gridpoints[cnt]=GRIB_MISSING_VALUE;
+		for (size_t m=0; m < groups.lengths[n]; ++m) {
+		  if ((grib2_msg->md.bitmap != NULL && grib2_msg->md.bitmap[gridpoint_index] == 0) || pval == groups.group_miss_val) {
+		    grib2_msg->grids[grid_num].gridpoints[gridpoint_index]=GRIB_MISSING_VALUE;
 		  }
 		  else {
 		    get_bits(grib2_msg->buffer,&pval,off,groups.widths[n]);
 		    off+=groups.widths[n];
-		    grib2_msg->grids[grid_num].gridpoints[cnt]=pval+groups.ref_vals[n]+groups.omin;
-		    ++m;
+		    grib2_msg->grids[grid_num].gridpoints[gridpoint_index]=pval+groups.ref_vals[n]+groups.omin;
 		  }
-		  ++cnt;
 		}
 	    }
 	    else {
 // constant group
-		size_t m=0;
-		while (m < groups.lengths[n]) {
-		  if ((grib2_msg->md.bitmap != NULL && grib2_msg->md.bitmap[cnt] == 0) || groups.ref_vals[n] == groups.miss_val) {
-		    grib2_msg->grids[grid_num].gridpoints[cnt]=GRIB_MISSING_VALUE;
+		for (int m=0; m < groups.lengths[n]; ++m) {
+		  if ((grib2_msg->md.bitmap != NULL && grib2_msg->md.bitmap[gridpoint_index] == 0) || groups.ref_vals[n] == groups.miss_val) {
+		    grib2_msg->grids[grid_num].gridpoints[gridpoint_index]=GRIB_MISSING_VALUE;
 		  }
 		  else {
-		    grib2_msg->grids[grid_num].gridpoints[cnt]=groups.ref_vals[n]+groups.omin;
-		    ++m;
+		    grib2_msg->grids[grid_num].gridpoints[gridpoint_index]=groups.ref_vals[n]+groups.omin;
 		  }
-		  ++cnt;
 		}
 	    }
 	  }
-	  while (cnt < grib2_msg->md.nx*grib2_msg->md.ny) {
-	    grib2_msg->grids[grid_num].gridpoints[cnt++]=GRIB_MISSING_VALUE;
+	  for (; gridpoint_index < grib2_msg->md.nx*grib2_msg->md.ny; ++gridpoint_index) {
+	    grib2_msg->grids[grid_num].gridpoints[gridpoint_index]=GRIB_MISSING_VALUE;
 	  }
 	  float lastgp;
-	  int order=grib2_msg->md.complex_pack.spatial_diff.order-1;
-	  while (order > 0) {
-	    lastgp=groups.first_vals[order]-groups.first_vals[order-1];
-	    size_t m=0;
-	    for (size_t n=0; n < grib2_msg->md.nx*grib2_msg->md.ny; ++n) {
-		if (grib2_msg->grids[grid_num].gridpoints[n] != GRIB_MISSING_VALUE) {
-		  if (m >= grib2_msg->md.complex_pack.spatial_diff.order) {
-		    grib2_msg->grids[grid_num].gridpoints[n]+=lastgp;
-		    lastgp=grib2_msg->grids[grid_num].gridpoints[n];
+	  for (int n=grib2_msg->md.complex_pack.spatial_diff.order-1; n > 0; --n) {
+	    lastgp=groups.first_vals[n]-groups.first_vals[n-1];
+	    int num_not_missing=0;
+	    for (size_t l=0; l < grib2_msg->md.nx*grib2_msg->md.ny; ++l) {
+		if (grib2_msg->grids[grid_num].gridpoints[l] != GRIB_MISSING_VALUE) {
+		  if (num_not_missing >= grib2_msg->md.complex_pack.spatial_diff.order) {
+		    grib2_msg->grids[grid_num].gridpoints[l]+=lastgp;
+		    lastgp=grib2_msg->grids[grid_num].gridpoints[l];
 		  }
-		  ++m;
+		  ++num_not_missing;
 		}
 	    }
-	    --order;
 	  }
 	  lastgp=0.;
-	  size_t m=0;
-	  for (size_t n=0; n < grib2_msg->md.nx*grib2_msg->md.ny; ++n) {
-	    if (grib2_msg->grids[grid_num].gridpoints[n] != GRIB_MISSING_VALUE) {
-		if (m < grib2_msg->md.complex_pack.spatial_diff.order) {
-		  grib2_msg->grids[grid_num].gridpoints[n]=grib2_msg->md.R+groups.first_vals[m]*E/D;
-		  lastgp=grib2_msg->md.R*D/E+groups.first_vals[m];
+	  size_t num_not_missing=0;
+	  for (size_t l=0; l < grib2_msg->md.nx*grib2_msg->md.ny; ++l) {
+	    if (grib2_msg->grids[grid_num].gridpoints[l] != GRIB_MISSING_VALUE) {
+		if (num_not_missing < grib2_msg->md.complex_pack.spatial_diff.order) {
+		  grib2_msg->grids[grid_num].gridpoints[l]=grib2_msg->md.R+groups.first_vals[num_not_missing]*E/D;
+		  lastgp=grib2_msg->md.R*D/E+groups.first_vals[num_not_missing];
 		}
 		else {
-		  lastgp+=grib2_msg->grids[grid_num].gridpoints[n];
-		  grib2_msg->grids[grid_num].gridpoints[n]=lastgp*E/D;
+		  lastgp+=grib2_msg->grids[grid_num].gridpoints[l];
+		  grib2_msg->grids[grid_num].gridpoints[l]=lastgp*E/D;
 		}
-		++m;
+		++num_not_missing;
 	    }
 	  }
 	  if (grib2_msg->md.complex_pack.spatial_diff.order > 0) {
@@ -1326,7 +1318,7 @@ void unpack_DS(GRIB2Message *grib2_msg,int grid_num)
 	  }
 	}
 	else {
-	  for (size_t n=0; n < grib2_msg->md.ny*grib2_msg->md.nx; ++n) {
+	  for (int n=0; n < grib2_msg->md.ny*grib2_msg->md.nx; ++n) {
 	    grib2_msg->grids[grid_num].gridpoints[n]=GRIB_MISSING_VALUE;
 	  }
 	}
