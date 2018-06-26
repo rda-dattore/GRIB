@@ -45,8 +45,6 @@
 **               unpack DRS template 5.3
 **          13 Jul 2017:
 **             GDS Template 3.10 (Mercator grid)
-**          26 Jun 2018:
-**             bug fix for DRS Template 5.3
 **
 ** Purpose: to provide a single C-routine for unpacking GRIB2 messages
 **
@@ -1252,16 +1250,17 @@ void unpack_DS(GRIB2Message *grib2_msg,int grid_num)
 		else {
 		  groups.group_miss_val=GRIB_MISSING_VALUE;
 		}
-		int pval=0;
 		for (size_t m=0; m < groups.lengths[n]; ++m) {
+		  int pval;
+		  get_bits(grib2_msg->buffer,&pval,off,groups.widths[n]);
+		  off+=groups.widths[n];
 		  if ((grib2_msg->md.bitmap != NULL && grib2_msg->md.bitmap[gridpoint_index] == 0) || pval == groups.group_miss_val) {
 		    grib2_msg->grids[grid_num].gridpoints[gridpoint_index]=GRIB_MISSING_VALUE;
 		  }
 		  else {
-		    get_bits(grib2_msg->buffer,&pval,off,groups.widths[n]);
-		    off+=groups.widths[n];
 		    grib2_msg->grids[grid_num].gridpoints[gridpoint_index]=pval+groups.ref_vals[n]+groups.omin;
 		  }
+		  ++gridpoint_index;
 		}
 	    }
 	    else {
@@ -1273,6 +1272,7 @@ void unpack_DS(GRIB2Message *grib2_msg,int grid_num)
 		  else {
 		    grib2_msg->grids[grid_num].gridpoints[gridpoint_index]=groups.ref_vals[n]+groups.omin;
 		  }
+		  ++gridpoint_index;
 		}
 	    }
 	  }
