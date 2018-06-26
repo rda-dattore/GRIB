@@ -40,6 +40,9 @@
 **                 ParameterData structure because some parameter codes belong
 **                 to parameter tables other than version 3
 **   26 Jun 2018 - added NCEP mapping for 2.0.218 (LANDN)
+**               - fixed missing value check for bitmap inclusion - some GRIB2
+**                 data representations (e.g. DRS Template 5.3) don't require a
+**                 bitmap in the GRIB2 message
 **
 ** Contact Bob Dattore at dattore@ucar.edu to get conversions for other products
 ** and grid definitions added.
@@ -2410,7 +2413,7 @@ void map_time_range(GRIB2Message *msg,GRIB2Grid *grid,int *p1,int *p2,int *t_ran
   }
 }
 
-void pack_PDS(GRIB2Message *msg,int grid_number,unsigned char *grib1_buffer,size_t *offset)
+void pack_PDS(GRIB2Message *msg,int grid_number,size_t num_to_pack,size_t num_points,unsigned char *grib1_buffer,size_t *offset)
 {
   int level_type,level1,level2,p1,p2,t_range,n_avg,n_missing,D;
   static short warned=0;
@@ -2428,7 +2431,7 @@ void pack_PDS(GRIB2Message *msg,int grid_number,unsigned char *grib1_buffer,size
 // grid definition catalog number - set to 255 because GDS is to be included
   set_bits(grib1_buffer,255,*offset+48,8);
 // flag
-  if (msg->grids[grid_number].md.bitmap == NULL) {
+  if (num_to_pack == num_points) {
     set_bits(grib1_buffer,0x80,*offset+56,8);
   }
   else {
@@ -2751,7 +2754,12 @@ void pack_BMS(GRIB2Message *msg,int grid_number,unsigned char *grib1_buffer,size
 // the bitmap
   off=*offset+48;
   for (n=0; n < num_points; ++n) {
-    set_bits(grib1_buffer,msg->grids[grid_number].md.bitmap[n],off++,1);
+    if (msg->grids[grid_number].gridpoints[n] == GRIB_MISSING_VALUE) {
+	set_bits(grib1_buffer,0,off++,1);
+    }
+    else {
+	set_bits(grib1_buffer,1,off++,1);
+    }
   }
   (*offset)+=length*8;
 }
@@ -2848,6 +2856,7 @@ int main(int argc,char **argv)
   char *head="GRIB",*tail="7777";
   while ( (status=unpackgrib2(fp,&grib2_msg)) == 0) {
     ++nmsg;
+fprintf(stderr,"msg: %d\n",nmsg);
     for (size_t n=0; n < grib2_msg.num_grids; ++n) {
 // calculate the octet length of the GRIB1 grid (minus the Indicator and End
 // Sections, which are both fixed in length
@@ -2902,18 +2911,14 @@ int main(int argc,char **argv)
 	    exit(1);
 	  }
 	}
-	size_t num_to_pack;
-	if (grib2_msg.grids[n].md.bitmap != NULL) {
-	  length+=6+(num_points+7)/8;
-	  num_to_pack=0;
-	  for (size_t m=0; m < num_points; ++m) {
-	    if (grib2_msg.grids[n].md.bitmap[m] == 1) {
-		++num_to_pack;
-	    }
+	size_t num_to_pack=0;
+	for (size_t m=0; m < num_points; ++m) {
+	  if (grib2_msg.grids[n].gridpoints[m] != GRIB_MISSING_VALUE) {
+	    ++num_to_pack;
 	  }
 	}
-	else {
-	  num_to_pack=num_points;
+	if (num_to_pack != num_points) {
+	  length+=6+(num_points+7)/8;
 	}
 	int *pvals=(int *)malloc(sizeof(int)*num_to_pack);
 	size_t max_pack=0;
@@ -2946,11 +2951,11 @@ int main(int argc,char **argv)
 	}
 	size_t offset=0;
 // pack the Product Definition Section
-	pack_PDS(&grib2_msg,n,grib1_buffer,&offset);
+	pack_PDS(&grib2_msg,n,num_to_pack,num_points,grib1_buffer,&offset);
 // pack the Grid Definition Section
 	pack_GDS(&grib2_msg,n,grib1_buffer,&offset);
 // pack the Bitmap Section, if it exists
-	if (grib2_msg.grids[n].md.bitmap != NULL) {
+	if (num_to_pack != num_points) {
 	  pack_BMS(&grib2_msg,n,grib1_buffer,&offset,num_points);
 	}
 // pack the Binary Data Section
