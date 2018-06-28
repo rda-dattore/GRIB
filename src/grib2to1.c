@@ -2856,7 +2856,6 @@ int main(int argc,char **argv)
   char *head="GRIB",*tail="7777";
   while ( (status=unpackgrib2(fp,&grib2_msg)) == 0) {
     ++nmsg;
-fprintf(stderr,"msg: %d\n",nmsg);
     for (size_t n=0; n < grib2_msg.num_grids; ++n) {
 // calculate the octet length of the GRIB1 grid (minus the Indicator and End
 // Sections, which are both fixed in length
